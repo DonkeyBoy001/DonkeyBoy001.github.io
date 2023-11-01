@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Test Development KnowledgeTTDTest Driven Development: 测试驱动开发: 在编写实际功能代码之前先编写测试代码。 基本步骤 **Writing failed tests **:首先，为即将要开发的功能或修改编写一个测试，并确保在没有相应功能的情况下，这个测试是失败的。 Write functional code：然后，尽量简单地编写功能代码，使其能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Test Development Knowledge">
+<meta property="og:url" content="https://www.zhoujoe.us/2023/10/28/Test-Development-Knowledge/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="Test Development KnowledgeTTDTest Driven Development: 测试驱动开发: 在编写实际功能代码之前先编写测试代码。 基本步骤 **Writing failed tests **:首先，为即将要开发的功能或修改编写一个测试，并确保在没有相应功能的情况下，这个测试是失败的。 Write functional code：然后，尽量简单地编写功能代码，使其能">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029110517224.png">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029101927544.png">
+<meta property="article:published_time" content="2023-10-29T04:50:50.000Z">
+<meta property="article:modified_time" content="2023-10-29T22:43:53.307Z">
+<meta property="article:author" content="Joe">
+<meta property="article:tag" content="Technical stack">
+<meta property="article:tag" content="Test Development Knowledge">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029110517224.png">
+
+
+<link rel="canonical" href="https://www.zhoujoe.us/2023/10/28/Test-Development-Knowledge/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.zhoujoe.us/2023/10/28/Test-Development-Knowledge/","path":"2023/10/28/Test-Development-Knowledge/","title":"Test Development Knowledge"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Test Development Knowledge | Notes</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Notes</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Test-Development-Knowledge"><span class="nav-number">1.</span> <span class="nav-text">Test Development Knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TTD"><span class="nav-number">1.1.</span> <span class="nav-text">TTD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Junit-Test"><span class="nav-number">1.2.</span> <span class="nav-text">Junit Test</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Junit5-Basic-Conceptions"><span class="nav-number">1.2.1.</span> <span class="nav-text">Junit5 Basic Conceptions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Library"><span class="nav-number">1.2.2.</span> <span class="nav-text">Library</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Core-Decorator"><span class="nav-number">1.2.3.</span> <span class="nav-text">Core Decorator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Specific-Steps-Actual-Practice"><span class="nav-number">1.2.4.</span> <span class="nav-text">Specific Steps (Actual Practice)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-number">1.2.5.</span> <span class="nav-text">实战</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Joe</p>
+  <div class="site-description" itemprop="description">Festina lente</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2023/10/28/Test-Development-Knowledge/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Test Development Knowledge | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Test Development Knowledge
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-10-28 21:50:50" itemprop="dateCreated datePublished" datetime="2023-10-28T21:50:50-07:00">2023-10-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-10-29 15:43:53" itemprop="dateModified" datetime="2023-10-29T15:43:53-07:00">2023-10-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technical-stack/" itemprop="url" rel="index"><span itemprop="name">Technical stack</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technical-stack/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Test-Development-Knowledge"><a href="#Test-Development-Knowledge" class="headerlink" title="Test Development Knowledge"></a>Test Development Knowledge</h1><h2 id="TTD"><a href="#TTD" class="headerlink" title="TTD"></a>TTD</h2><p>Test Driven Development: <strong>测试驱动开发</strong>: 在编写实际功能代码之前先编写测试代码。</p>
+<h3 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h3><ol>
+<li>**Writing failed tests **:首先，为即将要开发的功能或修改编写一个测试，并确保在没有相应功能的情况下，这个测试是失败的。</li>
+<li><strong>Write functional code</strong>：然后，尽量简单地编写功能代码，使其能够通过测试。</li>
+<li><strong>reconfiguration</strong>：当测试通过后，可以考虑重构代码，优化结构，确保在不改变功能的前提下提高代码的可读性和可维护性。在重构的过程中，应当确保已有的测试仍然能够通过，以确保功能没有被破坏。</li>
+<li><strong>Repeat the above steps</strong>：对于每一个新的功能或修改，都重复以上的步骤。</li>
+</ol>
+<h2 id="Junit-Test"><a href="#Junit-Test" class="headerlink" title="Junit Test"></a>Junit Test</h2><h3 id="Junit5-Basic-Conceptions"><a href="#Junit5-Basic-Conceptions" class="headerlink" title="Junit5 Basic Conceptions"></a>Junit5 Basic Conceptions</h3><h3 id="Library"><a href="#Library" class="headerlink" title="Library"></a>Library</h3><p>​	<strong>JUnit Platform</strong>: 提供了在 JVM 上启动测试框架的基础。可以运行JUnit 5，也支持其他测试框架。</p>
+<p>​	<strong>JUnit Jupiter</strong>: JUnit 5 的核心部分，提供新的编写和运行测试的模型。</p>
+<p>​	<strong>JUnit Vintage</strong>: 提供对运行早期版本（JUnit 3 和 JUnit 4）的测试的支持。</p>
+<h3 id="Core-Decorator"><a href="#Core-Decorator" class="headerlink" title="Core Decorator"></a>Core Decorator</h3><p><strong>生命周期方法</strong></p>
+<p>@BeforeEach 每次测试前都要执行的方法</p>
+<p>@AfterEach 每次测试后都要执行的方法</p>
+<p>@BeforeAll 标记所有测试开始前只执行一次的方法。该方法必须是 <code>static</code></p>
+<p>@AfterAll 记所有测试结束后只执行一次的方法。该方法必须是 <code>static</code></p>
+<p><strong>测试方法</strong></p>
+<p><code>@Test</code>: 标记一个方法为测试方法。</p>
+<p><code>@DisplayName</code>: 可为测试方法或测试类定义一个自定义的显示名称。</p>
+<p><code>@Nested</code>: 支持内部测试类，有助于更结构化地组织测试。</p>
+<p><code>@Tag</code>: 允许分类测试，例如“快速”、“慢速”等。</p>
+<p><strong>条件执行</strong></p>
+<p>在满足某些条件时才执行测试</p>
+<p>@EnabledOnOs<code>, </code>@EnabledOnJre<code>, </code>@EnabledIfSystemProperty<code>, </code>@EnabledIfEnvironmentVariable</p>
+<p> 禁用某个特定的测试</p>
+<p>@Disabled</p>
+<p><strong>参数注入</strong></p>
+<p> 定义一个参数化测试： @ParameterizedTest。</p>
+<p>为参数化测试提供数据： @ValueSource<code>, </code>@EnumSource<code>, </code>@MethodSource<code>, </code>@CsvSource<code>, </code>@CsvFileSource。</p>
+<p>多次运行一个测试：@RepeatedTest。</p>
+<p>其它参数</p>
+<p>@DisplayName</p>
+<p>主要是辅助功能，增加代码的可以阅读性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@DisplayName(&quot;some readiable content here!&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>Eg:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package org.example;</span><br><span class="line"></span><br><span class="line">import org.junit.jupiter.api.BeforeEach;</span><br><span class="line">import org.junit.jupiter.api.DisplayName;</span><br><span class="line">import org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line">import static org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"></span><br><span class="line">@DisplayName(&quot;Calculator Tests&quot;)</span><br><span class="line">public class CalculatorTest &#123;</span><br><span class="line"></span><br><span class="line">    private Calculator calculator;</span><br><span class="line"></span><br><span class="line">    @BeforeEach</span><br><span class="line">    public void setUp() &#123;</span><br><span class="line">        calculator = new Calculator();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    @DisplayName(&quot;Adding 1 + 1 should result in 2&quot;)</span><br><span class="line">    public void testAddition() &#123;</span><br><span class="line">        assertEquals(2, calculator.add(1, 1));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    @DisplayName(&quot;Adding 0 + 0 should result in 0&quot;)</span><br><span class="line">    public void testAdditionOfZeros() &#123;</span><br><span class="line">        assertEquals(0, calculator.add(0, 0));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029110517224.png" alt="image-20231029110517224"></p>
+<p><strong>Fail() method</strong></p>
+<p>Used to clearly indicate that the test case should fail.</p>
+<p>When you expect a code block not to be executed, but it is indeed executed.<br>When you test the exception handling logic, you expect an exception to be thrown, but not.</p>
+<p>Eg:</p>
+<p>对于下面例子</p>
+<p>假设 some应该报错，之后 走 catch 路线</p>
+<p>但是没有报错的话， 就走了 fail路线，这样会 爆出 fail(我们在这里设置的异常)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">    someMethodThatShouldThrowException();</span><br><span class="line">    fail(&quot;Expected an exception to be thrown&quot;);</span><br><span class="line">&#125; catch (SomeException e) &#123;</span><br><span class="line">    // Handle exception and maybe some assertions about the exception</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>assertEquals</strong></p>
+<p>Used to assert whether two values are equal</p>
+<p>Basis assertEquals</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assertEquals(Object expected, Object actual)</span><br></pre></td></tr></table></figure>
+
+<p>With message parameters</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assertEquals(Object expected, Object actual, String message)</span><br><span class="line">assertEquals(Object expected, Object actual, Supplier&lt;String&gt; messageSupplier)</span><br></pre></td></tr></table></figure>
+
+<p>For comparing double and float types, add the delta parameter</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assertEquals(double expected, double actual, double delta)</span><br><span class="line">assertEquals(float expected, float actual, float delta)</span><br></pre></td></tr></table></figure>
+
+<p>Comparison of Arrays</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assertArrayEquals(Object[] expected, Object[] actual)</span><br><span class="line">assertArrayEquals(int[] expected, int[] actual)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Specific-Steps-Actual-Practice"><a href="#Specific-Steps-Actual-Practice" class="headerlink" title="Specific Steps (Actual Practice)"></a>Specific Steps (Actual Practice)</h3><p>Configuring the environment</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- JUnit Jupiter (JUnit 5) API --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;junit-jupiter-api&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;5.8.2&lt;/version&gt;</span><br><span class="line">  &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- JUnit Jupiter (JUnit 5) Runtime --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;junit-jupiter-engine&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;5.8.2&lt;/version&gt;</span><br><span class="line">  &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- JUnit Vintage Engine to support running JUnit 3 &amp; 4 tests --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.junit.vintage&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;junit-vintage-engine&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;5.8.2&lt;/version&gt;</span><br><span class="line">  &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Write a test class</p>
+<p>eg:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Calculator &#123;</span><br><span class="line">    public int add(int a, int b) &#123;</span><br><span class="line">        return a + b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import static org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"></span><br><span class="line">import org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line">public class CalculatorTest &#123;</span><br><span class="line">    </span><br><span class="line">    @Test</span><br><span class="line">    public void testAdd() &#123;</span><br><span class="line">        Calculator calculator = new Calculator();</span><br><span class="line">        int result = calculator.add(2, 3);</span><br><span class="line">        assertEquals(5, result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Eg2:</p>
+<p>展示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import org.junit.jupiter.api.*;</span><br><span class="line"></span><br><span class="line">public class SampleTest &#123;</span><br><span class="line"></span><br><span class="line">    @BeforeEach</span><br><span class="line">    public void setup() &#123;</span><br><span class="line">        System.out.println(&quot;Setup: Initializing the test environment...&quot;);</span><br><span class="line">        // 例如，初始化数据库连接、配置文件等。</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @AfterEach</span><br><span class="line">    public void teardown() &#123;</span><br><span class="line">        System.out.println(&quot;Teardown: Cleaning up after the test...&quot;);</span><br><span class="line">        // 例如，断开数据库连接、清除临时文件等。</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testMethod1() &#123;</span><br><span class="line">        System.out.println(&quot;Running testMethod1&quot;);</span><br><span class="line">        // ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testMethod2() &#123;</span><br><span class="line">        System.out.println(&quot;Running testMethod2&quot;);</span><br><span class="line">        // ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h3><p>进入某个类文件中</p>
+<p>shift + command + T  快捷键 直接创建对应的Test class</p>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029101927544.png" alt="image-20231029101927544"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Technical-stack/" rel="tag"># Technical stack</a>
+              <a href="/tags/Test-Development-Knowledge/" rel="tag"># Test Development Knowledge</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/26/10years/" rel="prev" title="How to Gain Ten Years of Experience in One Year">
+                  <i class="fa fa-angle-left"></i> How to Gain Ten Years of Experience in One Year
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/10/29/Lambda-java/" rel="next" title="Lambda and Anonymous function Java">
+                  Lambda and Anonymous function Java <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Joe</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
