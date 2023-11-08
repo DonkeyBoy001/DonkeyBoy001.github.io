@@ -19,29 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Seven Times Have I Despised my Soul——Kahlil Gibran The first time when I saw her being meek that she might attain height. 当它本可进取时，却故作谦卑。 The second time when I saw her limping before the crippled. 当它在">
+    <meta name="description" content="React Learning NotesVue 和 React的区别考点在于React的 虚拟Dom Hookswhat is hook?常用hook useState useEffect useContext useReducer useCallback useMemo useRef useLayoutEffect useImperativeHandle useDebugValue 自定义hoo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Seven Times Have I Despised my Soul">
-<meta property="og:url" content="https://www.zhoujoe.us/2023/10/23/7TimeDesSoul/index.html">
+<meta property="og:title" content="React Learning Notes">
+<meta property="og:url" content="https://www.zhoujoe.us/2023/11/05/React-Learning-Notes/index.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description" content="Seven Times Have I Despised my Soul——Kahlil Gibran The first time when I saw her being meek that she might attain height. 当它本可进取时，却故作谦卑。 The second time when I saw her limping before the crippled. 当它在">
+<meta property="og:description" content="React Learning NotesVue 和 React的区别考点在于React的 虚拟Dom Hookswhat is hook?常用hook useState useEffect useContext useReducer useCallback useMemo useRef useLayoutEffect useImperativeHandle useDebugValue 自定义hoo">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-10-24T06:31:42.000Z">
-<meta property="article:modified_time" content="2023-10-24T06:42:39.550Z">
+<meta property="article:published_time" content="2023-11-06T05:29:54.000Z">
+<meta property="article:modified_time" content="2023-11-07T06:37:59.093Z">
 <meta property="article:author" content="Joe">
-<meta property="article:tag" content="Reading notes">
-<meta property="article:tag" content="Seven Times Have I Despised my Soul">
+<meta property="article:tag" content="Technical stack">
+<meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.zhoujoe.us/2023/10/23/7TimeDesSoul/">
+<link rel="canonical" href="https://www.zhoujoe.us/2023/11/05/React-Learning-Notes/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.zhoujoe.us/2023/10/23/7TimeDesSoul/","path":"2023/10/23/7TimeDesSoul/","title":"Seven Times Have I Despised my Soul"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.zhoujoe.us/2023/11/05/React-Learning-Notes/","path":"2023/11/05/React-Learning-Notes/","title":"React Learning Notes"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Seven Times Have I Despised my Soul | Notes</title>
+<title>React Learning Notes | Notes</title>
   
 
 
@@ -106,7 +106,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Seven-Times-Have-I-Despised-my-Soul"><span class="nav-number">1.</span> <span class="nav-text">Seven Times Have I Despised my Soul</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Learning-Notes"><span class="nav-number">1.</span> <span class="nav-text">React Learning Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue-%E5%92%8C-React%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.0.1.</span> <span class="nav-text">Vue 和 React的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hooks"><span class="nav-number">1.1.</span> <span class="nav-text">Hooks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-is-hook"><span class="nav-number">1.2.</span> <span class="nav-text">what is hook?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89hook%EF%BC%8C%E5%B9%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">自定义hook，并使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-SSR"><span class="nav-number">1.3.1.</span> <span class="nav-text">What is SSR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83SSR"><span class="nav-number">1.3.2.</span> <span class="nav-text">如何防范SSR</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -155,7 +155,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2023/10/23/7TimeDesSoul/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2023/11/05/React-Learning-Notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -168,12 +168,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Seven Times Have I Despised my Soul | Notes">
+      <meta itemprop="name" content="React Learning Notes | Notes">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Seven Times Have I Despised my Soul
+          React Learning Notes
         </h1>
 
         <div class="post-meta-container">
@@ -183,9 +183,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-10-23 23:31:42 / Modified: 23:42:39" itemprop="dateCreated datePublished" datetime="2023-10-23T23:31:42-07:00">2023-10-23</time>
+      <time title="Created: 2023-11-05 21:29:54" itemprop="dateCreated datePublished" datetime="2023-11-05T21:29:54-08:00">2023-11-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-06 22:37:59" itemprop="dateModified" datetime="2023-11-06T22:37:59-08:00">2023-11-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -193,7 +199,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Reading-notes/" itemprop="url" rel="index"><span itemprop="name">Reading notes</span></a>
+          <a href="/categories/Technical-stack/" itemprop="url" rel="index"><span itemprop="name">Technical stack</span></a>
         </span>
     </span>
 
@@ -206,25 +212,19 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="Seven-Times-Have-I-Despised-my-Soul"><a href="#Seven-Times-Have-I-Despised-my-Soul" class="headerlink" title="Seven Times Have I Despised my Soul"></a>Seven Times Have I Despised my Soul</h1><p>——Kahlil Gibran</p>
-<p>The first time when I saw her being meek that she might attain height.</p>
-<p>当它本可进取时，却故作谦卑。</p>
-<p>The second time when I saw her limping before the crippled.</p>
-<p>当它在跛足者 面前蹒跚而行。</p>
-<p>当它在空虚时，用爱欲来填充。</p>
-<p>The third time when she was given to choose between the hard and the easy, and she chose the easy.</p>
-<p>在困难和容易之间，它选择了容易.</p>
-<p>The fourth time when she committed a wrong, and comforted herself that others also commit wrong.</p>
-<p>它犯了错，却借由别人也会犯错来宽慰自己。</p>
-<p>The fifth time when she forbore for weakness, and attributed her patience to strength.</p>
-<p>它自由软弱，却把它认为是生命的坚韧。</p>
-<p>The sixth time when she despised the ugliness of a face, and knew not that it was one of her own masks.</p>
-<p>当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副。</p>
-<p>And the seventh time when she sang a song of praise, and deemed it a virtue.</p>
-<p>唱起颂歌，还以美德自诩。</p>
-<p>当它满口道义,却多行不义之事。</p>
-<p>它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。</p>
-
+    <div class="post-body" itemprop="articleBody"><h1 id="React-Learning-Notes"><a href="#React-Learning-Notes" class="headerlink" title="React Learning Notes"></a>React Learning Notes</h1><h3 id="Vue-和-React的区别"><a href="#Vue-和-React的区别" class="headerlink" title="Vue 和 React的区别"></a>Vue 和 React的区别</h3><p>考点在于React的 虚拟Dom</p>
+<h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><h2 id="what-is-hook"><a href="#what-is-hook" class="headerlink" title="what is hook?"></a>what is hook?</h2><p>常用hook</p>
+<p>useState</p>
+<p>useEffect</p>
+<p>useContext</p>
+<p>useReducer</p>
+<p>useCallback</p>
+<p>useMemo</p>
+<p>useRef</p>
+<p>useLayoutEffect</p>
+<p>useImperativeHandle</p>
+<p>useDebugValue</p>
+<h2 id="自定义hook，并使用"><a href="#自定义hook，并使用" class="headerlink" title="自定义hook，并使用"></a>自定义hook，并使用</h2><h3 id="What-is-SSR"><a href="#What-is-SSR" class="headerlink" title="What is SSR"></a>What is SSR</h3><h3 id="如何防范SSR"><a href="#如何防范SSR" class="headerlink" title="如何防范SSR"></a>如何防范SSR</h3>
     </div>
 
     
@@ -233,22 +233,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Reading-notes/" rel="tag"># Reading notes</a>
-              <a href="/tags/Seven-Times-Have-I-Despised-my-Soul/" rel="tag"># Seven Times Have I Despised my Soul</a>
+              <a href="/tags/Technical-stack/" rel="tag"># Technical stack</a>
+              <a href="/tags/React/" rel="tag"># React</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/10/23/%E7%97%85%E9%9A%99%E7%A2%8E%E7%AC%94/" rel="prev" title="病隙碎笔">
-                  <i class="fa fa-angle-left"></i> 病隙碎笔
+                <a href="/2023/11/02/How-to-use-MongoDB/" rel="prev" title="How to use MongoDB">
+                  <i class="fa fa-angle-left"></i> How to use MongoDB
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/10/26/dataprocessing/" rel="next" title="Data Progressing">
-                  Data Progressing <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
