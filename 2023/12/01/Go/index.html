@@ -21,19 +21,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="GO举例2023年结束还有一个月，暂定一个小目标是在2024年1月1日前，每天可以用1小时来学习Go语言，并记录自己的学习过程。">
+    <meta name="description" content="GO距离2023年结束还有一个月，暂定一个小目标是在2024年1月1日前，每天可以用1小时来学习Go语言，并记录自己的学习过程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go">
 <meta property="og:url" content="https://www.zhoujoe.us/2023/12/01/Go/index.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description" content="GO举例2023年结束还有一个月，暂定一个小目标是在2024年1月1日前，每天可以用1小时来学习Go语言，并记录自己的学习过程。">
+<meta property="og:description" content="GO距离2023年结束还有一个月，暂定一个小目标是在2024年1月1日前，每天可以用1小时来学习Go语言，并记录自己的学习过程。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231205222855795.png">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231205225448137.png">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231211221059812.png">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231212235009262.png">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231212235607611.png">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231212235729459.png">
 <meta property="article:published_time" content="2023-12-01T20:50:49.000Z">
-<meta property="article:modified_time" content="2023-12-02T00:07:49.770Z">
+<meta property="article:modified_time" content="2023-12-15T07:26:03.468Z">
 <meta property="article:author" content="Joe">
 <meta property="article:tag" content="Technical stack">
 <meta property="article:tag" content="GO">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231205222855795.png">
 
 
 <link rel="canonical" href="https://www.zhoujoe.us/2023/12/01/Go/">
@@ -138,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GO"><span class="nav-number">1.</span> <span class="nav-text">GO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20231201"><span class="nav-number">2.</span> <span class="nav-text">20231201</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Go%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">Go的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="nav-number">2.2.</span> <span class="nav-text">Go的历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6"><span class="nav-number">2.3.</span> <span class="nav-text">Go语言设计哲学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95"><span class="nav-number">2.3.1.</span> <span class="nav-text">简单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E5%BC%8F"><span class="nav-number">2.3.2.</span> <span class="nav-text">显式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88"><span class="nav-number">2.3.3.</span> <span class="nav-text">组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91"><span class="nav-number">2.3.4.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.3.5.</span> <span class="nav-text">面向工程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go-%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.</span> <span class="nav-text">Go 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E5%AE%89%E8%BD%ACgo"><span class="nav-number">2.4.1.</span> <span class="nav-text">Linux 安转go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-Helllo-World"><span class="nav-number">2.4.2.</span> <span class="nav-text">开启 Helllo World</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.4.3.</span> <span class="nav-text">开启一个服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E8%8A%82"><span class="nav-number">2.4.4.</span> <span class="nav-text">小节</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GO"><span class="nav-number">1.</span> <span class="nav-text">GO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-12-01"><span class="nav-number">2.</span> <span class="nav-text">2023.12.01</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Go%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">Go的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="nav-number">2.2.</span> <span class="nav-text">Go的历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6"><span class="nav-number">2.3.</span> <span class="nav-text">Go语言设计哲学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95"><span class="nav-number">2.3.1.</span> <span class="nav-text">简单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E5%BC%8F"><span class="nav-number">2.3.2.</span> <span class="nav-text">显式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88"><span class="nav-number">2.3.3.</span> <span class="nav-text">组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91"><span class="nav-number">2.3.4.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.3.5.</span> <span class="nav-text">面向工程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go-%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.</span> <span class="nav-text">Go 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E5%AE%89%E8%BD%ACgo"><span class="nav-number">2.4.1.</span> <span class="nav-text">Linux 安转go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-Helllo-World"><span class="nav-number">2.4.2.</span> <span class="nav-text">开启 Helllo World</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.4.3.</span> <span class="nav-text">开启一个服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E8%8A%82"><span class="nav-number">2.4.4.</span> <span class="nav-text">小节</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-12-04"><span class="nav-number">3.</span> <span class="nav-text">2023.12.04</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Go-%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.1.</span> <span class="nav-text">Go 项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E8%A1%8D%E5%8C%96"><span class="nav-number">3.1.1.</span> <span class="nav-text">Go 衍化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E5%85%AC%E8%AE%A4%E5%B8%83%E5%B1%80"><span class="nav-number">3.1.2.</span> <span class="nav-text">Go 公认布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#go-%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%B8%83%E5%B1%80"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">go 可执行程序布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#go-%E5%BA%93%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">go 库项目</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E8%8A%82-1"><span class="nav-number">3.1.3.</span> <span class="nav-text">小节</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-12-05"><span class="nav-number">4.</span> <span class="nav-text">2023.12.05</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Go-%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%BC%8F%E6%BC%94%E5%8C%96"><span class="nav-number">4.1.</span> <span class="nav-text">Go 构建模式演化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#go-path"><span class="nav-number">4.1.1.</span> <span class="nav-text">go path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vendor-Mechanism"><span class="nav-number">4.1.2.</span> <span class="nav-text">Vendor Mechanism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GO-Module"><span class="nav-number">4.1.3.</span> <span class="nav-text">GO Module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Go-Module%E8%AF%AD%E8%A8%80%E5%AF%BC%E5%85%A5%E7%89%88%E6%9C%AC%E6%9C%BA%E5%88%B6-Semantic-Import-Versioning"><span class="nav-number">4.1.3.1.</span> <span class="nav-text">Go Module语言导入版本机制 Semantic Import Versioning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#go-module-%E6%9C%80%E5%B0%8F%E7%89%88%E6%9C%AC%E5%91%A2%E9%80%89%E6%8B%A9%E5%8E%9F%E5%88%99"><span class="nav-number">4.1.3.2.</span> <span class="nav-text">go module 最小版本呢选择原则</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-12-06"><span class="nav-number">5.</span> <span class="nav-text">2023.12.06</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-Module6%E7%B1%BB%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C"><span class="nav-number">5.0.1.</span> <span class="nav-text">Go Module6类常见操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#go-module-%E7%BB%B4%E6%8A%A4"><span class="nav-number">5.0.1.1.</span> <span class="nav-text">go module 维护</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%BA%E5%BD%93%E5%89%8D%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-number">5.0.1.1.1.</span> <span class="nav-text">为当前项目添加一个依赖包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%87%E9%99%8D%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-number">5.0.1.1.2.</span> <span class="nav-text">升降级依赖包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%89%88%E6%9C%AC%E5%A4%A7%E4%BA%8E1%E7%9A%84%E4%BE%9D%E8%B5%96"><span class="nav-number">5.0.1.1.3.</span> <span class="nav-text">添加版本大于1的依赖</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E4%B8%80%E4%B8%AA%E4%BE%9D%E8%B5%96"><span class="nav-number">5.0.1.1.4.</span> <span class="nav-text">移除一个依赖</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8vendor"><span class="nav-number">5.0.1.1.5.</span> <span class="nav-text">使用vendor</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-12-11"><span class="nav-number">6.</span> <span class="nav-text">2023.12.11</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GO%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="nav-number">6.1.</span> <span class="nav-text">GO程序执行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Go-%E5%BA%94%E7%94%A8%E7%9A%84%E5%85%A5%E5%8F%A3%E5%87%BD%E6%95%B0-main%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.0.1.</span> <span class="nav-text">Go 应用的入口函数 main函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Go-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0-init%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.0.2.</span> <span class="nav-text">Go 初始化函数 init函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#init-%E5%87%BD%E6%95%B0%E7%94%A8%E9%80%94"><span class="nav-number">6.1.0.2.0.1.</span> <span class="nav-text">init 函数用途</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-12-12"><span class="nav-number">7.</span> <span class="nav-text">2023.12.12</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">7.0.1.</span> <span class="nav-text">搭建一个服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86API%E6%9C%8D%E5%8A%A1"><span class="nav-number">7.0.1.1.</span> <span class="nav-text">图书管理API服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#panic-deffered-function-call-stack-recover"><span class="nav-number">7.0.1.1.1.</span> <span class="nav-text">panic &amp;&amp; deffered function &amp;&amp; call stack &amp;&amp; recover</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-12-13"><span class="nav-number">8.</span> <span class="nav-text">2023.12.13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-12-14"><span class="nav-number">9.</span> <span class="nav-text">2023.12.14</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E4%B9%A6%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%A8%A1%E5%9D%97-store"><span class="nav-number">9.0.1.</span> <span class="nav-text">图书数据存储模块 (store)</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -153,18 +160,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -231,9 +238,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-12-01 12:50:49 / Modified: 16:07:49" itemprop="dateCreated datePublished" datetime="2023-12-01T12:50:49-08:00">2023-12-01</time>
+      <time title="Created: 2023-12-01 12:50:49" itemprop="dateCreated datePublished" datetime="2023-12-01T12:50:49-08:00">2023-12-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-14 23:26:03" itemprop="dateModified" datetime="2023-12-14T23:26:03-08:00">2023-12-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -266,14 +279,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>2.4k</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>9 mins.</span>
+      <span>39 mins.</span>
     </span>
 </div>
 
@@ -283,10 +296,10 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="GO"><a href="#GO" class="headerlink" title="GO"></a>GO</h1><p>举例2023年结束还有一个月，暂定一个小目标是在2024年1月1日前，每天可以用1小时来学习Go语言，并记录自己的学习过程。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="GO"><a href="#GO" class="headerlink" title="GO"></a>GO</h1><p>距离2023年结束还有一个月，暂定一个小目标是在2024年1月1日前，每天可以用1小时来学习Go语言，并记录自己的学习过程。</p>
 <span id="more"></span>
 
-<h1 id="20231201"><a href="#20231201" class="headerlink" title="20231201"></a>20231201</h1><h2 id="Go的应用"><a href="#Go的应用" class="headerlink" title="Go的应用"></a>Go的应用</h2><p>云基础架构语言</p>
+<h1 id="2023-12-01"><a href="#2023-12-01" class="headerlink" title="2023.12.01"></a>2023.12.01</h1><h2 id="Go的应用"><a href="#Go的应用" class="headerlink" title="Go的应用"></a>Go的应用</h2><p>云基础架构语言</p>
 <blockquote>
 <blockquote>
 <p>大部分的现代与计算基础设施软件都是用Go写的</p>
@@ -359,15 +372,17 @@
 <p>通过语言内置的 channel 传递消息或实现同步，并通过 select 实现多路 channel 的并发控制。</p>
 <p>goroutines 各自执行特定的工作，通过 channel+select 将 goroutines 组合连接起来。</p>
 <h3 id="面向工程"><a href="#面向工程" class="headerlink" title="面向工程"></a>面向工程</h3><p>面向解决真实世界中 Google 内部<strong>大规模软件开发存在的各种问题</strong>，为这些问题提供答案，这些问题包括：程序构建慢、依赖管理失控、代码难于理解、跨语言构建难等。</p>
+<p><strong>如果源文件导入它不使用的包，则程序将无法编译</strong></p>
 <blockquote>
 <p>重新设计编译单元和目标文件格式，实现 Go 源码快速构建，让大工程的构建时间缩短到类似动态语言的交互式解释的编译速度；如果源文件导入它不使用的包，则程序将无法编译。这可以充分保证任何 Go 程序的依赖树是精确的。这也可以保证在构建程序时不会编译额外的代码，从而最大限度地缩短编译时间；</p>
 </blockquote>
-<p><strong>2. 如果源文件导入它不使用的包，则程序将无法编译</strong></p>
 <blockquote>
 <p>去除包的循环依赖，循环依赖会在大规模的代码中引发问题，因为它们要求编译器同时处理更大的源文件集，这会减慢增量构建；包路径是唯一的，而包名不必唯一的。导入路径必须唯一标识要导入的包，而名称只是包的使用者如何引用其内容的约定。“包名称不必是唯一的”这个约定，大大降低了开发人员给包起唯一名字的心智负担；</p>
 </blockquote>
 <blockquote>
 <p>故意不支持默认函数参数。因为在规模工程中，很多开发者利用默认函数参数机制，向函数添加过多的参数以弥补函数 API 的设计缺陷，这会导致函数拥有太多的参数，降低清晰度和可读性；</p>
+</blockquote>
+<blockquote>
 <p>增加类型别名（type alias），支持大规模代码库的重构。</p>
 </blockquote>
 <p>Gofmt 统一的go语言代码风格</p>
@@ -445,6 +460,570 @@
 <p>Go 源码可以导入其他 Go 包，并使用其中的导出语法元素，包括类型、变量、函数、方法等。</p>
 <p>main 函数是整个 Go 应用的入口函数；</p>
 <p>Go 源码需要先编译，再分发和运行。如果是单 Go 源文件的情况，我们可以直接使用 go build 命令 +Go 源文件名的方式编译。不过，对于复杂的 Go 项目，我们需要在 Go Module 的帮助下完成项目的构建。</p>
+<h1 id="2023-12-04"><a href="#2023-12-04" class="headerlink" title="2023.12.04"></a>2023.12.04</h1><h2 id="Go-项目"><a href="#Go-项目" class="headerlink" title="Go 项目"></a>Go 项目</h2><p>go语言创世项目源代码(C语言为主)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/golang/go.git</span><br></pre></td></tr></table></figure>
+
+<p>查看go最初源代码布局，以1.3版本为例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> go // 进入Go语言项目根目录</span><br><span class="line">git checkout go1.3 // 切换到go 1.3版本</span><br><span class="line">tree -LF 1 ./src // 查看src目录下的结构布局</span><br></pre></td></tr></table></figure>
+
+<p>tree: 主命令，用于以树状图的形式显示目录和文件。</p>
+<p>-L:  后面跟着一个数字，表示要展示的目录深度。在这个例子中，它后面没有指定数字，所以默认为 1。</p>
+<p>-F: 让 <code>tree</code> 在每个项目后面添加一个指示符。例如，<code>/</code> 表示目录，<code>*</code> 表示可执行文件。</p>
+<blockquote>
+<blockquote>
+<ul>
+<li>当 <code>tree</code> 命令遇到一个目录时，它会在该目录名的后面添加一个斜杠 (<code>/</code>)。</li>
+<li>如果一个文件是可执行的，它的名字后面会添加一个星号 (<code>*</code>)。</li>
+<li>对于符号链接（即链接到另一个文件或目录的快捷方式），<code>tree</code> 会在其名字后面添加一个 <code>@</code> 符号。</li>
+<li>如果开启了其他特定的选项，可能还会看到其他类型的指示符，例如管道 (<code>|</code>) 或套接字 (<code>=</code>)。</li>
+</ul>
+</blockquote>
+<p>Eg: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">├── main.c</span><br><span class="line">├── utils/</span><br><span class="line">│   ├── helper.c</span><br><span class="line">│   └── test_helper</span><br><span class="line">├── lib/</span><br><span class="line">│   └── libmath.a</span><br><span class="line">└── run.sh*</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在上面目录结构中，<code>main.c</code> 和 <code>helper.c</code> 是普通文件，<code>utils</code> 和 <code>lib</code> 是子目录，<code>run.sh</code> 是一个可执行文件（这里通过 <code>*</code> 表示），而 <code>libmath.a</code> 可能是一个静态库文件。</p>
+</blockquote>
+<p><code>./src</code>: 指定了 <code>tree</code> 命令的起始目录。在这个例子中，它是当前目录下的 <code>src</code> 目录。</p>
+<p>src下 cmd 存放go相关可执行文件</p>
+<p>src下 pkg存放，标准库包</p>
+<h3 id="Go-衍化"><a href="#Go-衍化" class="headerlink" title="Go 衍化"></a>Go 衍化</h3><p>1.4 删除pkg，直接放在src下</p>
+<p>一日internal包机制，增加internal</p>
+<p>1.6 增vendor， 解决go包依赖包问题</p>
+<p>1.7 引入 go.mod 和 go.sum</p>
+<p>这三次演进主要体现在简化结构布局，以及优化包依赖管理方面</p>
+<h3 id="Go-公认布局"><a href="#Go-公认布局" class="headerlink" title="Go 公认布局"></a>Go 公认布局</h3><h4 id="go-可执行程序布局"><a href="#go-可执行程序布局" class="headerlink" title="go 可执行程序布局"></a>go 可执行程序布局</h4><p>go 可执行程序布局： 构建可执行程序为目的的项目。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$tree</span> -F exe-layout </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">exe-layout</span><br><span class="line">├── cmd/</span><br><span class="line">│   ├── app1/</span><br><span class="line">│   │   └── main.go</span><br><span class="line">│   └── app2/</span><br><span class="line">│       └── main.go</span><br><span class="line">├── go.mod</span><br><span class="line">├── go.sum</span><br><span class="line">├── internal/</span><br><span class="line">│   ├── pkga/</span><br><span class="line">│   │   └── pkg_a.go</span><br><span class="line">│   └── pkgb/</span><br><span class="line">│       └── pkg_b.go</span><br><span class="line">├── pkg1/</span><br><span class="line">│   └── pkg1.go</span><br><span class="line">├── pkg2/</span><br><span class="line">│   └── pkg2.go</span><br><span class="line">└── vendor/</span><br></pre></td></tr></table></figure>
+
+<p><strong>Cmd</strong>: 存放 项目要编译执行文件 对应的 mian包的源文件。</p>
+<p>mian包： 命令行参数解析、资源初始化、日志设施初始化、数据库连接初始化等工作。</p>
+<p>之后就会将程序的执行权限交给更高级的执行控制对象。</p>
+<p>(一些Go项目会将cmd改为app或者其他名字)</p>
+<p><strong>pkgN目录</strong>： 存放依赖库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">存放项目自身要使用、同样也是可执行文件对应 main 包所要依赖的库文件</span><br><span class="line">些目录下的包还可以被外部项目引用</span><br></pre></td></tr></table></figure>
+
+<p><strong>go.mod</strong></p>
+<p><strong>gosum</strong></p>
+<p>都是go 依赖管理配置文件</p>
+<p>推荐使用 go moudle 管理包依赖</p>
+<p><strong>vendor目录</strong></p>
+<p>在项目本地缓存特定版本依赖包的机制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以将vendor 目录视为一个可选目录。原因在于，Go Module 本身就支持可再现构建，而无需使用 vendor。</span><br></pre></td></tr></table></figure>
+
+<p><strong>第三方辅助工具</strong></p>
+<p>一般放在项目的顶层</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比如：make、bazel 等。你可以将这类外部辅助构建工具涉及的诸多脚本文件（比如 Makefile）放置在项目的顶层目录下，就像 Go 创世项目中的 all.bash 那样。</span><br></pre></td></tr></table></figure>
+
+<h4 id="go-库项目"><a href="#go-库项目" class="headerlink" title="go 库项目"></a>go 库项目</h4><p>Go 库项目： 对外暴露库包</p>
+<p>Go 库项目的初衷是为了对外部（开源或组织内部公开）暴露 API，</p>
+<p>对于仅限项目内部使用而不想暴露到外部的包，可以放在项目顶层的 internal 目录下面。</p>
+<p>当然 internal 也可以有多个并存在于项目结构中的任一目录层级中，关键是项目结构设计人员要明确各级 internal 包的应用层次和范围。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">lib-layout</span><br><span class="line">├── go.mod</span><br><span class="line">├── internal/</span><br><span class="line">│   ├── pkga/</span><br><span class="line">│   │   └── pkg_a.go</span><br><span class="line">│   └── pkgb/</span><br><span class="line">│       └── pkg_b.go</span><br><span class="line">├── pkg1/</span><br><span class="line">│   └── pkg1.go</span><br><span class="line">└── pkg2/</span><br><span class="line">    └── pkg2.go</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="小节-1"><a href="#小节-1" class="headerlink" title="小节"></a>小节</h3><p>对于以生产可执行程序为目的的 Go 项目，它的典型项目结构分为五部分：</p>
+<p>放在项目顶层的 Go Module 相关文件，包括 go.mod 和 go.sum；</p>
+<p>cmd 目录：存放项目要编译构建的可执行文件所对应的 main 包的源码文件；</p>
+<p>项目包目录：每个项目下的非 main 包都“平铺”在项目的根目录下，每个目录对应一个 Go 包；</p>
+<p>internal 目录：存放仅项目内部引用的 Go 包，这些包无法被项目之外引用；</p>
+<p>vendor 目录：这是一个可选目录，为了兼容 Go 1.5 引入的 vendor 构建模式而存在的。这个目录下的内容均由 Go 命令自动维护，不需要开发者手工干预。</p>
+<h1 id="2023-12-05"><a href="#2023-12-05" class="headerlink" title="2023.12.05"></a>2023.12.05</h1><h2 id="Go-构建模式演化"><a href="#Go-构建模式演化" class="headerlink" title="Go 构建模式演化"></a>Go 构建模式演化</h2><p>go程序： go包组合而成。</p>
+<p>go程序构建： 确定包版本， 编译包， 将编译后得到的目标文件链接到一起。</p>
+<p>go语言 经过三个迭代：</p>
+<blockquote>
+<pre><code>1. gopath
+1. 1.5 vendor
+1. go module
+</code></pre>
+</blockquote>
+<h3 id="go-path"><a href="#go-path" class="headerlink" title="go path"></a>go path</h3><p>go编译器 在本地path环境配置路径下， 搜寻go依赖的第三方包，没有就报错。</p>
+<p>eg:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;github.com/sirupsen/logrus&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    logrus.Println(&quot;hello, gopath mode&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>没有依赖包，会报错</p>
+<p>需要自己配置环境变量</p>
+<p>下面是一个例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export GOPATH=/usr/local/goprojects:/home/tonybai/go</span><br></pre></td></tr></table></figure>
+
+<p>配置好之后，就会从两个地方找go第三方依赖包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/goprojects/src/github.com/user/repo</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/tonybai/go/src/github.com/user/repo</span><br></pre></td></tr></table></figure>
+
+<p>如果不配置，会在默认环境下找， HOME&#x2F;go</p>
+<p>通过使用 go get 下载本地缺失的 环境依赖包</p>
+<h3 id="Vendor-Mechanism"><a href="#Vendor-Mechanism" class="headerlink" title="Vendor Mechanism"></a>Vendor Mechanism</h3><p>1.5版本 引入 vendor机制</p>
+<p>优先使用vendor目录下 缓存的第三方依赖包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── main.go</span><br><span class="line">└── vendor/</span><br><span class="line">    ├── github.com/</span><br><span class="line">    │   └── sirupsen/</span><br><span class="line">    │       └── logrus/</span><br><span class="line">    └── golang.org/</span><br><span class="line">        └── x/</span><br><span class="line">            └── sys/</span><br><span class="line">                └── unix/</span><br></pre></td></tr></table></figure>
+
+<p>所谓 <code>vendor</code> 机制，就是每个项目的根目录下可以有一个 <code>vendor</code> 目录，里面存放了该项目的依赖的 <code>package</code>。<code>go build</code> 的时候会先去 <code>vendor</code> 目录查找依赖，如果没有找到会再去 <code>GOPATH</code> 目录下查找</p>
+<h3 id="GO-Module"><a href="#GO-Module" class="headerlink" title="GO Module"></a>GO Module</h3><p>解决包依赖问题</p>
+<p>go module： 一个go包的集合。</p>
+<p>一个代码仓库 对应一个 go module。存放一个go.mod文件。</p>
+<p>创建一个 go module</p>
+<p>第一步，通过 go mod init 创建 go.mod 文件，将当前项目变为一个 Go Module；</p>
+<p>第二步，通过 go mod tidy 命令自动更新当前 module 的依赖信息；</p>
+<p>第三步，执行 go build，执行新 module 的构建。</p>
+<p>打开文件创建一个main.go</p>
+<p>内容如下</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;github.com/sirupsen/logrus&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	logrus.Println(<span class="string">&quot;hello, gopath mode&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod init github.com/bigwhite/module-mode</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod tidy</span><br></pre></td></tr></table></figure>
+
+<p>go mod tidy 命令会扫描 Go 源码，并自动找出项目依赖的外部 Go Module 以及版本，下载这些依赖并更新本地的 go.mod 文件。</p>
+<p>生成运行文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go build</span><br></pre></td></tr></table></figure>
+
+<p>如果顺利的话，我们会在当前目录下看到一个新生成的可执行文件 module-mode，执行这个文件我们就能得到正确结果了。</p>
+<p>运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./module-mode</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Go-Module语言导入版本机制-Semantic-Import-Versioning"><a href="#Go-Module语言导入版本机制-Semantic-Import-Versioning" class="headerlink" title="Go Module语言导入版本机制 Semantic Import Versioning"></a>Go Module语言导入版本机制 Semantic Import Versioning</h4><p>语义版本号分成 3 部分：主版本号（major）、次版本号（minor）和补丁版本号（patch）</p>
+<blockquote>
+<p>Eg:</p>
+<p>上面的 logrus module 的版本号是 v1.8.1，这就表示它的主版本号为 1，次版本号为 8，补丁版本号为 1。</p>
+</blockquote>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231205222855795.png" alt="image-20231205222855795"></p>
+<p>主版本 之间 不兼容。</p>
+<p>此版本 大 兼容小。</p>
+<p>如果是不同版本包，同时使用也是可以的</p>
+<p>下面就是两个版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import ( &quot;github.com/sirupsen/logrus&quot; </span><br><span class="line">logv2 &quot;github.com/sirupsen/logrus/v2&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>v0版本是不稳定的，视为和v1主版本同等对待</p>
+<h4 id="go-module-最小版本呢选择原则"><a href="#go-module-最小版本呢选择原则" class="headerlink" title="go module 最小版本呢选择原则"></a>go module 最小版本呢选择原则</h4><p>思考：</p>
+<p>yproject 有两个直接依赖 A 和 B，</p>
+<p>A 和 B 有一个共同的依赖包 C，</p>
+<p>但 A 依赖 C 的 v1.1.0 版本，</p>
+<p>而 B 依赖的是 C 的 v1.3.0 版本，</p>
+<p>并且此时 C 包的最新发布版为 C v1.7.0。</p>
+<p>这个时候，Go 命令是如何为 myproject 选出间接依赖包 C 的版本呢？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">但是 没有选择1.7.0</span><br><span class="line">go会选择 符合项目整体要求的最小版本</span><br><span class="line">所以是1.3.0版本</span><br></pre></td></tr></table></figure>
+
+
+
+<p>三个不同版本分界线</p>
+<p>1.13 前 取决于要构建的源码目录所在位置，</p>
+<p>1.13 只要 当前目录或父目录下有go.mod 就是go Module</p>
+<p>1.16 只有 当前目录或父目录下有go.mod 就是go Module</p>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231205225448137.png" alt="image-20231205225448137"></p>
+<h1 id="2023-12-06"><a href="#2023-12-06" class="headerlink" title="2023.12.06"></a>2023.12.06</h1><h3 id="Go-Module6类常见操作"><a href="#Go-Module6类常见操作" class="headerlink" title="Go Module6类常见操作"></a>Go Module6类常见操作</h3><h4 id="go-module-维护"><a href="#go-module-维护" class="headerlink" title="go module 维护"></a>go module 维护</h4><h5 id="为当前项目添加一个依赖包"><a href="#为当前项目添加一个依赖包" class="headerlink" title="为当前项目添加一个依赖包"></a>为当前项目添加一个依赖包</h5><p>添加到go代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">  &quot;github.com/google/uuid&quot;</span><br><span class="line">  &quot;github.com/sirupsen/logrus&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">  logrus.Println(&quot;hello, go module mode&quot;)</span><br><span class="line">  logrus.Println(uuid.NewString())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>手动使用go get下载uuid第三方依赖包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/google/uuid</span><br></pre></td></tr></table></figure>
+
+<p>go get 命令将我们新增的依赖包下载到了本地 module 缓存里</p>
+<p>go.mod 文件的 require 段中新增了一行内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">require (</span><br><span class="line">  github.com/google/uuid v1.3.0 //新增的依赖</span><br><span class="line">  github.com/sirupsen/logrus v1.8.1</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>或者直接 go mod tidy 直接自配配置</p>
+<h5 id="升降级依赖包"><a href="#升降级依赖包" class="headerlink" title="升降级依赖包"></a>升降级依赖包</h5><p>依赖 语义导入版本机制</p>
+<blockquote>
+<p>Go Module 的版本号采用了语义版本规范，也就是版本号使用 vX.Y.Z 的格式。其中 X 是主版本号，Y 为次版本号（minor），Z 为补丁版本号（patch）。主版本号相同的两个版本，较新的版本是兼容旧版本的。如果主版本号不同，那么两个版本是不兼容的。</p>
+</blockquote>
+<p>Eg： logrus为例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go list -m -versions github.com/sirupsen/logrus</span><br></pre></td></tr></table></figure>
+
+<p>基于初始状态执行的 go mod tidy 命令，帮我们选择了 logrus 的最新发布版本 v1.8.1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/sirupsen/logrus@v1.7.0</span><br></pre></td></tr></table></figure>
+
+<p>或者 自动降级</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod edit -require=github.com/sirupsen/logrus@v1.7.0</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod tidy</span><br></pre></td></tr></table></figure>
+
+
+
+<p>升降</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/sirupsen/logrus@v1.7.1</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="添加版本大于1的依赖"><a href="#添加版本大于1的依赖" class="headerlink" title="添加版本大于1的依赖"></a>添加版本大于1的依赖</h5><p>如果版本为V0 或者V1 是不需要写版本号的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import github.com/user/repo/v0 等价于 import github.com/user/repo</span><br><span class="line">import github.com/user/repo/v1 等价于 import github.com/user/repo</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果是版本大于1</p>
+<p>以2为例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import github.com/user/repo/v2/xxx</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Eg:</p>
+<p>以“向 module-mode 项目添加 github.com&#x2F;go-redis&#x2F;redis 依赖包的 v7 版本”为例，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">  _ &quot;github.com/go-redis/redis/v7&quot; // “_”为空导入</span><br><span class="line">  &quot;github.com/google/uuid&quot;</span><br><span class="line">  &quot;github.com/sirupsen/logrus&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">  logrus.Println(&quot;hello, go module mode&quot;)</span><br><span class="line">  logrus.Println(uuid.NewString())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/go-redis/redis/v7</span><br></pre></td></tr></table></figure>
+
+
+
+<p>升级依赖版本到一个不兼容版本</p>
+<p>先将代码中 redis 包导入路径中的版本号改为 v8</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import (</span><br><span class="line">  _ &quot;github.com/go-redis/redis/v8&quot;</span><br><span class="line">  &quot;github.com/google/uuid&quot;</span><br><span class="line">  &quot;github.com/sirupsen/logrus&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/go-redis/redis/v8</span><br></pre></td></tr></table></figure>
+
+<h5 id="移除一个依赖"><a href="#移除一个依赖" class="headerlink" title="移除一个依赖"></a>移除一个依赖</h5><p>go list 命令列出当前 module 的所有依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go list -m all</span><br></pre></td></tr></table></figure>
+
+<p>在原文件，删除该依赖</p>
+<p>用 go mod tidy 命令，将这个依赖项彻底从 Go Module 构建上下文中清除掉。go mod tidy 会自动分析源码依赖，而且将不再使用的依赖从 go.mod 和 go.sum 中移除。</p>
+<h5 id="使用vendor"><a href="#使用vendor" class="headerlink" title="使用vendor"></a>使用vendor</h5><p>为什么 Go Module 的维护，还有要用 vendor 的情况</p>
+<p>Go Module 构建模式下，它依旧被保留了下来，并且成为了 Go Module 构建机制的一个很好的补充</p>
+<p>为该项目建立 vendor</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod vendor</span><br></pre></td></tr></table></figure>
+
+<p>go mod vendor 命令在 vendor 目录下，创建了一份这个项目的依赖包的副本，并且通过 vendor&#x2F;modules.txt 记录了 vendor 下的 module 以及版本。</p>
+<p>如果我们要基于 vendor 构建，而不是基于本地缓存的 Go Module 构建，我们需要在 go build 后面加上 -mod&#x3D;vendor 参数。</p>
+<h1 id="2023-12-11"><a href="#2023-12-11" class="headerlink" title="2023.12.11"></a>2023.12.11</h1><h2 id="GO程序执行"><a href="#GO程序执行" class="headerlink" title="GO程序执行"></a>GO程序执行</h2><h4 id="Go-应用的入口函数-main函数"><a href="#Go-应用的入口函数-main函数" class="headerlink" title="Go 应用的入口函数 main函数"></a>Go 应用的入口函数 main函数</h4><p>可执行程序的 main 包必须定义 main 函数，否则 Go 编译器会报错。</p>
+<blockquote>
+<p>在启动了多个 Goroutine（Go 语言的轻量级用户线程，后面我们会详细讲解）的 Go 应用中，main.main 函数将在 Go 应用的主 Goroutine 中执行。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line">​</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 用户层执行逻辑</span></span><br><span class="line">    ... ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Go-初始化函数-init函数"><a href="#Go-初始化函数-init函数" class="headerlink" title="Go 初始化函数 init函数"></a>Go 初始化函数 init函数</h4><p>用于进行包初始化的 init 函数</p>
+<p>和 main.main 函数一样，init 函数也是一个无参数无返回值的函数</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 包初始化逻辑</span></span><br><span class="line">    ... ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果 main 包依赖的包中定义了 init 函数，或者是 main 包自身定义了 init 函数，那么 Go 程序在这个包初始化的时候，就会自动调用它的 init 函数，因此这些 init 函数的执行就都会发生在 main 函数之前。</p>
+</blockquote>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231211221059812.png" alt="image-20231211221059812"></p>
+<ol>
+<li><p>main 包依赖 pkg1 和 pkg4 两个包，所以第一步，Go 会根据包导入的顺序，先去初始化 main 包的第一个依赖包 pkg1。</p>
+</li>
+<li><p>Go 在进行包初始化的过程中，会采用“深度优先”的原则，递归初始化各个包的依赖包。在上图里，pkg1 包依赖 pkg2 包，pkg2 包依赖 pkg3 包，pkg3 没有依赖包，于是 Go 在 pkg3 包中按照“常量 -&gt; 变量 -&gt; init 函数”的顺序先对 pkg3 包进行初始化</p>
+</li>
+</ol>
+<p>​	在 pkg3 包初始化完毕后，Go 会回到 pkg2 包并对 pkg2 包进行初始化，接下来再回到 pkg1 包并对 pkg1 包进行初始化。在调用完 pkg1 包的 init 函数后，Go 就完成了 main 包的第一个依赖包 pkg1 的初始化。</p>
+<ol start="3">
+<li>Go 会初始化 main 包的第二个依赖包 pkg4，pkg4 包的初始化过程与 pkg1 包类似，也是先初始化它的依赖包 pkg5，然后再初始化自身；</li>
+<li>当 Go 初始化完 pkg4 包后也就完成了对 main 包所有依赖包的初始化，接下来初始化 main 包自身。</li>
+<li>main 包中，Go 同样会按照“常量 -&gt; 变量 -&gt; init 函数”的顺序进行初始化，执行完这些初始化工作后才正式进入程序的入口函数 main 函数。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prog-init-order</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">├── go.mod</span><br><span class="line">├── main.go</span><br><span class="line">├── pkg1</span><br><span class="line">│   └── pkg1.go</span><br><span class="line">├── pkg2</span><br><span class="line">│   └── pkg2.go</span><br><span class="line">└── pkg3</span><br><span class="line">    └── pkg3.go</span><br></pre></td></tr></table></figure>
+
+<p>main 包依赖 pkg1 包和 pkg2 包；pkg1 包和 pkg2 包都依赖 pkg3 包。</p>
+<p>下面只列出了 main 包的代码，pkg1、pkg2 和 pkg3 包的代码与 main 包都是类似的，你可以自己尝试去列一下。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line">​</span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">​</span><br><span class="line">    _ <span class="string">&quot;github.com/bigwhite/prog-init-order/pkg1&quot;</span></span><br><span class="line">    _ <span class="string">&quot;github.com/bigwhite/prog-init-order/pkg2&quot;</span></span><br><span class="line">)</span><br><span class="line">​</span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    _  = constInitCheck()</span><br><span class="line">    v1 = variableInit(<span class="string">&quot;v1&quot;</span>)</span><br><span class="line">    v2 = variableInit(<span class="string">&quot;v2&quot;</span>)</span><br><span class="line">)</span><br><span class="line">​</span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    c1 = <span class="string">&quot;c1&quot;</span></span><br><span class="line">    c2 = <span class="string">&quot;c2&quot;</span></span><br><span class="line">)</span><br><span class="line">​</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">constInitCheck</span><span class="params">()</span></span> <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> c1 != <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;main: const c1 has been initialized&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> c2 != <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;main: const c2 has been initialized&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">​</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">variableInit</span><span class="params">(name <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">&quot;main: var %s has been initialized\n&quot;</span>, name)</span><br><span class="line">    <span class="keyword">return</span> name</span><br><span class="line">&#125;</span><br><span class="line">​</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;main: first init func invoked&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line">​</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;main: second init func invoked&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line">​</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// do nothing</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 main 包中其实并没有使用 pkg1 和 pkg2 中的函数或方法，而是直接通过空导入的方式“触发”pkg1 包和 pkg2 包的初始化（pkg2 包也是通过空导入的方式依赖 pkg3 包的），下面是这个程序的运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$go run main.go</span><br><span class="line">pkg3: const c has been initialized</span><br><span class="line">pkg3: var v has been initialized</span><br><span class="line">pkg3: init func invoked</span><br><span class="line">pkg1: const c has been initialized</span><br><span class="line">pkg1: var v has been initialized</span><br><span class="line">pkg1: init func invoked</span><br><span class="line">pkg2: const c has been initialized</span><br><span class="line">pkg2: var v has been initialized</span><br><span class="line">pkg2: init func invoked</span><br><span class="line">main: const c1 has been initialized</span><br><span class="line">main: const c2 has been initialized</span><br><span class="line">main: var v1 has been initialized</span><br><span class="line">main: var v2 has been initialized</span><br><span class="line">main: first init func invoked</span><br><span class="line">main: second init func invoked</span><br></pre></td></tr></table></figure>
+
+<p>Go 运行时是按照“pkg3 -&gt; pkg1 -&gt; pkg2 -&gt; main”的顺序，来对 Go 程序的各个包进行初始化的，而在包内，则是以“常量 -&gt; 变量 -&gt; init 函数”的顺序进行初始化。此外，main 包的两个 init 函数，会按照在源文件 main.go 中的出现次序进行调用。</p>
+<p>pkg1 包和 pkg2 包都依赖 pkg3 包，但根据 Go 语言规范，一个被多个包依赖的包仅会初始化一次，因此这里的 pkg3 包仅会被初始化了一次。</p>
+<h6 id="init-函数用途"><a href="#init-函数用途" class="headerlink" title="init 函数用途"></a>init 函数用途</h6><ol>
+<li>重置包级变量值</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> mypackage</span><br><span class="line"></span><br><span class="line"><span class="comment">// 包级变量</span></span><br><span class="line"><span class="keyword">var</span> packageVar <span class="type">int</span> = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 重置函数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ResetPackageVar</span><span class="params">()</span></span> &#123;</span><br><span class="line">    packageVar = <span class="number">0</span> <span class="comment">// 重置为0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他使用packageVar的函数...</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在这个例子中，<code>packageVar</code> 是一个包级变量，它在 <code>mypackage</code> 包内是全局可见的。<code>ResetPackageVar</code> 函数被用来重置这个变量的值。</p>
+</blockquote>
+<ol start="2">
+<li>包级变量的复杂初始化</li>
+</ol>
+<blockquote>
+<p>由于包级变量是在包被导入时初始化的，因此这种初始化通常会在程序启动时完成，且仅执行一次。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> mypackage</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 包级变量</span></span><br><span class="line"><span class="keyword">var</span> complexVar SomeType</span><br><span class="line"></span><br><span class="line"><span class="comment">// init函数用于复杂的初始化</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">    complexVar = complexInitialization()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">complexInitialization</span><span class="params">()</span></span> SomeType &#123;</span><br><span class="line">    <span class="comment">// 这里可以是任何复杂的逻辑</span></span><br><span class="line">    <span class="comment">// 比如计算结果、加载文件、连接到数据库等</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result SomeType</span><br><span class="line">    <span class="comment">// ...初始化result</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他函数可以使用初始化好的complexVar...</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="2023-12-12"><a href="#2023-12-12" class="headerlink" title="2023.12.12"></a>2023.12.12</h1><h3 id="搭建一个服务器"><a href="#搭建一个服务器" class="headerlink" title="搭建一个服务器"></a>搭建一个服务器</h3><p>Go应用最广泛领域 API&#x2F;RPC services</p>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231212235009262.png" alt="image-20231212235009262"></p>
+<p><strong>建立一个http服务器。收到http请求。发送hello world 响应。</strong></p>
+<p>建议 simple-http-server目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir simple-http-server</span><br><span class="line">cd simple-http-server</span><br><span class="line">go mod init simple-http-server</span><br></pre></td></tr></table></figure>
+
+<p>在 simple-http-server 目录下创建一个 main.go 源文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> package main</span><br><span class="line"></span><br><span class="line"> import &quot;net/http&quot;</span><br><span class="line"> </span><br><span class="line"> func main() &#123;</span><br><span class="line">     http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request)&#123;</span><br><span class="line">         w.Write([]byte(&quot;hello, world&quot;))</span><br><span class="line">     &#125;)</span><br><span class="line">     http.ListenAndServe(&quot;:8080&quot;, nil)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>两个重要的函数，一个是 ListenAndServe，另一个是 HandleFunc</p>
+</blockquote>
+<p>处理请求函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func(w http.ResponseWriter, r *http.Request)</span><br></pre></td></tr></table></figure>
+
+<p>两个参数，w 和 r。</p>
+<p>第二个参数 r 代表来自客户端的 HTTP 请求，</p>
+<p>第一个参数 w 则是用来操作返回给客户端的应答的，基于 http 包实现的 HTTP 服务的处理函数都要符合这一原型。</p>
+<blockquote>
+<p>在这个例子中，我们仅设置了“&#x2F;”这一个模式字符串，并且所有请求的 URI 都能与之匹配，自然所有请求都会被我们设置的处理函数处理。</p>
+</blockquote>
+<p>运行代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd simple-http-server</span><br><span class="line">go build</span><br><span class="line">./simple-http-server</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用curl测试 模拟 客户端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$curl localhost:8080/</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>hello, world</p>
+</blockquote>
+<h4 id="图书管理API服务"><a href="#图书管理API服务" class="headerlink" title="图书管理API服务"></a>图书管理API服务</h4><p>项目介绍：</p>
+<p>图书馆 CRUD项目</p>
+<blockquote>
+<p> 模拟的是真实世界的一个书店的图书管理后端服务。这个服务为平台前端以及其他客户端，提供针对图书的 CRUD（创建、检索、更新与删除）的基于 HTTP 协议的 API。</p>
+</blockquote>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231212235607611.png" alt="image-20231212235607611"></p>
+<p>模块拆分：</p>
+<p>一部分是 HTTP 服务器，用来对外提供 API 服务；</p>
+<p>另一部分是图书数据的存储模块，所有的图书数据均存储在这里。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir bookstore</span><br><span class="line">cd bookstore</span><br><span class="line">go mod init bookstore</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>go: creating new go.mod: module bookstore</p>
+</blockquote>
+<p>项目布局</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">├── cmd/</span><br><span class="line">│   └── bookstore/         // 放置bookstore main包源码</span><br><span class="line">│       └── main.go</span><br><span class="line">├── go.mod                 // module bookstore的go.mod</span><br><span class="line">├── go.sum</span><br><span class="line">├── internal/              // 存放项目内部包的目录</span><br><span class="line">│   └── store/</span><br><span class="line">│       └── memstore.go     </span><br><span class="line">├── server/                // HTTP服务器模块</span><br><span class="line">│   ├── middleware/</span><br><span class="line">│   │   └── middleware.go</span><br><span class="line">│   └── server.go          </span><br><span class="line">└── store/                 // 图书数据存储模块</span><br><span class="line">    ├── factory/</span><br><span class="line">    │   └── factory.go</span><br><span class="line">    └── store.go</span><br></pre></td></tr></table></figure>
+
+<p><strong>main包流程</strong></p>
+<p>main 包是主要包，用于搞清楚各个模块之间的关系</p>
+<ol>
+<li><p>整个程序的入口</p>
+</li>
+<li><p>整个程序中主要模块初始化与组装的场所</p>
+</li>
+</ol>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Go.assets/image-20231212235729459.png" alt="image-20231212235729459"></p>
+<p>main包代码</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"> <span class="keyword">import</span> (</span><br><span class="line">     _ <span class="string">&quot;bookstore/internal/store&quot;</span></span><br><span class="line">     <span class="string">&quot;bookstore/server&quot;</span></span><br><span class="line">     <span class="string">&quot;bookstore/store/factory&quot;</span></span><br><span class="line">     <span class="string">&quot;context&quot;</span></span><br><span class="line">     <span class="string">&quot;log&quot;</span></span><br><span class="line">     <span class="string">&quot;os&quot;</span></span><br><span class="line">     <span class="string">&quot;os/signal&quot;</span></span><br><span class="line">     <span class="string">&quot;syscall&quot;</span></span><br><span class="line">     <span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s, err := factory.New(<span class="string">&quot;mem&quot;</span>) <span class="comment">// 创建图书数据存储模块实例</span></span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="built_in">panic</span>(err)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    srv := server.NewBookStoreServer(<span class="string">&quot;:8080&quot;</span>, s) <span class="comment">// 创建http服务实例</span></span><br><span class="line"></span><br><span class="line">    errChan, err := srv.ListenAndServe() <span class="comment">// 运行http服务</span></span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Println(<span class="string">&quot;web server start failed:&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    log.Println(<span class="string">&quot;web server start ok&quot;</span>)</span><br><span class="line"></span><br><span class="line">    c := <span class="built_in">make</span>(<span class="keyword">chan</span> os.Signal, <span class="number">1</span>)</span><br><span class="line">    signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">select</span> &#123; <span class="comment">// 监视来自errChan以及c的事件</span></span><br><span class="line">    <span class="keyword">case</span> err = &lt;-errChan:</span><br><span class="line">        log.Println(<span class="string">&quot;web server run failed:&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">case</span> &lt;-c:</span><br><span class="line">        log.Println(<span class="string">&quot;bookstore program is exiting...&quot;</span>)</span><br><span class="line">        ctx, cf := context.WithTimeout(context.Background(), time.Second)</span><br><span class="line">        <span class="keyword">defer</span> cf()</span><br><span class="line">        err = srv.Shutdown(ctx) <span class="comment">// 优雅关闭http服务实例</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Println(<span class="string">&quot;bookstore program exit error:&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    log.Println(<span class="string">&quot;bookstore program exit ok&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>分块理解代码</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s, err := factory.New(<span class="string">&quot;mem&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>调用工厂对象的 New 方法来创建一个新的数据存储模块实例<br>“mem” 参数可能指示工厂方法使用内存作为数据存储的方式。这种模式通常用于创建具有不同实现但共同接口的对象</p>
+<p><code>s</code> 是新创建的存储模块实例，而 <code>err</code> 用于捕获在创建实例过程中可能发生的任何错误。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line"><span class="built_in">panic</span>(err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>nil 是表示 空值 or 不存在的状态, 变量没有指向任何有效的内存地址或对象。</p>
+<p>这一行是错误处理的代码。如果在创建存储模块时出现错误，<code>err</code> 将不会是 <code>nil</code>。通过检查 <code>err</code> 是否为 <code>nil</code>，代码可以确定是否发生了错误。</p>
+<p><code>panic(err)</code>: 如果确实发生了错误（即 <code>err</code> 不为 <code>nil</code>），代码将触发一个 panic，这通常会导致程序崩溃并打印出错误消息。使用 panic 是一种处理不可恢复错误的方式，在这种情况下，它表示无法创建数据存储模块。</p>
+</blockquote>
+<h5 id="panic-deffered-function-call-stack-recover"><a href="#panic-deffered-function-call-stack-recover" class="headerlink" title="panic &amp;&amp; deffered function &amp;&amp; call stack &amp;&amp; recover"></a>panic &amp;&amp; deffered function &amp;&amp; call stack &amp;&amp; recover</h5><p>类比理解：</p>
+<blockquote>
+<p>你正在一个大型的公司大楼里工作。这个大楼有许多楼层，每层楼都进行着不同的活动和操作。</p>
+<p>每层楼 比作一个 函数调用栈（call stack） ： 每个楼层代表程序中的一个函数。</p>
+<p>正常情况下，人们（即数据和控制流）按计划在楼层之间上下移动，就像程序在不同函数间按照预定的逻辑执行。</p>
+<p>突然间有火警警报响起，这就像是在程序中调用了 <code>panic</code>。</p>
+<p>警报是一个紧急信号，表明所有的正常活动都必须立即停止，人们需要按照特定的紧急程序（即“延迟函数(defered function)”）撤离大楼。</p>
+<p>每层楼的人都会立刻停止他们正在做的事情，并开始执行紧急撤离程序。这就像是程序中的 <code>panic</code> 逐层向上回退栈帧，并执行每层栈帧上的延迟函数。</p>
+<p>最终，如果火警是真实的，整个大楼（即程序）可能会被疏散，这代表程序的终止。如果火警被确认是虚假的，可能通过某种方式（类似于 <code>recover</code>），人们可以被告知返回他们的工作岗位，程序也可以继续执行。</p>
+</blockquote>
+<p><strong>panic</strong></p>
+<p>当panic被调用，会立即终止函数，并向上层 退栈，运行在这些栈上的 延迟函数(deferred functions)。然后继续，一直到程序最顶层报告panic发生原因。</p>
+<p>用于处理不可恢复的错误情况： 数组越界访问， 空指针引用 or 严重的逻辑错误。</p>
+<p>用于处理致命错误，立即停止，并汇报错误。</p>
+<p><strong>deferred functions</strong></p>
+<p>go语言中，是用defer关键字来进行标识。</p>
+<p>这个函数的执行不会立即发生，而是在包含它的函数即将返回时执行。</p>
+<p>通常用于 closing a file handle， Unlocking a mutex，执行清理工作。</p>
+<p>例子：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readFile</span><span class="params">(filename <span class="type">string</span>)</span></span> ([]<span class="type">byte</span>, <span class="type">error</span>) &#123;</span><br><span class="line">    file, err := os.Open(filename)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">defer</span> file.Close() <span class="comment">// 确保在函数结束时关闭文件</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ioutil.ReadAll(file)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在上面读取file的函数中，无论读取成功，还是遇到错误，读取失败，readFile函数都会在关闭前执行 file.Close()函数</p>
+</blockquote>
+<p>什么是closing a file handle？</p>
+<p>使用完一个文件之后释放与之相关联的资源的过程</p>
+<p>File handle: 一个指向打开文件的引用或指针，它是操作系统提供的一种方式，用于访问和操作文件。</p>
+<blockquote>
+<p>当一个程序打开一个文件时（例如用于读取或写入数据），操作系统会创建一个文件句柄，这个句柄包含了访问该文件所需的所有信息。程序通过这个句柄与文件交互，例如读取数据、写入数据或更改文件的位置。</p>
+</blockquote>
+<p>不同的语言通过调用特定函数实现</p>
+<blockquote>
+<p>C 语言中的 <code>fclose()</code></p>
+<p>Python 中的 <code>close()</code> </p>
+</blockquote>
+<p>当然高级语言 java 和 python也会自动回收</p>
+<p>什么是Unlocking a mutex?</p>
+<p>用于Control access to shared resources，以防止数据竞争和保证线程安全。</p>
+<p>Mutex 互斥</p>
+<p>Mutual Exclusion： 使用它可以实现thread间的互相排斥。</p>
+<blockquote>
+<p>在多线程环境中，当一个线程需要访问一个共享资源时，它会先尝试“锁定（lock）”Mutex。如果Mutex已经被另一个线程锁定，这个thread将会等待（或阻塞），直到Mutex被释放。</p>
+<p>当thread完成对shared resource的访问后，它必须“解锁（unlock）”互斥量，这样其他等待访问该资源的thread就可以锁定mutex并安全地访问资源了。</p>
+</blockquote>
+<p>lock and unlock function to implement mutex</p>
+<blockquote>
+<p>C++: use lock() and unlock() in <mutex> library</p>
+<p>Go: use Lock() and Unlock() in sync package</p>
+</blockquote>
+<p><strong>call stack</strong></p>
+<p>一个程序在执行过程中，函数调用和返回值的堆栈结构。</p>
+<blockquote>
+<p>每当程序调用一个新的函数，这个函数的信息（如参数、局部变量和返回地址）就会被放入这个栈中，而当函数执行完成后，其信息又会从栈中移除。</p>
+</blockquote>
+<p><strong>recover function</strong></p>
+<p>用于”Catch”或”recover”从 <code>panic</code> 引起的Abnormal control流程。</p>
+<blockquote>
+<p>当一个 Go 程序触发 <code>panic</code> 时，它会立即停止当前函数的执行，并开始逐层向上回退栈（即退出函数调用），直到遇到合适的 <code>recover</code> 调用为止。<code>recover</code> 的作用是终止 panic 引起的异常控制流程，允许程序恢复正常执行。</p>
+</blockquote>
+<ol>
+<li><p>recover 只有在 deferred function中 调用才会有效</p>
+<blockquote>
+<p><code>recover</code> 只有在延迟函数（deferred function）中调用时才有效。如果在延迟函数外调用 <code>recover</code>，它将不会捕获到任何 panic。</p>
+</blockquote>
+</li>
+<li><p>用于catch panic</p>
+<blockquote>
+<p> 当 <code>recover</code> 捕获到 panic，它会停止 panic 的传播（unwinding the stack），并返回传递给 <code>panic</code> 的值（如果有的话）。</p>
+</blockquote>
+</li>
+<li><p>Allow progress to continue run</p>
+<blockquote>
+<p> 一旦 <code>recover</code> 成功捕获到 panic 并处理它，程序控制流程可以从 <code>recover</code> 调用之后的点继续执行。</p>
+</blockquote>
+</li>
+<li><p>use to handle error or clear</p>
+<blockquote>
+<p><code>recover</code> 常用于处理异常情况和执行必要的清理工作，如关闭文件、释放资源等，特别是在可能发生 panic 的情况下。</p>
+</blockquote>
+</li>
+</ol>
+<p>例子</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">mayPanic</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">&quot;a problem&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> r := <span class="built_in">recover</span>(); r != <span class="literal">nil</span> &#123;</span><br><span class="line">            fmt.Println(<span class="string">&quot;Recovered from error:&quot;</span>, r)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    mayPanic()</span><br><span class="line">    fmt.Println(<span class="string">&quot;After mayPanic()&quot;</span>) <span class="comment">// 这行代码只有在没有 panic 或 panic 被恢复时才会执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>main</code> 函数中有一个延迟函数，该函数使用 <code>recover</code> 来捕获和处理任何可能发生的 panic。</p>
+<p>如果 <code>mayPanic</code> 函数触发 panic，延迟函数会捕获到它，并允许程序继续执行，而不是立即崩溃。</p>
+</blockquote>
+<h1 id="2023-12-13"><a href="#2023-12-13" class="headerlink" title="2023.12.13"></a>2023.12.13</h1><p>继续分解代码模块2</p>
+<p>建一个监听8080端口的 HTTP 服务器实例，并可能在创建过程中使用了 <code>s</code> 这个参数。这个服务器可以用来处理来自客户端的HTTP请求，并根据具体需求执行相应的操作。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srv := server.NewBookStoreServer(<span class="string">&quot;:8080&quot;</span>, s) <span class="comment">// 创建http服务实例</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>srv 变量名</p>
+<p><code>:=</code> 表示在声明变量的同时初始化它。</p>
+<p><code>erver.NewBookStoreServer(&quot;:8080&quot;, s)</code>：这个函数的目的是创建一个新的 HTTP 服务器实例。</p>
+<blockquote>
+<p> 这部分代码调用了 <code>server</code> 包中的 <code>NewBookStoreServer</code> 函数，并传递了两个参数 <code>&quot;:8080&quot;</code> 和 <code>s</code>。</p>
+<p><code>&quot;:8080&quot;</code>：这是服务器监听的端口号。在这里，服务器将监听本机的8080端口，以便接收来自客户端的HTTP请求。</p>
+<p><code>s</code>：这是传递给服务器的参数，可能是配置信息、处理程序或其他服务器需要的信息。<code>s</code> 的具体含义需要查看 <code>NewBookStoreServer</code> 函数的实现来确定。</p>
+</blockquote>
+</blockquote>
+<p>启动 HTTP 服务器，如果启动过程中出现错误，就记录错误信息并提前退出函数，否则，输出成功启动的日志消息。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">errChan, err := srv.ListenAndServe() <span class="comment">// 运行http服务</span></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Println(<span class="string">&quot;web server start failed:&quot;</span>, err)</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">log.Println(<span class="string">&quot;web server start ok&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>errChan, err := srv.ListenAndServe()</code>：调用了 <code>srv</code>（之前创建的 HTTP 服务器实例）的 <code>ListenAndServe</code> 方法来启动服务器。</p>
+<blockquote>
+<p><code>ListenAndServe</code> 函数会监听指定的端口并处理来自客户端的 HTTP 请求。这个函数会返回两个值，一个是 <code>errChan</code>，另一个是 <code>err</code>。</p>
+</blockquote>
+<blockquote>
+<p><code>errChan</code>：这是一个通道（channel），通道是用于在不同 Go 协程之间传递数据的机制。在这里，<code>errChan</code> 可能用于在服务器运行时发送错误信息。</p>
+</blockquote>
+<blockquote>
+<p><code>err</code>：这是一个错误变量，如果 <code>ListenAndServe</code> 函数成功运行，<code>err</code> 将为 <code>nil</code>，否则，它将包含一个描述错误的值。</p>
+</blockquote>
+</blockquote>
+<p>创建一个通道（channel）<code>c</code>，并注册信号通知，以便在操作系统接收到指定信号时发送通知到这个通道。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c := <span class="built_in">make</span>(<span class="keyword">chan</span> os.Signal, <span class="number">1</span>)</span><br><span class="line">     signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>创建了一个通道 <code>c</code>，并指定了通道的缓冲区大小为 1。</p>
+<p>通道用于在不同的 Go 协程之间传递数据。</p>
+<blockquote>
+<p>这里的通道类型是 <code>os.Signal</code>，表示它将用于接收操作系统信号。</p>
+</blockquote>
+<p><code>signal.Notify</code> 的主要作用是将指定的信号注册到通道 <code>c</code>，以便在程序运行时等待信号，并在接收到信号时执行相应的操作。一旦信号被注册，通道 <code>c</code> 就会在接收到这些信号时收到通知。</p>
+<p>后面syscall.SIGINT, syscall.SIGTERM就是两个信号</p>
+<blockquote>
+<p><code>syscall.SIGINT</code> 通常表示终止程序，例如，<strong>用户</strong>在终端中按下 Ctrl+C 会触发这个信号。</p>
+<p>它的主要目的是通知正在运行的进程立即中断执行，以便程序可以优雅地终止。</p>
+<p><strong>用户交互式</strong></p>
+</blockquote>
+<blockquote>
+<p><code>os.Signal(syscall.SIGTERM)</code>：表示终止信号，通常由<strong>系统或管理员</strong>发出，用于请求程序正常退出。</p>
+<p>它的目的是请求进程正常退出，但不会立即强制终止，允许程序有机会执行清理操作。</p>
+<p><strong>系统管理和脚本控制</strong></p>
+</blockquote>
+</blockquote>
+<h1 id="2023-12-14"><a href="#2023-12-14" class="headerlink" title="2023.12.14"></a>2023.12.14</h1><p>详细拆解代码</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> &#123; <span class="comment">// 监视来自errChan以及c的事件</span></span><br><span class="line"><span class="keyword">case</span> err = &lt;-errChan:</span><br><span class="line">    log.Println(<span class="string">&quot;web server run failed:&quot;</span>, err)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"><span class="keyword">case</span> &lt;-c:</span><br><span class="line">    log.Println(<span class="string">&quot;bookstore program is exiting...&quot;</span>)</span><br><span class="line">    ctx, cf := context.WithTimeout(context.Background(), time.Second)</span><br><span class="line">    <span class="keyword">defer</span> cf()</span><br><span class="line">    err = srv.Shutdown(ctx) <span class="comment">// 优雅关闭http服务实例</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>select</code> 语句，它用于同时监视两个通道 (<code>errChan</code> 和 <code>c</code>) 的事件，根据不同的事件执行相应的操作。</p>
+<p><code>case err = &lt;-errChan:</code>：这个 <code>case</code> 表示当从 <code>errChan</code> 接收到数据（或者通道关闭）时，执行以下操作。</p>
+<ul>
+<li>如果从 <code>errChan</code> channel 接收到数据，表示 <code>err</code> 变量将被设置为接收到的错误值，并输出错误消息。</li>
+<li>然后，函数使用 <code>return</code> 语句提前退出。</li>
+</ul>
+<p><code>case &lt;-c:</code>：这个 <code>case</code> 表示当从 <code>c</code> channel 接收到数据（或者通道关闭）时，执行以下操作。</p>
+<p>start a graceful shutdown( respond to an interrrupt signal)</p>
+<blockquote>
+<p> context.Background(): 返回一个空的Context，它通常用在主函数、初始化以及测试代码中，作为上下文的根。这个空的Context没有任何数据、取消信号或截止时间。</p>
+</blockquote>
+<p>ctx, cf :&#x3D; context.WithTimeout(context.Background(), time.Second) ： 创建一个带有超时的上下文。</p>
+<p><code>defer cf()</code>：延迟取消上下文，以确保在包围函数退出时调用。</p>
+<p><code>err = srv.Shutdown(ctx)</code>：用创建的上下文调用服务器（<code>srv</code>）的<code>Shutdown</code>方法。</p>
+</blockquote>
+<p><strong>select语句</strong></p>
+<p>用于wait on multiple channel operations. </p>
+<p><strong>context包</strong></p>
+<blockquote>
+<p><code>context</code> 包被广泛用于控制多个goroutine之间的超时、取消信号、截止时间等。</p>
+</blockquote>
+<p>**什么是上下文contxt和context.Background()联系 ** </p>
+<p>房子的地基context.Background 和 上面的建造的东西 context</p>
+<blockquote>
+<p>你正在建造一栋房子。这个房子需要一个基础或地基。这个基础是最基本的，它本身并不决定房子的最终样式、大小或功能，但它是建造房子的起点。</p>
+<ul>
+<li><p><strong>房子的基础</strong> 就像是 <code>context.Background()</code>。它是最基础的、最简单的，没有任何额外的结构或功能。</p>
+</li>
+<li><p><strong>建造的房子</strong> 可以比作基于这个基础上下文创建的具有特定行为的上下文（比如带有超时或取消功能的上下文）</p>
+<p>在这个比喻中，<code>context.Background()</code> 提供了一个起始点，但它本身并不包含任何特定的行为（就像一个简单的房子基础并不决定房子的具体设计）。当你需要创建一个具有特定需求（比如处理超时或取消操作）的上下文时，你会在这个基础上下文的基础上进行扩展，就像在房子的基础上建造具体的房屋结构一样。</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>timescond</strong></p>
+<p>好比一个计时器，代表了一秒钟的时间长度。</p>
+<p>在这里传进去，就是说 计时器时间到了，房子就毁灭掉，这也是为什么 context.WithTimeout(context.Background(), time.Second) 传两个参数</p>
+<p><strong>ctx 和 cf</strong></p>
+<p><code>ctx</code> 和 <code>cf</code> 是从 <code>context.WithTimeout</code> 函数返回的两个值。</p>
+<p>**<code>ctx</code> (Context)**：</p>
+<p><code>ctx</code> 是一个被设定为在一秒后自动超时的上下文。意味着任何使用这个 <code>ctx</code> 的操作（如HTTP请求、数据库查询等）都会在一秒后自动被取消，除非它们更早完成。</p>
+<p>**<code>cf</code> (CancelFunc)**：</p>
+<p>用于手动取消其关联的上下文 <code>ctx</code>。 手动立即拆毁房子。</p>
+<p>当 <code>cf()</code> 被调用时，它立即发送取消信号到 <code>ctx</code>。这对于<strong>提前中止使用该上下文的操作</strong>非常有用。</p>
+<p>与 def 结合使用</p>
+<p><code>defer cf()</code> 是一种常见的用法，它确保在当前函数返回之前调用 <code>cf()</code>，以释放与 <code>ctx</code> 相关联的资源并发送取消信号。</p>
+<p>综上理解代码：<br>这个调用中，ctx 是一个被设定为在一秒后自动超时的上下文。这意味着任何使用这个 ctx 的操作（如HTTP请求、数据库查询等）都会在一秒后自动被取消，除非它们更早完成。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Println(<span class="string">&quot;bookstore program exit error:&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    log.Println(<span class="string">&quot;bookstore program exit ok&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>if err !&#x3D; nil 说明存在错误</p>
+<p>return 退出函数</p>
+</blockquote>
+<h3 id="图书数据存储模块-store"><a href="#图书数据存储模块-store" class="headerlink" title="图书数据存储模块 (store)"></a>图书数据存储模块 (store)</h3><p>用来存储整个 bookstore 的图书数据的。</p>
+<p>最简单的方式莫过于在内存中创建一个 map，以图书 id 作为 key，来保存图书信息。</p>
+<p>考虑 持久化：存储到 Nosql 数据库甚至是关系型数据库。</p>
+<p>为了多种 存储方式， 实现一个接口类型 store</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store/store.go</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">type</span> Book <span class="keyword">struct</span> &#123;</span><br><span class="line">     Id      <span class="type">string</span>   <span class="string">`json:&quot;id&quot;`</span>      <span class="comment">// 图书ISBN ID</span></span><br><span class="line">     Name    <span class="type">string</span>   <span class="string">`json:&quot;name&quot;`</span>    <span class="comment">// 图书名称</span></span><br><span class="line">     Authors []<span class="type">string</span> <span class="string">`json:&quot;authors&quot;`</span> <span class="comment">// 图书作者</span></span><br><span class="line">     Press   <span class="type">string</span>   <span class="string">`json:&quot;press&quot;`</span>   <span class="comment">// 出版社</span></span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">type</span> Store <span class="keyword">interface</span> &#123;</span><br><span class="line">     Create(*Book) <span class="type">error</span>        <span class="comment">// 创建一个新图书条目</span></span><br><span class="line">     Update(*Book) <span class="type">error</span>        <span class="comment">// 更新某图书条目</span></span><br><span class="line">     Get(<span class="type">string</span>) (Book, <span class="type">error</span>)  <span class="comment">// 获取某图书信息</span></span><br><span class="line">     GetAll() ([]Book, <span class="type">error</span>)   <span class="comment">// 获取所有图书信息</span></span><br><span class="line">     Delete(<span class="type">string</span>) <span class="type">error</span>       <span class="comment">// 删除某图书条目</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>struct</strong></p>
+<p>创建自定义数据类型的方式</p>
+<p>允许你将多个不同类型的数据项组合成一个单一的复合类型</p>
+<p><strong>interface</strong></p>
+<p>定义了一组方法，但不实现这些方法。</p>
+<p>如果一个类型实现了接口中的所有方法，我们说这个类型实现了该接口。</p>
 
     </div>
 
@@ -467,6 +1046,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/12/12/CUDA/" rel="next" title="CUDA">
+                  CUDA <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -497,13 +1079,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">45k</span>
+    <span title="Word count total">71k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:42</span>
+    <span title="Reading time total">4:19</span>
   </span>
 </div>
 <div class="busuanzi-count">

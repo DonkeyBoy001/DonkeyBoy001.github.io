@@ -31,8 +31,9 @@
 <meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/operationsystem.assets/image-20231130100443938.png">
 <meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/operationsystem.assets/image-20231129112245378.png">
 <meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/operationsystem.assets/image-20231130101958359.png">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/operationsystem.assets/image-20231202082051602.png">
 <meta property="article:published_time" content="2023-11-24T04:48:53.000Z">
-<meta property="article:modified_time" content="2023-11-30T21:21:12.654Z">
+<meta property="article:modified_time" content="2023-12-13T17:48:44.719Z">
 <meta property="article:author" content="Joe">
 <meta property="article:tag" content="Operation System">
 <meta name="twitter:card" content="summary">
@@ -141,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Operation-System"><span class="nav-number">1.</span> <span class="nav-text">Operation System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Process-and-Thread"><span class="nav-number">2.</span> <span class="nav-text">Process and Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-understand-the-difference-between-the-process-and-thread%EF%BC%9F"><span class="nav-number">2.0.1.</span> <span class="nav-text">How to understand the difference between the process and thread？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread-and-Porcess-switching-%E7%BA%BF%E7%A8%8B%E5%88%87%E6%8D%A2"><span class="nav-number">2.0.2.</span> <span class="nav-text">Thread and Porcess switching(线程切换)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coroutine-%E5%8D%8F%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">Coroutine(协程)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#User-State-and-Kernel-State"><span class="nav-number">2.1.1.</span> <span class="nav-text">User State and Kernel State</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#user-state"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">user state</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kernel-state"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">kernel state</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O"><span class="nav-number">2.2.</span> <span class="nav-text">I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-category"><span class="nav-number">2.2.1.</span> <span class="nav-text">I&#x2F;O category</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hardware-I-O"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">Hardware I&#x2F;O</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Software-I-O"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">Software I&#x2F;O</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-operation"><span class="nav-number">2.2.2.</span> <span class="nav-text">I&#x2F;O operation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Synchronous-IO"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Synchronous IO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Asynchronous-IO"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">Asynchronous IO</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">进程间通信方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%9C%80%E8%A6%81%E9%80%9A%E4%BF%A1%EF%BC%9F"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">为什么进程间需要通信？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E9%81%93"><span class="nav-number">2.3.1.</span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="nav-number">2.3.2.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98"><span class="nav-number">2.3.3.</span> <span class="nav-text">共享内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-number">2.3.4.</span> <span class="nav-text">信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7"><span class="nav-number">2.3.5.</span> <span class="nav-text">信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Socket"><span class="nav-number">2.3.6.</span> <span class="nav-text">Socket</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Operation-System"><span class="nav-number">1.</span> <span class="nav-text">Operation System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Process-and-Thread"><span class="nav-number">2.</span> <span class="nav-text">Process and Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-understand-the-difference-between-the-process-and-thread%EF%BC%9F"><span class="nav-number">2.0.1.</span> <span class="nav-text">How to understand the difference between the process and thread？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread-and-Porcess-switching-%E7%BA%BF%E7%A8%8B%E5%88%87%E6%8D%A2"><span class="nav-number">2.0.2.</span> <span class="nav-text">Thread and Porcess switching(线程切换)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coroutine-%E5%8D%8F%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">Coroutine(协程)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#User-State-and-Kernel-State"><span class="nav-number">2.1.1.</span> <span class="nav-text">User State and Kernel State</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#user-state"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">user state</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kernel-state"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">kernel state</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O"><span class="nav-number">2.2.</span> <span class="nav-text">I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-category"><span class="nav-number">2.2.1.</span> <span class="nav-text">I&#x2F;O category</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hardware-I-O"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">Hardware I&#x2F;O</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Software-I-O"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">Software I&#x2F;O</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-operation"><span class="nav-number">2.2.2.</span> <span class="nav-text">I&#x2F;O operation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Synchronous-IO"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Synchronous IO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Asynchronous-IO"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">Asynchronous IO</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">进程间通信方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%9C%80%E8%A6%81%E9%80%9A%E4%BF%A1%EF%BC%9F"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">为什么进程间需要通信？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E9%81%93"><span class="nav-number">2.3.1.</span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="nav-number">2.3.2.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98"><span class="nav-number">2.3.3.</span> <span class="nav-text">共享内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-number">2.3.4.</span> <span class="nav-text">信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7"><span class="nav-number">2.3.5.</span> <span class="nav-text">信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Socket"><span class="nav-number">2.3.6.</span> <span class="nav-text">Socket</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-virtual-address-space-switching-can-be-time-consuming%EF%BC%9F"><span class="nav-number">2.4.</span> <span class="nav-text">Why virtual address space switching can be time-consuming？</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -242,7 +243,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-30 13:21:12" itemprop="dateModified" datetime="2023-11-30T13:21:12-08:00">2023-11-30</time>
+      <time title="Modified: 2023-12-13 09:48:44" itemprop="dateModified" datetime="2023-12-13T09:48:44-08:00">2023-12-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -500,6 +501,9 @@
 <p>一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。</p>
 <p>eg： 对于Linux来说，实际信号是软中断，许多重要的程序都需要处理信号。信号，为Linux提供了一种处理异步事件的方法。比如，终端用户输入了ctrl+c来中断程序，会通过信号机制停止一个程序。</p>
 <h3 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h3><p>不同机器间的进程通信。</p>
+<h2 id="Why-virtual-address-space-switching-can-be-time-consuming？"><a href="#Why-virtual-address-space-switching-can-be-time-consuming？" class="headerlink" title="Why virtual address space switching can be time-consuming？"></a>Why virtual address space switching can be time-consuming？</h2><p>The picture below is used to show how cache in the machine works.</p>
+<p>The purpose: convert a <strong>virtual address</strong> requested by a program into <strong>data</strong> bytes</p>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/operationsystem.assets/image-20231202082051602.png" alt="image-20231202082051602"></p>
 <p><strong>如果你能像达尔文那样，带着好奇的毅力，循序渐进地去做，那么你就不会觉得这是艰巨的任务。你将会惊讶地发现自己完全能够胜任。</strong></p>
 
     </div>
@@ -555,13 +559,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">45k</span>
+    <span title="Word count total">71k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:42</span>
+    <span title="Reading time total">4:19</span>
   </span>
 </div>
 <div class="busuanzi-count">

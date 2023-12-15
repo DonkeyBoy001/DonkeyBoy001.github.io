@@ -28,11 +28,13 @@
 <meta property="og:site_name" content="Notes">
 <meta property="og:description" content="ReactHello everyone, This is what I use to document the difficulties I encountered during the React development and the corresponding solutions.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/ReactLearning.assets/image-20231202181117408.png">
 <meta property="article:published_time" content="2023-11-24T04:49:45.000Z">
-<meta property="article:modified_time" content="2023-11-28T00:15:38.231Z">
+<meta property="article:modified_time" content="2023-12-03T02:26:39.674Z">
 <meta property="article:author" content="Joe">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/ReactLearning.assets/image-20231202181117408.png">
 
 
 <link rel="canonical" href="https://www.zhoujoe.us/2023/11/23/ReactLearning/">
@@ -137,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number">1.</span> <span class="nav-text">React</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">时间问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-Bar"><span class="nav-number">1.2.</span> <span class="nav-text">Search Bar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E5%90%8E%E7%AB%AF%E5%8F%91%E9%80%81JSON%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.</span> <span class="nav-text">向后端发送JSON数据</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number">1.</span> <span class="nav-text">React</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">时间问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-Bar"><span class="nav-number">1.2.</span> <span class="nav-text">Search Bar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E5%90%8E%E7%AB%AF%E5%8F%91%E9%80%81JSON%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.</span> <span class="nav-text">向后端发送JSON数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-%E5%92%8C-let%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.</span> <span class="nav-text">const 和 let区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AEtap%E9%80%89%E9%A1%B9%E7%9A%84%E4%B8%8D%E5%90%8C-%E5%9F%BA%E4%BA%8E%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E7%82%B9-%E7%94%9F%E6%88%90-%E4%B8%8A%E4%B8%AA%E7%A4%BC%E6%8B%9C-%E4%B8%8A%E4%B8%AA%E6%98%9F%E6%9C%9F-%E4%B8%8A%E4%B8%AA%E6%9C%88"><span class="nav-number">1.5.</span> <span class="nav-text">根据tap选项的不同 基于当前时间点 生成 上个礼拜 上个星期 上个月</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E5%90%8E%E7%AB%AF%E4%BC%A0%E5%85%A5%E5%86%85%E5%AE%B9%EF%BC%8C%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E6%AF%8F%E4%B8%80%E5%88%97"><span class="nav-number">1.5.1.</span> <span class="nav-text">根据后端传入内容，动态生成每一列</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -152,18 +154,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -238,7 +240,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-27 16:15:38" itemprop="dateModified" datetime="2023-11-27T16:15:38-08:00">2023-11-27</time>
+      <time title="Modified: 2023-12-02 18:26:39" itemprop="dateModified" datetime="2023-12-02T18:26:39-08:00">2023-12-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,14 +273,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>358</span>
+      <span>807</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -326,6 +328,37 @@
 <p>发送数据给后端</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">  const handleSearch = async () =&gt; &#123;</span><br><span class="line">    setFiltered(false)</span><br><span class="line"></span><br><span class="line">    const tickets = [searchTerm.toUpperCase()];</span><br><span class="line"></span><br><span class="line">    const now = moment();</span><br><span class="line">    const timeFrom = now.format(&#x27;YYYY-MM-DDTHH:mm&#x27;);</span><br><span class="line">    </span><br><span class="line">    const dataToSend = &#123;</span><br><span class="line">      &quot;tickets&quot;: tickets,</span><br><span class="line">      &quot;time_from&quot;: timeFrom,</span><br><span class="line">      &quot;limit&quot;: &quot;50&quot;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    console.log(&quot;dataToSend&quot;)</span><br><span class="line">    console.log(dataToSend)</span><br><span class="line"></span><br><span class="line">    try &#123;</span><br><span class="line">      const response = await fetch(backendUrl, &#123;</span><br><span class="line">        method: &#x27;POST&#x27;,</span><br><span class="line">        headers: &#123;</span><br><span class="line">          &#x27;Content-Type&#x27;: &#x27;application/json&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        body: JSON.stringify(dataToSend)</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      if (response.ok) &#123;</span><br><span class="line"></span><br><span class="line">        const backendData = await response.json();</span><br><span class="line"></span><br><span class="line">        if (backendData == null) onSearchResults(null);</span><br><span class="line">        </span><br><span class="line">        console.log(&#x27;Received backendData:&#x27;, backendData);</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        onSearchResults(backendData); </span><br><span class="line"></span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        console.error(&#x27;Server responded with a non-200 status code&#x27;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125; catch (error) &#123;</span><br><span class="line">      console.error(&#x27;Error fetching data:&#x27;, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="const-和-let区别"><a href="#const-和-let区别" class="headerlink" title="const 和 let区别"></a>const 和 let区别</h2><p>let声明 是在{} 块级作用域</p>
+<p>const声明 也是  块级作用域</p>
+<p>区别</p>
+<p>let可以对变量重新赋值</p>
+<p>const不允许重新赋值，一旦被声明，不能改变值(变量指向的内存地址不能改变)</p>
+<ul>
+<li><code>const</code> 声明的变量必须在声明时初始化，即必须在声明时赋予一个值。</li>
+<li><code>let</code> 声明的变量可以在声明时不赋值。</li>
+</ul>
+<h2 id="根据tap选项的不同-基于当前时间点-生成-上个礼拜-上个星期-上个月"><a href="#根据tap选项的不同-基于当前时间点-生成-上个礼拜-上个星期-上个月" class="headerlink" title="根据tap选项的不同 基于当前时间点 生成 上个礼拜 上个星期 上个月"></a>根据tap选项的不同 基于当前时间点 生成 上个礼拜 上个星期 上个月</h2><p>下面是sort的选项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;select value=&#123;timeFrame&#125; onChange=&#123;e =&gt; &#123; setTimeFrame(e.target.value);  &#125;&#125;&gt;</span><br><span class="line">&lt;option value=&quot;&quot;&gt;Time Frame&lt;/option&gt;</span><br><span class="line">&lt;option value=&quot;today&quot;&gt;Last Day&lt;/option&gt;</span><br><span class="line">&lt;option value=&quot;week&quot;&gt;Last Week&lt;/option&gt;</span><br><span class="line">&lt;option value=&quot;month&quot;&gt;Last Month&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下面是生成对应的时间点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  const now = moment();</span><br><span class="line">  let timeFrom = now.format(&#x27;YYYY-MM-DDTHH:mm&#x27;);</span><br><span class="line">  </span><br><span class="line">  const yesterday = now.clone().subtract(1, &#x27;days&#x27;).format(&#x27;YYYY-MM-DDTHH:mm&#x27;);</span><br><span class="line">  const lastWeek = now.clone().subtract(1, &#x27;weeks&#x27;).format(&#x27;YYYY-MM-DDTHH:mm&#x27;);</span><br><span class="line">  const lastMonth = now.clone().subtract(1, &#x27;months&#x27;).format(&#x27;YYYY-MM-DDTHH:mm&#x27;);</span><br><span class="line"></span><br><span class="line">  const timeFrameChecks = &#123;</span><br><span class="line">    &#x27;today&#x27;: () =&gt; timeFrom = yesterday,</span><br><span class="line">    &#x27;week&#x27;: () =&gt; timeFrom = lastWeek,</span><br><span class="line">    &#x27;month&#x27;: () =&gt; timeFrom = lastMonth</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">if (timeFrame in timeFrameChecks) &#123;</span><br><span class="line">  timeFrameChecks[timeFrame]();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据后端传入内容，动态生成每一列"><a href="#根据后端传入内容，动态生成每一列" class="headerlink" title="根据后端传入内容，动态生成每一列"></a>根据后端传入内容，动态生成每一列</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&#123;containerStyle&#125;&gt;</span><br><span class="line">                     &lt;p style=&#123;pStyle&#125;&gt; Assess and choose a diversified portfolio of financial products that match your risk tolerance and investment goals. Options for fund allocation include:&lt;/p&gt;</span><br><span class="line">                     &lt;ul style=&#123;ulStyle&#125;&gt;</span><br><span class="line">                         &#123;investmentDescriptions.map((desc, index) =&gt; (</span><br><span class="line">                             &lt;li key=&#123;index&#125;&gt;&#123;desc&#125;&lt;/li&gt;</span><br><span class="line">                         ))&#125;</span><br><span class="line">                     &lt;/ul&gt;</span><br><span class="line">                 &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const investmentDescriptions = backendData &amp;&amp; backendData[&#x27;data&#x27;]</span><br><span class="line">? Object.entries(backendData[&#x27;data&#x27;]).map(([key, value]) =&gt; &#123;</span><br><span class="line">    const description = getDescriptionForKey(key);</span><br><span class="line">    return `$&#123;value&#125;% in $&#123;description&#125;`;</span><br><span class="line">&#125;)</span><br><span class="line">: [];</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const getDescriptionForKey = (key) =&gt; &#123;</span><br><span class="line">    switch (key) &#123;</span><br><span class="line">      case &quot;Exchange-traded funds (ETFs)&quot;:</span><br><span class="line">        return &quot;growth-focused ETFs&quot;;</span><br><span class="line">      case &quot;Stocks&quot;:</span><br><span class="line">        return &quot;dividend stocks&quot;;</span><br><span class="line">      case &quot;Treasury bills (T-bills)&quot;:</span><br><span class="line">        return &quot;short-term safety with Treasury bills&quot;;</span><br><span class="line">      case &quot;Cash&quot;:</span><br><span class="line">        return &quot;cash for emergencies&quot;;</span><br><span class="line">      </span><br><span class="line">      default:</span><br><span class="line">        return key.toLowerCase();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>获取后端backendData数据，存在data这里</p>
+<p>然后将其中的 key 对应为 description, 根据key不同选择不用的值作为 desciption</p>
+<p>返回一个 value in description的格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;investmentDescriptions.map((desc, index) =&gt;(&lt;li key=&#123;index&#125;&gt;&#123;desc&#125;&lt;/li&gt;))&#125;                                 </span><br></pre></td></tr></table></figure>
+
+<p>在页面html格式出就为</p>
+<p>调用 investmentDescriptions.map 传入desc 和 index，生成 string 然后作为一个li</p>
+<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/ReactLearning.assets/image-20231202181117408.png" alt="image-20231202181117408"></p>
 
     </div>
 
@@ -380,13 +413,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">45k</span>
+    <span title="Word count total">71k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:42</span>
+    <span title="Reading time total">4:19</span>
   </span>
 </div>
 <div class="busuanzi-count">
