@@ -28,16 +28,16 @@
 <meta property="og:site_name" content="Notes">
 <meta property="og:description" content="Test Development Knowledge">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029110517224.png">
-<meta property="og:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029101927544.png">
+<meta property="og:image" content="https://www.zhoujoe.us/assets/React-Learning-Notes.assets/image-20231116232522368.png">
+<meta property="og:image" content="https://www.zhoujoe.us/assets/Test-Development-Knowledge.assets/image-20231029101927544.png">
 <meta property="article:published_time" content="2023-10-29T04:50:50.000Z">
-<meta property="article:modified_time" content="2023-11-14T07:51:46.035Z">
+<meta property="article:modified_time" content="2024-01-17T00:52:27.846Z">
 <meta property="article:author" content="Joe">
 <meta property="article:tag" content="Technical stack">
 <meta property="article:tag" content="Test Development Knowledge">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.zhoujoe.us/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029110517224.png">
+<meta name="twitter:image" content="https://www.zhoujoe.us/assets/React-Learning-Notes.assets/image-20231116232522368.png">
 
 
 <link rel="canonical" href="https://www.zhoujoe.us/2023/10/28/Test-Development-Knowledge/">
@@ -243,7 +243,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-13 23:51:46" itemprop="dateModified" datetime="2023-11-13T23:51:46-08:00">2023-11-13</time>
+      <time title="Modified: 2024-01-16 16:52:27" itemprop="dateModified" datetime="2024-01-16T16:52:27-08:00">2024-01-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@
 <p>Eg:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package org.example;</span><br><span class="line"></span><br><span class="line">import org.junit.jupiter.api.BeforeEach;</span><br><span class="line">import org.junit.jupiter.api.DisplayName;</span><br><span class="line">import org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line">import static org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"></span><br><span class="line">@DisplayName(&quot;Calculator Tests&quot;)</span><br><span class="line">public class CalculatorTest &#123;</span><br><span class="line"></span><br><span class="line">    private Calculator calculator;</span><br><span class="line"></span><br><span class="line">    @BeforeEach</span><br><span class="line">    public void setUp() &#123;</span><br><span class="line">        calculator = new Calculator();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    @DisplayName(&quot;Adding 1 + 1 should result in 2&quot;)</span><br><span class="line">    public void testAddition() &#123;</span><br><span class="line">        assertEquals(2, calculator.add(1, 1));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    @DisplayName(&quot;Adding 0 + 0 should result in 0&quot;)</span><br><span class="line">    public void testAdditionOfZeros() &#123;</span><br><span class="line">        assertEquals(0, calculator.add(0, 0));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029110517224.png" alt="image-20231029110517224"></p>
+<p><img src="/assets/React-Learning-Notes.assets/image-20231116232522368.png" alt="image-20231029110517224"></p>
 <p><strong>Fail() method</strong></p>
 <p>Used to clearly indicate that the test case should fail.</p>
 <p>When you expect a code block not to be executed, but it is indeed executed.<br>When you test the exception handling logic, you expect an exception to be thrown, but not.</p>
@@ -375,7 +375,7 @@
 
 <h3 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h3><p>进入某个类文件中</p>
 <p>shift + command + T  快捷键 直接创建对应的Test class</p>
-<p><img src="/Users/zhouzhenzhou/Desktop/%E5%89%8D%E7%AB%AF/hexo-web/source/_posts/Test-Development-Knowledge.assets/image-20231029101927544.png" alt="image-20231029101927544"></p>
+<p><img src="/assets/Test-Development-Knowledge.assets/image-20231029101927544.png" alt="image-20231029101927544"></p>
 
     </div>
 
