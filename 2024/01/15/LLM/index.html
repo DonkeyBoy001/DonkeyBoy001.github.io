@@ -21,16 +21,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="LLMLarge Language Model  based on DL The porpular onesLLaMA Meta Standford Alpaca Lit-LLaMA Dolly Pre-knowledgeBasic Conception of ML机器学习的基本原理 监督学习 非监督学习 强化学习 Basic Conception of ML神经网络 激活函数 损失函数 优化算法">
+    <meta name="description" content="LLMThis is a record notes of relevant knowledge in LLM. Upadate Date:  2024.01.16">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LLM">
 <meta property="og:url" content="https://www.zhoujoe.us/2024/01/15/LLM/index.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description" content="LLMLarge Language Model  based on DL The porpular onesLLaMA Meta Standford Alpaca Lit-LLaMA Dolly Pre-knowledgeBasic Conception of ML机器学习的基本原理 监督学习 非监督学习 强化学习 Basic Conception of ML神经网络 激活函数 损失函数 优化算法">
+<meta property="og:description" content="LLMThis is a record notes of relevant knowledge in LLM. Upadate Date:  2024.01.16">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-01-16T05:17:22.000Z">
-<meta property="article:modified_time" content="2024-01-16T06:42:39.586Z">
+<meta property="article:modified_time" content="2024-01-25T05:54:31.947Z">
 <meta property="article:author" content="Joe">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
 
 
@@ -136,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LLM"><span class="nav-number">1.</span> <span class="nav-text">LLM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-porpular-ones"><span class="nav-number">1.0.1.</span> <span class="nav-text">The porpular ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pre-knowledge"><span class="nav-number">1.0.2.</span> <span class="nav-text">Pre-knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Conception-of-ML"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Basic Conception of ML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Conception-of-ML-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Basic Conception of ML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NLP"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">NLP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Big-data-processing"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">Big data processing</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformer"><span class="nav-number">1.1.</span> <span class="nav-text">Transformer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LLaMA-2"><span class="nav-number">1.2.</span> <span class="nav-text">LLaMA 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mistral"><span class="nav-number">1.3.</span> <span class="nav-text">Mistral</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LLM"><span class="nav-number">1.</span> <span class="nav-text">LLM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-porpular-ones"><span class="nav-number">1.0.1.</span> <span class="nav-text">The porpular ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pre-knowledge"><span class="nav-number">1.0.2.</span> <span class="nav-text">Pre-knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Conception-of-ML"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Basic Conception of ML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Conception-of-ML-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Basic Conception of ML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NLP"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">NLP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Big-data-processing"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">Big data processing</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformer"><span class="nav-number">1.1.</span> <span class="nav-text">Transformer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LLaMA-2"><span class="nav-number">1.2.</span> <span class="nav-text">LLaMA 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mistral"><span class="nav-number">1.3.</span> <span class="nav-text">Mistral</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="nav-number">1.4.</span> <span class="nav-text">相关技术栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.5.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -151,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -162,7 +165,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -229,9 +232,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-01-15 21:17:22 / Modified: 22:42:39" itemprop="dateCreated datePublished" datetime="2024-01-15T21:17:22-08:00">2024-01-15</time>
+      <time title="Created: 2024-01-15 21:17:22" itemprop="dateCreated datePublished" datetime="2024-01-15T21:17:22-08:00">2024-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-01-24 21:54:31" itemprop="dateModified" datetime="2024-01-24T21:54:31-08:00">2024-01-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technical-stack/" itemprop="url" rel="index"><span itemprop="name">Technical stack</span></a>
+        </span>
     </span>
 
   
@@ -255,14 +273,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>169</span>
+      <span>876</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -272,7 +290,12 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="LLM"><a href="#LLM" class="headerlink" title="LLM"></a>LLM</h1><p>Large Language Model </p>
+    <div class="post-body" itemprop="articleBody"><h1 id="LLM"><a href="#LLM" class="headerlink" title="LLM"></a>LLM</h1><p>This is a record notes of relevant knowledge in LLM.</p>
+<p>Upadate Date: </p>
+<p>2024.01.16</p>
+<span id="more"></span>
+
+<p>Large Language Model </p>
 <p>based on DL</p>
 <h3 id="The-porpular-ones"><a href="#The-porpular-ones" class="headerlink" title="The porpular ones"></a>The porpular ones</h3><p>LLaMA Meta</p>
 <p>Standford Alpaca</p>
@@ -302,7 +325,84 @@
 <p>GPT系列</p>
 <p>T5</p>
 <h2 id="LLaMA-2"><a href="#LLaMA-2" class="headerlink" title="LLaMA 2"></a>LLaMA 2</h2><p>LLM and NLP</p>
-<h2 id="Mistral"><a href="#Mistral" class="headerlink" title="Mistral"></a>Mistral</h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://github.com/liguodongiot/llm-action?tab=readme-ov-file">https://github.com/liguodongiot/llm-action?tab=readme-ov-file</a></p>
+<h2 id="Mistral"><a href="#Mistral" class="headerlink" title="Mistral"></a>Mistral</h2><h2 id="相关技术栈"><a href="#相关技术栈" class="headerlink" title="相关技术栈"></a>相关技术栈</h2><p>多分类文本预处理与特征工程</p>
+<p>• 最大匹配分词技术</p>
+<p>• 结巴分词原理剖析</p>
+<p>• 停用词与词的过滤</p>
+<p>• 独热编码，TF-IDF，词向量 SkipGram， CBOW， Glove， FastText Part-of-Speech Tagging</p>
+<p>• Sentence Embedding技术</p>
+<p>图书分类建模 和 模型部署</p>
+<p>•逻辑回归模型</p>
+<p>•梯度下降</p>
+<p>•线性SVM</p>
+<p>•Bias and Variance</p>
+<p>•集成模型的思想</p>
+<p>基于逻辑回归的多模型融合 F1-Score， AUC的评估工程代码规范</p>
+<p>其他常用的分类算法</p>
+<p>非线性SVM以及对偶问题 </p>
+<p>• 核函数以及核技巧</p>
+<p>• 神经网络以及深度学习 </p>
+<p>• 卷积神经网络模型 Pytorch的使用</p>
+<p>• 处理深度学习中的过拟合 </p>
+<p>• 深度学习的优势</p>
+<p>• 深度学习相比浅层学习的优势 RNN，</p>
+<p>•  LSTM与GRU</p>
+<p>• BPTT算法</p>
+<p>• 深度学习中的梯度消失与爆炸 </p>
+<p>• 京东实训平台上如何使用GPU</p>
+<p>Bi-LSTM模型</p>
+<p>• 层次表示与Deep B-LSTM模型 </p>
+<p>• 深度学习中的可视化</p>
+<p>• 传统Translation Model Seq2Seq模型</p>
+<p>• Greedy Decoding技术</p>
+<p>attention机制</p>
+<p>• 注意力机制的思想</p>
+<p>• 常见的注意力机制技术</p>
+<p>• Beam Search以及不同变种</p>
+<p>• Adam， Adagrad， SGD， L-BFGS的区别</p>
+<p>• 深度学习中的Debug技术</p>
+<p>• 深度学习中的调参技术</p>
+<p>• 文本生成中的那些坑？</p>
+<p>• Pointer-Generation Network模型 </p>
+<p>• 频繁生成重复的词，怎么办？</p>
+<p>• 如何让文本具有多样性？</p>
+<p>• 如何评价模型效果–Rough与Bleu评价标准 Pointer-Generation Network其他变种</p>
+<p>• 项目介绍以及需要完成的任务 </p>
+<p>• 基于检索的对话技术</p>
+<p>• 基于task-oriented的对话系统 </p>
+<p>• 基于generation-oriented的对话系统 </p>
+<p>• 基于reinforcement learning的对话系统  </p>
+<p>• 项目的技术架构</p>
+<p>• 京东对话系统数据处理</p>
+<p>• 业务型对话与闲聊型对话</p>
+<p>• 准备训练数据以及构建intent classification Query的预处理以及句子嵌入</p>
+<p>• 倒排表技术以及Elastic Search</p>
+<p>•  HNSW算法的实现</p>
+<p>• Learning to Rank技术介绍</p>
+<p>• 常用的Learning to Rank技术综述</p>
+<p>• BM25技术</p>
+<p>• 语法树以及CFG语法</p>
+<p>• 基于CKY算法的语法树构建</p>
+<p>• 基于parser Tree 的 Similarity 计算</p>
+<p>• 如何用XGBOOST&#x2F;LIGHTGBM建立ranker 模型</p>
+<p>根据岗位要求搜集的相关技术栈</p>
+<p>LLM和AIGC核心算法：基于海量内容 和 前沿LLM </p>
+<p>负责AI 内容生成： </p>
+<blockquote>
+<p>Prompt </p>
+<p>大模型SFT 和 预训练</p>
+<p>大模型强化学习</p>
+</blockquote>
+<p>熟悉AIGC前沿科技</p>
+<p>CLIP Stable Diffusion ControlNet Imagen Dreambooth</p>
+<p>项目上有过自然语言处理&#x2F;计算机视觉&#x2F;强化学习&#x2F;推荐系统等常用算法经历</p>
+<p>项目范文</p>
+<p><a target="_blank" rel="noopener" href="https://www.100chui.com/article/296193.html">https://www.100chui.com/article/296193.html</a></p>
+<p>简历范文</p>
+<p><a target="_blank" rel="noopener" href="https://yiddishkop.github.io/YIDDI_reme/resume_2018_v1_CN.pdf">https://yiddishkop.github.io/YIDDI_reme/resume_2018_v1_CN.pdf</a></p>
+<p>NLP学习范文</p>
+<p><a target="_blank" rel="noopener" href="https://finance.sina.cn/2020-05-15/detail-iirczymk1708552.d.html?cre=wappage&mod=r&loc=3&r=9&rfunc=7&tj=none">https://finance.sina.cn/2020-05-15/detail-iirczymk1708552.d.html?cre=wappage&amp;mod=r&amp;loc=3&amp;r=9&amp;rfunc=7&amp;tj=none</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://github.com/liguodongiot/llm-action?tab=readme-ov-file">https://github.com/liguodongiot/llm-action?tab=readme-ov-file</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/datawhalechina/hugging-llm?tab=readme-ov-file">https://github.com/datawhalechina/hugging-llm?tab=readme-ov-file</a></p>
 <p><a target="_blank" rel="noopener" href="https://aitutor.liduos.com/ref/a16z.html">https://aitutor.liduos.com/ref/a16z.html</a></p>
 
@@ -313,6 +413,11 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+              <a href="/tags/LLM/" rel="tag"># LLM</a>
+              <a href="/tags/NLP/" rel="tag"># NLP</a>
+          </div>
 
         
 
@@ -323,6 +428,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/01/18/cryptography/" rel="next" title="cryptography">
+                  cryptography <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -353,13 +461,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">117k</span>
+    <span title="Word count total">118k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">7:04</span>
+    <span title="Reading time total">7:09</span>
   </span>
 </div>
 <div class="busuanzi-count">
