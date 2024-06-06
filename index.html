@@ -148,18 +148,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -188,6 +188,477 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/06/06/DDVO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/06/06/DDVO/" class="post-title-link" itemprop="url">DDVO</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-06-06 15:53:39 / Modified: 16:16:39" itemprop="dateCreated datePublished" datetime="2024-06-06T15:53:39-07:00">2024-06-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Interview/" itemprop="url" rel="index"><span itemprop="name">Interview</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/06/06/DDVO/" class="post-meta-item leancloud_visitors" data-flag-title="DDVO" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="databrick-interview-review"><a class="markdownIt-Anchor" href="#databrick-interview-review"></a> DataBrick Interview Review</h1>
+<p>Examine the knowledge points elasticsearch and reverse Index</p>
+<h2 id="what-is-elasticsearch"><a class="markdownIt-Anchor" href="#what-is-elasticsearch"></a> What is elasticSearch?</h2>
+<p>elasticsearch is an open source search engine used for fast and salable full-text search.</p>
+<p>ES uses <em>reverse index</em> to support quick search ability.</p>
+<p>When an article is used for indexing, we first split the article into words.</p>
+<p>The words are then used to build a reverse index.</p>
+<blockquote>
+<p>index construction</p>
+<p>Record which documents each words appears in and where it appears</p>
+</blockquote>
+<h3 id="example"><a class="markdownIt-Anchor" href="#example"></a> Example</h3>
+<p>three documents</p>
+<blockquote>
+<p>1: “Apple is looking at buying U.K. startup for $1 billion”</p>
+<p>2: “Apple launches new iPhone in September”</p>
+<p>3: “Microsoft to buy U.K. startup for $1.5 billion”</p>
+</blockquote>
+<p>cconstruct reverse index</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">apple -&gt; [document1, document2]</span><br><span class="line"></span><br><span class="line">is -&gt; [Document 1]</span><br><span class="line"></span><br><span class="line">looking -&gt; [Document 1]</span><br><span class="line"></span><br><span class="line">at -&gt; [Document 1]</span><br><span class="line"></span><br><span class="line">buying -&gt; [Document 1]</span><br><span class="line"></span><br><span class="line">u.k. -&gt; [doc1, doc3]</span><br><span class="line"></span><br><span class="line">startup -&gt; [doc1, doc3]</span><br><span class="line"></span><br><span class="line">for -&gt; [doc1, doc3]</span><br><span class="line"></span><br><span class="line">$1 billion -&gt; [doc1]</span><br><span class="line"></span><br><span class="line">launches -&gt; [doc2]</span><br><span class="line"></span><br><span class="line">new -&gt; [doc 2]</span><br><span class="line"></span><br><span class="line">iphone -&gt; [doc 2]</span><br><span class="line"></span><br><span class="line">in -&gt; [Document 2]</span><br><span class="line"></span><br><span class="line">september -&gt; [Document 2]</span><br><span class="line"></span><br><span class="line">microsoft -&gt; [Document 3]</span><br><span class="line"></span><br><span class="line">to -&gt; [Document 3]</span><br><span class="line"></span><br><span class="line">buy -&gt; [Document 3]</span><br><span class="line"></span><br><span class="line">$1.5 billion -&gt; [doc 3]</span><br></pre></td></tr></table></figure>
+<p>when user using elasticsearch to search “Apple startup”</p>
+<ol>
+<li>find word by using reverse Index</li>
+</ol>
+<blockquote>
+<p>“apple” is associated with [doc 1, doc2]</p>
+<p>“startup” is associated with [doc1, doc3].</p>
+</blockquote>
+<ol start="2">
+<li>find the common document of two lists</li>
+</ol>
+<blockquote>
+<p>In this case,</p>
+<p>the doc 1 is the common doc.</p>
+<p>we gonna return doc1.</p>
+</blockquote>
+<h3 id="time-complexity-analysis"><a class="markdownIt-Anchor" href="#time-complexity-analysis"></a> Time Complexity Analysis</h3>
+<ol>
+<li>index construction</li>
+</ol>
+<p>Elasticsearch needs to segment and standardize the input documents, and then update the reverse index.</p>
+<p>if we assume there are n word per document on average.</p>
+<p><em>the time complexity will be O(n).</em></p>
+<p>earch word needs to be added in our reverse index.</p>
+<p>we can chose hashMap as the basic structure of reverse index.</p>
+<ol start="2">
+<li>Searching</li>
+</ol>
+<p>It depending on how many words we gonna use to search.</p>
+<p>assume we have <strong>M words</strong> in total in our searching input.</p>
+<p><em>for each word, we call reverse index(hashMap)—&gt; O(1)</em></p>
+<p>and we need to find the common parts of the lists(which is value based on the search keys in reverse index)</p>
+<p>we assume the average len of word in reverse index table**(hashMap values’ average len) is K**</p>
+<p><em>we need to merge m numbers of list —&gt; O(K * M)</em></p>
+<h3 id="real-question1-design-a-data-structure-for-book-appendix"><a class="markdownIt-Anchor" href="#real-question1-design-a-data-structure-for-book-appendix"></a> Real Question1: Design a Data Structure for Book Appendix</h3>
+<p>what is book appendix?</p>
+<p><a target="_blank" rel="noopener" href="https://books.forbes.com/blog/what-is-appendix-book/">https://books.forbes.com/blog/what-is-appendix-book/</a></p>
+<p><img src="https://p.ipic.vip/diz4y0.png" alt></p>
+<p>we should design a table the key is the id, and the value is course, state, date and score.</p>
+<p>we can choose using hashMap to find the book’s information directly when we are given the key.</p>
+<p>and next if we want to get information by other fields, such as State, Date, Score.</p>
+<p>we need to build a reverse index to implement that.</p>
+<p>using State as example,  it can be divided into 50 state.</p>
+<p>we use CA state as example.</p>
+<p>We build a hashMap, the key is the type of state.</p>
+<blockquote>
+<p>Eg: <strong>Key: CA</strong></p>
+<p>**Value: the books name **</p>
+<blockquote>
+<p>Key: CA</p>
+<p>Value: The Links at Spanish Bay, Pebble Beach, Spyglass Hill, Laquinta -Mountain etc.</p>
+</blockquote>
+<p>we narrow down our search space firstly.</p>
+<p>and we also build another hashMap(reverse index)</p>
+<blockquote>
+<p>**Key: CA + Course Name **</p>
+<p><strong>Value:  book Id</strong></p>
+</blockquote>
+<p>first we find the name, which belongs to CA</p>
+<p>and then we use CA + Name as the key to find this book</p>
+<p>once we got the id, we goona got all the information of this book.</p>
+</blockquote>
+<p>and we can use this logic to service for other field(Date, Score, Book Type)</p>
+<p>Hello Depeak, I’m Joey who interviewed you yesterday. The concept of the Appendix of the first book I interviewed yesterday is not very clear, so the design process is not clear what we need to design. After I woke up this morning, I sorted out my thoughts and designed a suitable method to quickly search for information about books. I just want to confirm with you whether my thinking in the design process is correct. If you would like to reply to me, I would be very grateful. It doesn’t matter to me if you don’t want to reply. I just don’t want to regret the display of my code ability because of the unclear definition of something. Anyway, thank you very much for your interview and the harvest！</p>
+<h2 id="real-question2-find-the-peers-in-org-structure"><a class="markdownIt-Anchor" href="#real-question2-find-the-peers-in-org-structure"></a> Real Question2:  find the peers in org structure</h2>
+<p>what is org structure?</p>
+<p><a target="_blank" rel="noopener" href="https://www.lucidchart.com/blog/types-of-organizational-structures">https://www.lucidchart.com/blog/types-of-organizational-structures</a></p>
+<p><img src="https://p.ipic.vip/pz67bf.png" alt></p>
+<p>what means peers?</p>
+<p>the guy who is the same level as you.</p>
+<p>what kind of information we have?</p>
+<blockquote>
+<p>employee name: xxx</p>
+<p>manager name: aaa</p>
+<p>manager id: 12</p>
+</blockquote>
+<p>My understanding.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">First under the same department:</span><br><span class="line">My peers are my manager&#x27;s employees.</span><br><span class="line">Find my manager, and then find the employees under my manager who are employees in the same department.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find the peers in other deparment:</span><br><span class="line">If the top of the manager is the chief boss</span><br><span class="line"></span><br><span class="line">Find the manager of the mamager, then find the employees of his employees that are all the peers of my other departments.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">If you consider that there are multiple layers of architectural relationships</span><br><span class="line"></span><br><span class="line">we may need to keep looking up until we find the top root node</span><br><span class="line"></span><br><span class="line">And then count how many steps up we&#x27;ve taken. Let&#x27;s say we&#x27;ve taken n steps.</span><br><span class="line"></span><br><span class="line">Then we use the BFS algorithm based on the root node, and the elements of the nth layer are the peers.</span><br></pre></td></tr></table></figure>
+<h2 id="other-gains"><a class="markdownIt-Anchor" href="#other-gains"></a> Other gains</h2>
+<h3 id="why-databrick"><a class="markdownIt-Anchor" href="#why-databrick"></a> why databrick？</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">datawarehouse</span><br><span class="line">datalake</span><br><span class="line"></span><br><span class="line">databrick combine this two together generate a lakewarehouse</span><br><span class="line">which provide the both function of these two</span><br></pre></td></tr></table></figure>
+<h3 id="市场上有很多第三方工具可以提供数据收集和处理为什么不用他们"><a class="markdownIt-Anchor" href="#市场上有很多第三方工具可以提供数据收集和处理为什么不用他们"></a> 市场上有很多第三方工具可以提供数据收集和处理，为什么不用他们?</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">因为我们是小公司，使用第三方比较贵</span><br></pre></td></tr></table></figure>
+<h3 id="介绍你第一个工作经历中对于业务上用户的数据是如何收集的"><a class="markdownIt-Anchor" href="#介绍你第一个工作经历中对于业务上用户的数据是如何收集的"></a> 介绍你第一个工作经历中，对于业务上，用户的数据是如何收集的？</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">回答的不好，拉了一坨大的</span><br><span class="line">应该 整体解释,我解释的有点乱</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">我们收集用户数据，然后根据我们收集的数据 对用户提供财富分析的可视化报告。</span><br><span class="line">collect data </span><br><span class="line">provide them data visualization report.</span><br><span class="line"></span><br><span class="line">两种主要的方式获取数据</span><br><span class="line">1.直接向用户获取</span><br><span class="line">1. Get it directly from the user</span><br><span class="line">2.通过基于用户在我们网站的活动，收集用户行为数据。</span><br><span class="line">2. Collect user behavior data based on the user&#x27;s activities on our website.</span><br><span class="line"></span><br><span class="line">1.1 直接向用户获取的数据，可以帮助我们cold start</span><br><span class="line">就是说，可以很快的在大范围方向上，将用户归属到其所示的用户群体。</span><br><span class="line">quickly groups users and based on the groups to know user profie generate direction.</span><br><span class="line"></span><br><span class="line">2.1 我们有个news平台</span><br><span class="line">news platform.</span><br><span class="line">用户可以在该平台搜集自己想要的news</span><br><span class="line">Users searchs the news</span><br><span class="line">基于 用户的点击率 和 用户在不同网页停留的时间</span><br><span class="line">user click-frequency and stay-time on pages</span><br><span class="line">还有 用户自己的交易，如果用户愿意开放权限</span><br><span class="line">User&#x27;s own transactions, If the user is willing to open up access</span><br><span class="line"></span><br><span class="line">用户在前端访问网站进行互动---&gt; 产生request，发送请求到后端 sevice</span><br><span class="line">后端service每处理一个request，都会生成一个logs 存在 logs files</span><br><span class="line"></span><br><span class="line">Flume 有一个专门的 Flume agent 定期收集 logs files文件</span><br><span class="line">Flume function: data integration(因为Flume还会收集来自其它网站的数据) and data piplines</span><br><span class="line"></span><br><span class="line">Flume将收集的数据存储到kafka上</span><br><span class="line"></span><br><span class="line">kafka将任务给spark stream进行Data cleansing, data computation, data modeling</span><br><span class="line">生成我们需要的数据结果 存储到数据库中</span><br><span class="line"></span><br><span class="line">我们后端服务器从数据库中 拿数据生成可视化report 并返还给前端</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>应该是挂定了</p>
+</blockquote>
+<p>后面是我整理的techinal Interview的面试题</p>
+<p>大概按照时间的远近，出现的频率 和 岗位的相关程度排了个等级</p>
+<p>一等：</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-942306-1-1.html">https://www.1point3acres.com/bbs/thread-942306-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1069274-1-1.html">https://www.1point3acres.com/bbs/thread-1069274-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-800479-1-1.html">https://www.1point3acres.com/bbs/thread-800479-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1067183-1-1.html">https://www.1point3acres.com/bbs/thread-1067183-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-887099-1-1.html">https://www.1point3acres.com/bbs/thread-887099-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1032987-1-1.html">https://www.1point3acres.com/bbs/thread-1032987-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1032987-1-1.html">https://www.1point3acres.com/bbs/thread-1032987-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1028271-1-1.html">https://www.1point3acres.com/bbs/thread-1028271-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/discuss/nterview-question/4007625/Data&amp;#8205;&amp;#8204;&amp;#8204;&amp;#8205;&amp;#8205;&amp;#8204;&amp;#8205;&amp;#8204;&amp;#8204;&amp;#8204;&amp;#8205;&amp;#8204;&amp;#8205;&amp;#8205;&amp;#8205;&amp;#8204;&amp;#8205;&amp;#8204;&amp;#8205;&amp;#8205;bricks-OA-or-Software-Engineer-L4">https://leetcode.com/discuss/nterview-question/4007625/Data&amp;#8205;&amp;#8204;&amp;#8204;&amp;#8205;&amp;#8205;&amp;#8204;&amp;#8205;&amp;#8204;&amp;#8204;&amp;#8204;&amp;#8205;&amp;#8204;&amp;#8205;&amp;#8205;&amp;#8205;&amp;#8204;&amp;#8205;&amp;#8204;&amp;#8205;&amp;#8205;bricks-OA-or-Software-Engineer-L4</a></p>
+<p>二等：</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-933556-1-1.html">https://www.1point3acres.com/bbs/thread-933556-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-936511-1-1.html">https://www.1point3acres.com/bbs/thread-936511-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-948352-1-1.html">https://www.1point3acres.com/bbs/thread-948352-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-956383-1-1.html">https://www.1point3acres.com/bbs/thread-956383-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1001685-1-1.html">https://www.1point3acres.com/bbs/thread-1001685-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1021201-1-1.html">https://www.1point3acres.com/bbs/thread-1021201-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1020796-1-1.html">https://www.1point3acres.com/bbs/thread-1020796-1-1.html</a></p>
+<p>三等：</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1055197-1-1.html">https://www.1point3acres.com/bbs/thread-1055197-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1028322-1-1.html">https://www.1point3acres.com/bbs/thread-1028322-1-1.html</a><br>
+四等：</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1063612-1-1.html">https://www.1point3acres.com/bbs/thread-1063612-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1032322-1-1.html">https://www.1point3acres.com/bbs/thread-1032322-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1017756-1-1.html">https://www.1point3acres.com/bbs/thread-1017756-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1020051-1-1.html">https://www.1point3acres.com/bbs/thread-1020051-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-818999-1-1.html">https://www.1point3acres.com/bbs/thread-818999-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1025319-1-1.html">https://www.1point3acres.com/bbs/thread-1025319-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1026031-1-1.html">https://www.1point3acres.com/bbs/thread-1026031-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1025247-1-1.html">https://www.1point3acres.com/bbs/thread-1025247-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1061965-1-1.html">https://www.1point3acres.com/bbs/thread-1061965-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1026916-1-1.html">https://www.1point3acres.com/bbs/thread-1026916-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1024685-1-1.html">https://www.1point3acres.com/bbs/thread-1024685-1-1.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/05/20/TopofWave/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/20/TopofWave/" class="post-title-link" itemprop="url">TopofWave</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-05-20 23:35:08" itemprop="dateCreated datePublished" datetime="2024-05-20T23:35:08-07:00">2024-05-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-05-28 22:59:30" itemprop="dateModified" datetime="2024-05-28T22:59:30-07:00">2024-05-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Reading-notes/" itemprop="url" rel="index"><span itemprop="name">Reading notes</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/05/20/TopofWave/" class="post-meta-item leancloud_visitors" data-flag-title="TopofWave" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>7.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>26 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="浪潮之巅"><a class="markdownIt-Anchor" href="#浪潮之巅"></a> 浪潮之巅</h1>
+<p>很久之前读过这本书，非常经典，读的时候能让人感到热血澎湃。</p>
+<p>今天再次重读一下，希望可以重回当年的感觉。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/20/TopofWave/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/05/20/flow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/20/flow/" class="post-title-link" itemprop="url">Flow</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-05-20 00:03:01 / Modified: 20:34:20" itemprop="dateCreated datePublished" datetime="2024-05-20T00:03:01-07:00">2024-05-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Reading-notes/" itemprop="url" rel="index"><span itemprop="name">Reading notes</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/05/20/flow/" class="post-meta-item leancloud_visitors" data-flag-title="Flow" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="flow"><a class="markdownIt-Anchor" href="#flow"></a> Flow</h1>
+<p>米哈德认为能为幸福研究做出重大贡献的是三个学科：生物学、心理学、社会学，而非当下的一些显学。作为心理学家，生物学与社会学是他的第二只、第三只眼睛。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/20/flow/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -233,7 +704,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-05-19 14:02:35" itemprop="dateModified" datetime="2024-05-19T14:02:35-07:00">2024-05-19</time>
+      <time title="Modified: 2024-05-31 00:48:55" itemprop="dateModified" datetime="2024-05-31T00:48:55-07:00">2024-05-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -278,7 +749,10 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="献给阿尔吉侬的花束"><a class="markdownIt-Anchor" href="#献给阿尔吉侬的花束"></a> 献给阿尔吉侬的花束</h1>
-<p>为什么要读这本书呢，因为看过关于这本书的描述的视频，对其中故事的描述很是喜爱，自己想从头到尾体验一番！</p>
+<p>为什么要读这本书呢，因为看过别人关于这本书，对其中故事的描述很是喜爱，自己想从头到尾体验一番！</p>
+<p>这本书真的非常值得推荐。</p>
+<p>查理的一生非常精彩，从笨蛋 到 非常聪明 到 变笨</p>
+<p>查理对周围人的看法也会随之发生改变，不仅仅是 智慧上的变化 还有 看待周围人的角度的变化。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/05/11/flowertoar/#more" rel="contents">
@@ -511,6 +985,140 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/04/25/basic%20Model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/04/25/basic%20Model/" class="post-title-link" itemprop="url">attention</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-04-25 21:49:20" itemprop="dateCreated datePublished" datetime="2024-04-25T21:49:20-07:00">2024-04-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-05-27 22:17:51" itemprop="dateModified" datetime="2024-05-27T22:17:51-07:00">2024-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Reading-notes/" itemprop="url" rel="index"><span itemprop="name">Reading notes</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/04/25/basic%20Model/" class="post-meta-item leancloud_visitors" data-flag-title="attention" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>136</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="basic-model"><a class="markdownIt-Anchor" href="#basic-model"></a> basic Model</h1>
+<p>-B military</p>
+<blockquote>
+<p>生成的故事的背景 是 军事</p>
+</blockquote>
+<p>–cond_text</p>
+<blockquote>
+<p>故事的开头词语，后面的内容 会在此基础上展开</p>
+</blockquote>
+<p>–length</p>
+<blockquote>
+<p>设置故事的长度</p>
+</blockquote>
+<p>–gamma 1.5</p>
+<blockquote>
+<p>这个故事中 关于 军事元素 更突出</p>
+</blockquote>
+<p>–num_interations</p>
+<blockquote>
+<p>回顾每个句子3次，确保他们贴合 主题</p>
+<p>设置越大，迭代次数越多。消耗资源多。</p>
+</blockquote>
+<p>__num_samples</p>
+<blockquote>
+<p>想要得到10个不同的故事</p>
+</blockquote>
+<p>一个 没有使用监督 生成的 文本内容</p>
+<p>和 10个 收到干扰 生成的不同风格的文本</p>
+
       
     </div>
 
@@ -867,540 +1475,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/04/09/Life%20Cycle%20Adaptation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
-      <meta itemprop="name" content="Joe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Notes">
-      <meta itemprop="description" content="Festina lente">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/04/09/Life%20Cycle%20Adaptation/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-04-09 20:31:48" itemprop="dateCreated datePublished" datetime="2024-04-09T20:31:48-07:00">2024-04-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-04-10 10:30:08" itemprop="dateModified" datetime="2024-04-10T10:30:08-07:00">2024-04-10</time>
-    </span>
-
-  
-    <span id="/2024/04/09/Life%20Cycle%20Adaptation/" class="post-meta-item leancloud_visitors" data-flag-title="" title="Views">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">Views: </span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>551</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="life-cycle-adaptation"><a class="markdownIt-Anchor" href="#life-cycle-adaptation"></a> Life Cycle Adaptation</h1>
-<p>The way each organization operates is determined</p>
-<p>by its type of business,</p>
-<p>its social responsibilities,</p>
-<p>and its business strategy.</p>
-<p>In order to establish these rules and processes and</p>
-<p>decide how many resources are needed,</p>
-<p>organizations can refer to some international standards.</p>
-<blockquote>
-<p>有两个项目，一个是建设一座桥梁，另一个是开发一个手机应用。</p>
-<p>两个项目都旨在创造价值，但它们之间的差异巨大。</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>桥梁建设项目需要Follow specific safety standards and building codes,</p>
-<p>Involve到大量的Physical engineering knowledge，比如Civil engineering and materials science等</p>
-</blockquote>
-<blockquote>
-<p>开发一个手机应用，则It involves completely different areas of knowledge.，如软件工程、用户体验设计等。</p>
-<p>这个项目需要Adapting to rapidly changing technology和Market demand，</p>
-<p>可能Need to constantly adjust product features during development</p>
-</blockquote>
-<p>组织需要制定不同的策略和流程。对于桥梁建设，可能需要侧重于Engineering quality control、safety standard和Resource Planning.</p>
-<p>而对于手机应用，策略可能会集中在Agile Development、Quick iteration of user feedback和Technological innovation上。</p>
-<p>The adaption:</p>
-<p>即便是Follow international standards or best practices，</p>
-<p>也需要According to the specific situation of the project，Adjust these standards according to the  practices.</p>
-</blockquote>
-<ol>
-<li><strong>Process selection</strong>：就是Pick out specific processes适用于你的项目或组织。不是所有流程对所有项目都是必需的，所以你可以根据需要选择最合适的流程。</li>
-<li><strong>Process Substitution</strong>：如果你的项目或组织需要，你可以用System-level processes来代替Software-level process。这就像是在制作蛋糕时，Original recipe要求使用Butter，但你可以选择使用Vegetable oil来满足Specific needs。</li>
-<li><strong>Results</strong>：这里的意思是，你要通过展示Results of the process来证明你Comply with the standard process。就好比你说你按照食谱做了蛋糕，而你展示的Finished cake就是Evidence that you follow the recipe。</li>
-<li><strong>Use of Notes</strong>：标准中可能会有一些Comments or guidance，这些不是Mandatory，但可以在Specific situation下提供帮助。就像一些cooking tips，不一定非要跟着做，但有时候它们可能会帮你做得更好。</li>
-<li><strong>Process customization</strong>：这是指根据你的项目或组织的specific requirement，增删或修改某些流程、活动或任务。回到蛋糕的例子，这就像是，Reduce the amount of sugar或者Add more chocolate chips。 According to ourr taste preference.</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/04/07/Poster/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
-      <meta itemprop="name" content="Joe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Notes">
-      <meta itemprop="description" content="Festina lente">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/04/07/Poster/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-04-07 01:20:49 / Modified: 23:25:37" itemprop="dateCreated datePublished" datetime="2024-04-07T01:20:49-07:00">2024-04-07</time>
-    </span>
-
-  
-    <span id="/2024/04/07/Poster/" class="post-meta-item leancloud_visitors" data-flag-title="" title="Views">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">Views: </span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>844</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="poster-frameblending-in-llm"><a class="markdownIt-Anchor" href="#poster-frameblending-in-llm"></a> Poster: FrameBlending in LLM</h1>
-<h2 id="background"><a class="markdownIt-Anchor" href="#background"></a> BackGround</h2>
-<h2 id="problem"><a class="markdownIt-Anchor" href="#problem"></a> Problem</h2>
-<p>For the current Large Language Model, it can be used to solve the most general problems. But when it comes to the integration of two specific different themes, sometimes the new content generated is a pile of vocabulary.</p>
-<p>The Large Language Model is like a huge library that contains books and knowledge on various topics. How to find the needed topics in this library and integrate these contents together, rather than simply piling up information, and ensure their consistency in style and narrative.</p>
-<p>The existing problems are as follows:</p>
-<ol>
-<li>
-<p>The generated content is not smooth and natural enough.</p>
-</li>
-<li>
-<p>The generated text, although smooth and natural, is not true to the source of the content (intrinsic problem) and/or is uncertain (extrinsic problem). This is usually caused by insufficient information given by the context.</p>
-</li>
-</ol>
-<h2 id="approches"><a class="markdownIt-Anchor" href="#approches"></a> Approches</h2>
-<ol>
-<li>Increase the granularity through fine tunning, and select a more suitable connection word as the fusion point for fusion.</li>
-</ol>
-<p>​    1.1 Find the connected keywords of these two different frames</p>
-<p>​    1.2 Find connected words based on keywords in different frames</p>
-<p>​    1.3 Generate different content based on two frames based on connected words</p>
-<p>​    1.4 Integrate different contents generated based on connected words</p>
-<p><img src="/.us//image-20240407150622906.png" alt="image-20240407150622906"></p>
-<p>Data Sources: AG’s corpus of news articles</p>
-<p>Link: <a target="_blank" rel="noopener" href="http://groups.di.unipi.it/~gulli/AG_corpus_of_news_articles.html">http://groups.di.unipi.it/~gulli/AG_corpus_of_news_articles.html</a></p>
-<p>目前建议数据库主要有10主题</p>
-<p>分别是</p>
-<p>computers, fantasy, kitchen, legal, military, politics, positive_words, religion, science, space.</p>
-<p>我们可以输入两个 关于 上面10个frame topic 里面的两个 进入融合，然后对比</p>
-<ol start="2">
-<li>利用现有的大语言生成模型，通过插入额外的模型 or 代码 来调整生成的内容。</li>
-</ol>
-<p>引入额外的基础模型来强化基础语言模型，改善生成文本的质量。</p>
-<p>这个引入的基础模型的功能：</p>
-<ol>
-<li>
-<p>改善 主题 一致性</p>
-<blockquote>
-<p>找到 两个不同frame之间关联词，在关联词的基础上进行生成。</p>
-</blockquote>
-</li>
-<li>
-<p>提升 文本的连贯性</p>
-<blockquote>
-<p>明确输入的大纲，使用连接词 和 过渡词 为LLM提供足够的上下文。</p>
-</blockquote>
-</li>
-<li>
-<p>对 LLM的生成内容进行方向性调整</p>
-<blockquote>
-<p>对于LLM来说，即便是输入内容的一点改进，也会导致输出内容变化，我们可以利用这一点，尝试让LLM生成特定方向的内容，并根据生成的内容改进 调试LLM的输入参数，从而让LLM的输出内容更接近我们想要的结果。</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="/.us//image-20240407151424369.png" alt="image-20240407151424369"></p>
-<h2 id="outcomes"><a class="markdownIt-Anchor" href="#outcomes"></a> OutComes</h2>
-<p>show cases</p>
-<p><img src="/.us//image-20240407033248934.png" alt="image-20240407033248934"></p>
-<blockquote>
-<p>Figure 1: An example of the Frame Blending System automatically suggesting Frame blends for the inputs of Jurassic Park and Sport Shoes. The system first expands both inputs into associations, then finds connections between the associations.</p>
-</blockquote>
-<h2 id="conclusions"><a class="markdownIt-Anchor" href="#conclusions"></a> Conclusions</h2>
-<p>我的目前 通过在大语言模型 前面增加 新的 框架，这个框架 允许 人类更进一步 控制所要 生成的故事主题。这个框架会和大语言生成模型一起工作，通过 控制生成志向特定的方向，同时保证生成句子的流畅性。</p>
-<p>设计一套系统，这套系统 可以 让人们控制 主题的改变范围，或者选择不同的侧重点来 生成新的故事。系统的重点在于 支持 不同颗粒度级别的 不同主题。 目前的系统仅 支持 四个主题，虽然可以证明该系统的可行性，但是，如何将其优化为适用于多个主题，并且广泛的应用还需要进一步的研究。</p>
-<p>系统例子</p>
-<p>未来提升空间</p>
-<ol>
-<li>
-<p>增加反馈机制，根据用户 or 自动系统 对 生成的文本进行评分，然后 基于这些分数 进一步调整 LLM的输入策略。</p>
-</li>
-<li>
-<p>优化数据库，使用更高质量，更丰富的数据库来作为 调整LLM的指标。</p>
-</li>
-</ol>
-<h2 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h2>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/04/05/basic%20Model/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
-      <meta itemprop="name" content="Joe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Notes">
-      <meta itemprop="description" content="Festina lente">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/04/05/basic%20Model/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-04-05 01:17:40 / Modified: 13:25:36" itemprop="dateCreated datePublished" datetime="2024-04-05T01:17:40-07:00">2024-04-05</time>
-    </span>
-
-  
-    <span id="/2024/04/05/basic%20Model/" class="post-meta-item leancloud_visitors" data-flag-title="" title="Views">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">Views: </span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>136</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="basic-model"><a class="markdownIt-Anchor" href="#basic-model"></a> basic Model</h1>
-<p>-B military</p>
-<blockquote>
-<p>生成的故事的背景 是 军事</p>
-</blockquote>
-<p>–cond_text</p>
-<blockquote>
-<p>故事的开头词语，后面的内容 会在此基础上展开</p>
-</blockquote>
-<p>–length</p>
-<blockquote>
-<p>设置故事的长度</p>
-</blockquote>
-<p>–gamma 1.5</p>
-<blockquote>
-<p>这个故事中 关于 军事元素 更突出</p>
-</blockquote>
-<p>–num_interations</p>
-<blockquote>
-<p>回顾每个句子3次，确保他们贴合 主题</p>
-<p>设置越大，迭代次数越多。消耗资源多。</p>
-</blockquote>
-<p>__num_samples</p>
-<blockquote>
-<p>想要得到10个不同的故事</p>
-</blockquote>
-<p>一个 没有使用监督 生成的 文本内容</p>
-<p>和 10个 收到干扰 生成的不同风格的文本</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/04/02/codeTransformer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
-      <meta itemprop="name" content="Joe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Notes">
-      <meta itemprop="description" content="Festina lente">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/04/02/codeTransformer/" class="post-title-link" itemprop="url">codeTransformer</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-04-02 12:10:03" itemprop="dateCreated datePublished" datetime="2024-04-02T12:10:03-07:00">2024-04-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-04-04 01:45:25" itemprop="dateModified" datetime="2024-04-04T01:45:25-07:00">2024-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LLM/" itemprop="url" rel="index"><span itemprop="name">LLM</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2024/04/02/codeTransformer/" class="post-meta-item leancloud_visitors" data-flag-title="codeTransformer" title="Views">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">Views: </span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>245</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="using-pytorch-to-build-transformer"><a class="markdownIt-Anchor" href="#using-pytorch-to-build-transformer"></a> Using Pytorch to Build Transformer</h1>
-<h2 id="encoder"><a class="markdownIt-Anchor" href="#encoder"></a> Encoder</h2>
-<p><img src="https://f005.backblazeb2.com/file/joejoejoe9527123/2024-04-02-202352.png" alt></p>
-<blockquote>
-<p>首先是一个norm函数</p>
-<p>norm里面做残差，会输入(x 和 淡粉色z1，残差值)，输出一个值粉红色z1</p>
-</blockquote>
-<h2 id="basic-knowledge-about-how-to-use-pytorch"><a class="markdownIt-Anchor" href="#basic-knowledge-about-how-to-use-pytorch"></a> Basic Knowledge about How to use Pytorch</h2>
-<p>Example:</p>
-<p>using pytorch to build a simple linear regression</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">1</span>, <span class="number">12</span>, dtype = np.float32).reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">y = <span class="number">2</span> * x + <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LinearRegressionModel</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, input_dim, output_dim</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.linear = nn.Linear(input_dim, output_dim)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, inp</span>):</span><br><span class="line">        out = self.linear(inp)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">regression_model = LinearRegressionModel(input_dim = <span class="number">1</span>, output_dim = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">device = torch.device(<span class="string">&quot;cuda:0&quot;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&quot;cpu&quot;</span>)</span><br><span class="line">regression_model.to(device)</span><br><span class="line"></span><br><span class="line">epochs = <span class="number">1000</span></span><br><span class="line">learning_rate = <span class="number">0.01</span></span><br><span class="line">optimizer = torch.optim.SGD(regression_model.parameters(), learning_rate)</span><br><span class="line">criterion = nn.MSELoss()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(epochs):</span><br><span class="line">    inputs = torch.from_numpy(x).to(device)</span><br><span class="line">    labels = torch.from_numpy(y).to(device)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># train</span></span><br><span class="line">    optimizer.zero_grad()</span><br><span class="line">    outputs = regression_model(inputs)</span><br><span class="line">    loss = criterion(outputs, labels)</span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> epoch % <span class="number">50</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;epoch:&quot;</span>, epoch, <span class="string">&quot;loss:&quot;</span>, loss.item())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(regression_model)</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">torch.from_numpy(x): put the data formation from numpy into tensor</span></span><br><span class="line"><span class="string">data.numpy(): get the results</span></span><br><span class="line"><span class="string">require_grad: use gradient descent to update the weights</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># predict = regression_model(torch.from_numpy(x).requires_grad_()).data.numpy()  # 通过训练好的模型预测结果</span></span><br><span class="line">predict = regression_model(torch.from_numpy(x).requires_grad_(<span class="literal">False</span>)).detach().numpy()  <span class="comment"># 通过训练好的模型预测结果</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># another way</span></span><br><span class="line"><span class="comment"># tensor_x = torch.from_numpy(x).float().to(device)</span></span><br><span class="line"><span class="comment"># tensor_x.requires_grad_(True)</span></span><br><span class="line"><span class="comment"># predict = regression_model(tensor_x).detach().numpy()</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line"><span class="built_in">print</span>(predict)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1424,13 +1498,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">142k</span>
+    <span title="Word count total">152k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">8:35</span>
+    <span title="Reading time total">9:12</span>
   </span>
 </div>
 <div class="busuanzi-count">

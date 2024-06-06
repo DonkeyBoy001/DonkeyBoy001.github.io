@@ -148,18 +148,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -188,6 +188,286 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/04/07/Poster/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/04/07/Poster/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-04-07 01:20:49 / Modified: 23:25:37" itemprop="dateCreated datePublished" datetime="2024-04-07T01:20:49-07:00">2024-04-07</time>
+    </span>
+
+  
+    <span id="/2024/04/07/Poster/" class="post-meta-item leancloud_visitors" data-flag-title="" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>844</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="poster-frameblending-in-llm"><a class="markdownIt-Anchor" href="#poster-frameblending-in-llm"></a> Poster: FrameBlending in LLM</h1>
+<h2 id="background"><a class="markdownIt-Anchor" href="#background"></a> BackGround</h2>
+<h2 id="problem"><a class="markdownIt-Anchor" href="#problem"></a> Problem</h2>
+<p>For the current Large Language Model, it can be used to solve the most general problems. But when it comes to the integration of two specific different themes, sometimes the new content generated is a pile of vocabulary.</p>
+<p>The Large Language Model is like a huge library that contains books and knowledge on various topics. How to find the needed topics in this library and integrate these contents together, rather than simply piling up information, and ensure their consistency in style and narrative.</p>
+<p>The existing problems are as follows:</p>
+<ol>
+<li>
+<p>The generated content is not smooth and natural enough.</p>
+</li>
+<li>
+<p>The generated text, although smooth and natural, is not true to the source of the content (intrinsic problem) and/or is uncertain (extrinsic problem). This is usually caused by insufficient information given by the context.</p>
+</li>
+</ol>
+<h2 id="approches"><a class="markdownIt-Anchor" href="#approches"></a> Approches</h2>
+<ol>
+<li>Increase the granularity through fine tunning, and select a more suitable connection word as the fusion point for fusion.</li>
+</ol>
+<p>​    1.1 Find the connected keywords of these two different frames</p>
+<p>​    1.2 Find connected words based on keywords in different frames</p>
+<p>​    1.3 Generate different content based on two frames based on connected words</p>
+<p>​    1.4 Integrate different contents generated based on connected words</p>
+<p><img src="/.us//image-20240407150622906.png" alt="image-20240407150622906"></p>
+<p>Data Sources: AG’s corpus of news articles</p>
+<p>Link: <a target="_blank" rel="noopener" href="http://groups.di.unipi.it/~gulli/AG_corpus_of_news_articles.html">http://groups.di.unipi.it/~gulli/AG_corpus_of_news_articles.html</a></p>
+<p>目前建议数据库主要有10主题</p>
+<p>分别是</p>
+<p>computers, fantasy, kitchen, legal, military, politics, positive_words, religion, science, space.</p>
+<p>我们可以输入两个 关于 上面10个frame topic 里面的两个 进入融合，然后对比</p>
+<ol start="2">
+<li>利用现有的大语言生成模型，通过插入额外的模型 or 代码 来调整生成的内容。</li>
+</ol>
+<p>引入额外的基础模型来强化基础语言模型，改善生成文本的质量。</p>
+<p>这个引入的基础模型的功能：</p>
+<ol>
+<li>
+<p>改善 主题 一致性</p>
+<blockquote>
+<p>找到 两个不同frame之间关联词，在关联词的基础上进行生成。</p>
+</blockquote>
+</li>
+<li>
+<p>提升 文本的连贯性</p>
+<blockquote>
+<p>明确输入的大纲，使用连接词 和 过渡词 为LLM提供足够的上下文。</p>
+</blockquote>
+</li>
+<li>
+<p>对 LLM的生成内容进行方向性调整</p>
+<blockquote>
+<p>对于LLM来说，即便是输入内容的一点改进，也会导致输出内容变化，我们可以利用这一点，尝试让LLM生成特定方向的内容，并根据生成的内容改进 调试LLM的输入参数，从而让LLM的输出内容更接近我们想要的结果。</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="/.us//image-20240407151424369.png" alt="image-20240407151424369"></p>
+<h2 id="outcomes"><a class="markdownIt-Anchor" href="#outcomes"></a> OutComes</h2>
+<p>show cases</p>
+<p><img src="/.us//image-20240407033248934.png" alt="image-20240407033248934"></p>
+<blockquote>
+<p>Figure 1: An example of the Frame Blending System automatically suggesting Frame blends for the inputs of Jurassic Park and Sport Shoes. The system first expands both inputs into associations, then finds connections between the associations.</p>
+</blockquote>
+<h2 id="conclusions"><a class="markdownIt-Anchor" href="#conclusions"></a> Conclusions</h2>
+<p>我的目前 通过在大语言模型 前面增加 新的 框架，这个框架 允许 人类更进一步 控制所要 生成的故事主题。这个框架会和大语言生成模型一起工作，通过 控制生成志向特定的方向，同时保证生成句子的流畅性。</p>
+<p>设计一套系统，这套系统 可以 让人们控制 主题的改变范围，或者选择不同的侧重点来 生成新的故事。系统的重点在于 支持 不同颗粒度级别的 不同主题。 目前的系统仅 支持 四个主题，虽然可以证明该系统的可行性，但是，如何将其优化为适用于多个主题，并且广泛的应用还需要进一步的研究。</p>
+<p>系统例子</p>
+<p>未来提升空间</p>
+<ol>
+<li>
+<p>增加反馈机制，根据用户 or 自动系统 对 生成的文本进行评分，然后 基于这些分数 进一步调整 LLM的输入策略。</p>
+</li>
+<li>
+<p>优化数据库，使用更高质量，更丰富的数据库来作为 调整LLM的指标。</p>
+</li>
+</ol>
+<h2 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h2>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/04/02/codeTransformer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/04/02/codeTransformer/" class="post-title-link" itemprop="url">codeTransformer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-04-02 12:10:03" itemprop="dateCreated datePublished" datetime="2024-04-02T12:10:03-07:00">2024-04-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-05-27 22:18:09" itemprop="dateModified" datetime="2024-05-27T22:18:09-07:00">2024-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LLM/" itemprop="url" rel="index"><span itemprop="name">LLM</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/04/02/codeTransformer/" class="post-meta-item leancloud_visitors" data-flag-title="codeTransformer" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>246</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="using-pytorch-to-build-transformer"><a class="markdownIt-Anchor" href="#using-pytorch-to-build-transformer"></a> Using Pytorch to Build Transformer</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/04/02/codeTransformer/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1105,234 +1385,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2023/11/27/%E7%BB%88%E8%BA%AB%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
-      <meta itemprop="name" content="Joe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Notes">
-      <meta itemprop="description" content="Festina lente">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/11/27/%E7%BB%88%E8%BA%AB%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">终身学习</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-27 20:43:29" itemprop="dateCreated datePublished" datetime="2023-11-27T20:43:29-08:00">2023-11-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-04-24 21:55:07" itemprop="dateModified" datetime="2024-04-24T21:55:07-07:00">2024-04-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Reading-notes/" itemprop="url" rel="index"><span itemprop="name">Reading notes</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2023/11/27/%E7%BB%88%E8%BA%AB%E5%AD%A6%E4%B9%A0/" class="post-meta-item leancloud_visitors" data-flag-title="终身学习" title="Views">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">Views: </span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>48k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2:55</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="终身学习"><a class="markdownIt-Anchor" href="#终身学习"></a> 终身学习</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/11/27/%E7%BB%88%E8%BA%AB%E5%AD%A6%E4%B9%A0/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2023/11/23/ReactLearning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
-      <meta itemprop="name" content="Joe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Notes">
-      <meta itemprop="description" content="Festina lente">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/11/23/ReactLearning/" class="post-title-link" itemprop="url">React Learning Notes</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-23 20:49:45" itemprop="dateCreated datePublished" datetime="2023-11-23T20:49:45-08:00">2023-11-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-02 18:26:39" itemprop="dateModified" datetime="2023-12-02T18:26:39-08:00">2023-12-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Technical-stack/" itemprop="url" rel="index"><span itemprop="name">Technical stack</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2023/11/23/ReactLearning/" class="post-meta-item leancloud_visitors" data-flag-title="React Learning Notes" title="Views">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">Views: </span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>807</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><p>Hello everyone, This is what I use to document the difficulties I encountered during the React development and the corresponding solutions.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/11/23/ReactLearning/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1356,13 +1408,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">142k</span>
+    <span title="Word count total">152k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">8:35</span>
+    <span title="Reading time total">9:12</span>
   </span>
 </div>
 <div class="busuanzi-count">
