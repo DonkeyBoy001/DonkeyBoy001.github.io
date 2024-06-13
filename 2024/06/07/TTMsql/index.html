@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-corner-indicator.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Tiktok Interview Prepare">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TTMsql">
+<meta property="og:url" content="https://www.zhoujoe.us/2024/06/07/TTMsql/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="Tiktok Interview Prepare">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-07T07:09:24.000Z">
+<meta property="article:modified_time" content="2024-06-12T22:08:53.619Z">
+<meta property="article:author" content="Joe">
+<meta property="article:tag" content="Interview">
+<meta property="article:tag" content="Tiktok">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zhoujoe.us/2024/06/07/TTMsql/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.zhoujoe.us/2024/06/07/TTMsql/","path":"2024/06/07/TTMsql/","title":"TTMsql"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>TTMsql | Notes</title>
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Notes</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tiktok-interview-prepare"><span class="nav-number">1.</span> <span class="nav-text"> Tiktok Interview Prepare</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#oltp-%E5%92%8C-olap"><span class="nav-number">1.1.</span> <span class="nav-text"> OLTP 和 OLAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rdbms"><span class="nav-number">1.2.</span> <span class="nav-text"> RDBMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#middleware"><span class="nav-number">1.3.</span> <span class="nav-text"> Middleware</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#types-middleware"><span class="nav-number">1.3.1.</span> <span class="nav-text"> Types Middleware</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sharding"><span class="nav-number">1.4.</span> <span class="nav-text"> Sharding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-database-sharding"><span class="nav-number">1.4.1.</span> <span class="nav-text"> What is database sharding?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-does-database-shrding-works"><span class="nav-number">1.4.2.</span> <span class="nav-text"> How does database shrding works?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-make-sure-the-data-is-evenly-distributed-in-database"><span class="nav-number">1.4.2.1.</span> <span class="nav-text"> How to make sure the data is evenly distributed in database?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#working-experience-in-database-sharding"><span class="nav-number">1.4.2.2.</span> <span class="nav-text"> Working Experience in Database Sharding</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transaction-mechanism"><span class="nav-number">1.5.</span> <span class="nav-text"> Transaction mechanism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mvcc"><span class="nav-number">1.6.</span> <span class="nav-text"> MVCC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#query-optimization"><span class="nav-number">1.7.</span> <span class="nav-text"> Query optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#master-slave-replication"><span class="nav-number">1.8.</span> <span class="nav-text"> Master-slave replication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#backup-and-recovery"><span class="nav-number">1.9.</span> <span class="nav-text"> Backup and recovery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#storage-engine"><span class="nav-number">1.10.</span> <span class="nav-text"> Storage engine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hahigh-availability"><span class="nav-number">1.11.</span> <span class="nav-text"> HA(High Availability)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#raft-project"><span class="nav-number">1.12.</span> <span class="nav-text"> Raft Project</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#what-is-etcd"><span class="nav-number">1.12.0.0.1.</span> <span class="nav-text"> what is etcd?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pre-knowledge"><span class="nav-number">1.12.0.1.</span> <span class="nav-text"> Pre-Knowledge</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#real-question"><span class="nav-number">1.13.</span> <span class="nav-text"> Real Question</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#raft-and-pixo-protocols-consensus-agreement"><span class="nav-number">1.13.1.</span> <span class="nav-text"> Raft and Pixo protocols —&gt; Consensus Agreement</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#raft-russia-%E9%9B%86%E6%9D%83"><span class="nav-number">1.13.1.1.</span> <span class="nav-text"> Raft  ----&gt; Russia 集权</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#paxos-america-%E5%88%86%E6%9D%83"><span class="nav-number">1.13.1.2.</span> <span class="nav-text"> Paxos —&gt; America 分权</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#using-two-example-to-exlpain-raft-protocol-and-paxos-protocol"><span class="nav-number">1.13.1.2.1.</span> <span class="nav-text"> Using Two Example to Exlpain Raft Protocol and Paxos Protocol</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-the-difference-beteween-key-and-index"><span class="nav-number">1.13.2.</span> <span class="nav-text"> What is the difference beteween key and index?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#why-we-need-primary-key-in-mysql-database"><span class="nav-number">1.13.2.1.</span> <span class="nav-text"> why we need primary key in mysql DataBase?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#datastructure-of-database"><span class="nav-number">1.14.</span> <span class="nav-text"> DataStructure of DataBase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lsm-tree"><span class="nav-number">1.14.1.</span> <span class="nav-text"> LSM tree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#black-red-tree"><span class="nav-number">1.14.1.0.1.</span> <span class="nav-text"> Black Red Tree</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-tree"><span class="nav-number">1.14.2.</span> <span class="nav-text"> B+ tree</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#llm-combined-with-database"><span class="nav-number">1.15.</span> <span class="nav-text"> LLM combined with DataBase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#user-interface"><span class="nav-number">1.15.0.1.</span> <span class="nav-text"> User Interface</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-consistency-monitor-and-control"><span class="nav-number">1.15.0.2.</span> <span class="nav-text"> Data Consistency Monitor and Control</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Joe"
+      src="https://avatars.githubusercontent.com/u/91183483?v=4">
+  <p class="site-author-name" itemprop="name">Joe</p>
+  <div class="site-description" itemprop="description">Festina lente</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/DonkeyBoy001" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;DonkeyBoy001" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100081303083864" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100081303083864" rel="noopener me" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/06/07/TTMsql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="TTMsql | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TTMsql
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-06-07 00:09:24" itemprop="dateCreated datePublished" datetime="2024-06-07T00:09:24-07:00">2024-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-06-12 15:08:53" itemprop="dateModified" datetime="2024-06-12T15:08:53-07:00">2024-06-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Interview/" itemprop="url" rel="index"><span itemprop="name">Interview</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/06/07/TTMsql/" class="post-meta-item leancloud_visitors" data-flag-title="TTMsql" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>4.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>17 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="tiktok-interview-prepare"><a class="markdownIt-Anchor" href="#tiktok-interview-prepare"></a> Tiktok Interview Prepare</h1>
+<span id="more"></span>
+<h2 id="oltp-和-olap"><a class="markdownIt-Anchor" href="#oltp-和-olap"></a> OLTP 和 OLAP</h2>
+<p>OLTP</p>
+<p>Online Transaction Processing</p>
+<blockquote>
+<p>Data processing system for managing daily business operations</p>
+<p>Support a large number of concurrency of transactional applications (in the case of simultaneous multi-user operation)</p>
+</blockquote>
+<p>OLAP</p>
+<p>Online Analytical Processing</p>
+<blockquote>
+<p>数据仓库中支持复杂的分析操作，使得用户可以通过各种视图（如汇总、分类、聚合）快速、有效地访问数据进行分析和决策。</p>
+<p>Complex analytical operations</p>
+<p>Various views (such as summary, classification, aggregation)</p>
+<p>to access data and make decisions.</p>
+</blockquote>
+<p>Eg:</p>
+<p>Suppose we have a large online retail store that needs to process thousands of customer orders every day. This system needs to not only be able to quickly process these orders, but also manage inventory, process payments and update customer account information.</p>
+<h2 id="rdbms"><a class="markdownIt-Anchor" href="#rdbms"></a> RDBMS</h2>
+<p>Relational Database Management System</p>
+<p>Table</p>
+<p>Primary Key</p>
+<p>Foreign Key</p>
+<p>Relations</p>
+<p>SQL</p>
+<blockquote>
+<p>Select</p>
+<p>update</p>
+<p>insert</p>
+<p>delete</p>
+<p>create table</p>
+<p>Alter table</p>
+</blockquote>
+<p>transaction management</p>
+<blockquote>
+<p>ACID</p>
+<p>atomicity</p>
+<p>consistency</p>
+<p>isolation</p>
+<p>durability</p>
+</blockquote>
+<p>Concurrency control</p>
+<blockquote>
+<p><strong>When multiple users access the database at the same time,</strong> the relational database manages concurrent operations through <strong>locking mechanisms</strong> and <strong>transaction isolation levels</strong> to prevent data conflicts and inconsistencies.</p>
+</blockquote>
+<p>optimzer</p>
+<blockquote>
+<p>The goal of the optimizer is to minimize query response time and resource usage.</p>
+</blockquote>
+<p>Data integrity</p>
+<blockquote>
+<p>entity integrity: primary key</p>
+<p>reference integrity: foreign key</p>
+<p>user defination integrity: check constrains</p>
+</blockquote>
+<h2 id="middleware"><a class="markdownIt-Anchor" href="#middleware"></a> Middleware</h2>
+<p>the software layer beteween clients and servers</p>
+<p>focus on simplify and manage data transmission, business logic, message services, etc.</p>
+<h3 id="types-middleware"><a class="markdownIt-Anchor" href="#types-middleware"></a> Types Middleware</h3>
+<p>Communication middleware</p>
+<blockquote>
+<p>消息队列（如RabbitMQ、Apache Kafka)</p>
+<p>provide Asynchronous communication mechanism</p>
+</blockquote>
+<p>Database middleware</p>
+<blockquote>
+<p>Provision of database connectivity services</p>
+<p>Connection Pool</p>
+<p>Optimize database access and manage multi-user database access</p>
+</blockquote>
+<p>Transaction middleware</p>
+<blockquote>
+<p>Manage transactions across multiple databases, messaging services and other resources.</p>
+<p>Make sure the ACID attribution of transaction</p>
+</blockquote>
+<p>Object Request Broker (ORB)</p>
+<blockquote>
+<p>in OOD, ORB support remote interaction among Object.</p>
+<p>it allows the Object request in different internet</p>
+</blockquote>
+<p>eg:</p>
+<blockquote>
+<p>在分布式计算环境中，当一个客户端应用程序想要调用远程服务器上的对象方法时，ORB充当中介。客户端不需要知道服务具体在哪台服务器上，也不需要知道如何在网络上找到它和如何与之通信。客户端只需要知道它需要调用的方法和必要的参数。</p>
+</blockquote>
+<p>Application Server</p>
+<blockquote>
+<p>Provide an execution environment for enterprise-level applications</p>
+</blockquote>
+<p>Web Middleware</p>
+<blockquote>
+<p>handle http request, manage web content display and interaction</p>
+<p>eg: web service, CMS system</p>
+</blockquote>
+<h2 id="sharding"><a class="markdownIt-Anchor" href="#sharding"></a> Sharding</h2>
+<h3 id="what-is-database-sharding"><a class="markdownIt-Anchor" href="#what-is-database-sharding"></a> What is database sharding?</h3>
+<p>the data are divided into mutiple parts or pieces.</p>
+<p>There are two kind of sharding:</p>
+<p>horizontal sharding</p>
+<blockquote>
+<p>Divide the rows in the table into multiple fragments,</p>
+<p>and each fragment stores different rows of the table</p>
+<p>but maintains the same table structure.</p>
+</blockquote>
+<p>Eg:</p>
+<blockquote>
+<p>we have a table including all the user in the world</p>
+<p>We can do horizontal sharding based on user’s location</p>
+<p>the user in China will be stored in the China database.</p>
+<p>the user in USA will be stored in USA database/</p>
+</blockquote>
+<p>vertical sharding</p>
+<blockquote>
+<p>split the table by columns</p>
+<p>with different segements storing different columns of the table.</p>
+</blockquote>
+<p>Eg:</p>
+<blockquote>
+<p>we have a user information table</p>
+<p>we store the basic information of user and description information into two parts.</p>
+<p>bastic information: name, address</p>
+<p>description informationL performance, historical records</p>
+</blockquote>
+<h3 id="how-does-database-shrding-works"><a class="markdownIt-Anchor" href="#how-does-database-shrding-works"></a> How does database shrding works?</h3>
+<ol>
+<li>Chose sharding key</li>
+<li>Data allocation</li>
+<li>Query Routing</li>
+<li>Independent operation</li>
+</ol>
+<p>Eg:</p>
+<blockquote>
+<p>we are working in a large retail company.</p>
+<p>the sales table record all the sales info of stores.</p>
+<p>in order to optimization the speed and report generate speed, we want to sharde our database.</p>
+<ol>
+<li>
+<p>Range partitioning</p>
+<blockquote>
+<p>Based on sale date to partition</p>
+<p>The sales record for 2020 is stored in the sales_2020 partition</p>
+<p>Sales records for 2021 are stored in the sales_2021 section</p>
+</blockquote>
+</li>
+<li>
+<p>List partitioning</p>
+<blockquote>
+<p>Based on sale region to partition</p>
+<p>The sales records of the eastern region are stored in the sales_east section.</p>
+<p>The sales records of the western region are stored in the sales_west section.</p>
+</blockquote>
+</li>
+<li>
+<p>Hash partitioning</p>
+<blockquote>
+<p>using hash function to evenly distribute the data to mutiple partition.</p>
+<p>Hash the sales table according to the <strong>hash value of customer_id</strong></p>
+<p>When inserting a record, the system applies a hash function to customer_id.</p>
+<p>According to the hash results, the record is assigned to a specific partition.</p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<h4 id="how-to-make-sure-the-data-is-evenly-distributed-in-database"><a class="markdownIt-Anchor" href="#how-to-make-sure-the-data-is-evenly-distributed-in-database"></a> How to make sure the data is evenly distributed in database?</h4>
+<p>we can use hash cycle to solve it.</p>
+<p>Consistent hash sharding method —&gt; hash cycle</p>
+<p>Eg:</p>
+<blockquote>
+<p>In an e-commercial platform</p>
+<p>we want to do sharding by order_id</p>
+<p>The order number is increasing sequentially.</p>
+<p>Steps:</p>
+<blockquote>
+<ol>
+<li>Create a hash cycle</li>
+</ol>
+<blockquote>
+<p>assume the range is beteween 0 and 2^32 - 1.</p>
+</blockquote>
+<ol start="2">
+<li>Node mapping</li>
+</ol>
+<blockquote>
+<p>map each sharding node to the hash ring.</p>
+<p>the sharding node is calculated its hash value by the hash function.</p>
+</blockquote>
+<ol start="3">
+<li>Data allocation</li>
+</ol>
+<blockquote>
+<p>for each user_id, if we use hash function to calcuate a hash value.</p>
+<p>The data for user_id will be stored on the first node found clockwise on the hash ring.</p>
+<p>It means that each node is responsible for all hash values between its position on the ring</p>
+<p>and the  postion of the next node.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>example</p>
+<blockquote>
+<p>we have thre sharding node: node1, node2, node3.</p>
+<p>node1 in 150</p>
+<p>node2 in 500</p>
+<p>Node3 in 1000</p>
+<p>when a new user coming,</p>
+<p>we assume the user_id is 12345</p>
+<p>we get the hash value is 650</p>
+<p>it will store in the clockwise closest node on the hash ring —&gt; node3</p>
+</blockquote>
+<p>Sharding</p>
+<blockquote>
+<p>Sharding is the process of dividing data horizontally into subsets,</p>
+<p>each stored on a different database server or slice.</p>
+</blockquote>
+<p>Replication</p>
+<blockquote>
+<p>copying data from a database server to one or more servers</p>
+</blockquote>
+<p>Cluster</p>
+<blockquote>
+<p>A collection of database servers</p>
+<p>work together and appear as a single database system externally.</p>
+</blockquote>
+<h4 id="working-experience-in-database-sharding"><a class="markdownIt-Anchor" href="#working-experience-in-database-sharding"></a> Working Experience in Database Sharding</h4>
+<p>Situation:</p>
+<p>previous work</p>
+<p>participant in a database optimization project of large e-commerical platform.</p>
+<p>Task:</p>
+<p>the data searching speed becomes slow when facing dramatic increase.</p>
+<p>Especially,</p>
+<p>During peak sales, the database performance will become the bottleneck.</p>
+<p>We want to increase our database handling ability and query response time.</p>
+<p>My role:</p>
+<p>Design and implement the database shiding strategy</p>
+<p>ensure the smooth execution of the whole process</p>
+<p>Sharding strategy:  horizontial sharding based on users’ geographical location.</p>
+<p>we use mysql database, it has its own sharding function.</p>
+<p>we also need to do data migration.</p>
+<ol>
+<li>
+<p>set up mutiple copies for each slice</p>
+</li>
+<li>
+<p>use master-slave replication to ensure data consistency and avaliability.</p>
+</li>
+<li>
+<p>implement a monitoring system to monitor the performance and health status of each slice.</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Situation</span><br><span class="line">我在一家e-commerce platforms工作，</span><br><span class="line">the growing of he user transaction volume</span><br><span class="line">database performance becoming the bottlenecks</span><br><span class="line"></span><br><span class="line">特别是在During peak sales，</span><br><span class="line">Query latency growth 和Insufficient processing capacity</span><br><span class="line">成为了主要挑战。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Task</span><br><span class="line">1. database sharding</span><br><span class="line">设计和实施一个有效的database sharding strategy，</span><br><span class="line">Processing capacity和Query response time</span><br><span class="line"></span><br><span class="line">2. data migration</span><br><span class="line">ensure the saft migration</span><br><span class="line">and set up fault recovery.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Action</span><br><span class="line">1. sharding strategy desgin:</span><br><span class="line">do horizontal segmentation based on location</span><br><span class="line"></span><br><span class="line">Based on User&#x27;s Geographic Location to do Horizontal Segmentation.</span><br><span class="line">Accroding to users&#x27; sign in location ---&gt; distribute the data into diff database center.</span><br><span class="line"></span><br><span class="line">for the detail part:</span><br><span class="line">use Mysql partition function to do sharding</span><br><span class="line">&gt; we have a table, user_id, name, country_code and other fields.</span><br><span class="line">&gt; based on country_code, we use sql to allocate the data into different areas.</span><br><span class="line"></span><br><span class="line">2. data migration and redundancy</span><br><span class="line">shard the data into diff pieces</span><br><span class="line">configure copys of each pieces in different locations</span><br><span class="line"></span><br><span class="line">and implement master-slave replication</span><br><span class="line"></span><br><span class="line">3. deploy monitor system and automatic failover mechanism.</span><br><span class="line">supervise the health of each node</span><br><span class="line">Timely recovery in case of node problems</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Result</span><br><span class="line">response time decrease 50% than before</span><br><span class="line">especiallu in peek hour, the response time reduce from 200 miliseonds to less than 100 milliseconds.</span><br><span class="line"></span><br><span class="line">The feedback from our cutomers</span><br><span class="line">customer satisfaction improve from 7 to 8 out of 10</span><br><span class="line">based on the most recent customer satisfaction survey.</span><br><span class="line"></span><br><span class="line">The whole view structure of Distributed System</span><br><span class="line">How to target problem</span><br><span class="line">do relevant research</span><br><span class="line">Choose the right solution based on current resources and customer requirements</span><br></pre></td></tr></table></figure>
+<h2 id="transaction-mechanism"><a class="markdownIt-Anchor" href="#transaction-mechanism"></a> Transaction mechanism</h2>
+<h2 id="mvcc"><a class="markdownIt-Anchor" href="#mvcc"></a> MVCC</h2>
+<h2 id="query-optimization"><a class="markdownIt-Anchor" href="#query-optimization"></a> Query optimization</h2>
+<h2 id="master-slave-replication"><a class="markdownIt-Anchor" href="#master-slave-replication"></a> Master-slave replication</h2>
+<h2 id="backup-and-recovery"><a class="markdownIt-Anchor" href="#backup-and-recovery"></a> Backup and recovery</h2>
+<h2 id="storage-engine"><a class="markdownIt-Anchor" href="#storage-engine"></a> Storage engine</h2>
+<h2 id="hahigh-availability"><a class="markdownIt-Anchor" href="#hahigh-availability"></a> HA(High Availability)</h2>
+<h2 id="raft-project"><a class="markdownIt-Anchor" href="#raft-project"></a> Raft Project</h2>
+<p>隶属于 MIT 6824 Distributed System</p>
+<p>what is Distribution System? —&gt; How to distribute data into diff meachines/services.</p>
+<p>当数据量 和 计算量 都非常大的时候， 我们需要将计算机 Scale.</p>
+<blockquote>
+<p>vertical and horizontial</p>
+</blockquote>
+<p>vertical： improve the performance of single PC</p>
+<blockquote>
+<p>CPU cache</p>
+<p>Instruction prediction</p>
+<p>the speed of chip execution instructions</p>
+<p>improve RAM capacity</p>
+<p>improve hard disk read and write speed</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>what is RAM capacity?</strong></p>
+<p>Random Access Memory</p>
+<p>store data for CPU in operation system.</p>
+<blockquote>
+<p>DRAM:  maintained by periodically refreshing the charge(电荷).</p>
+<p>SRAM:  quicker than DRAM, not need refreshing the charge.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>How to improve the hard disk read and write speed?</p>
+<ol>
+<li>
+<p>upgrade to SSD(固态硬盘) solid state disk  （compare to HDD）</p>
+</li>
+<li>
+<p>using RAID configuration</p>
+<blockquote>
+<p>RAID0 和 RAID1</p>
+<blockquote>
+<p>RAID0， 图书馆存储一本书，书的每一页都放在不同的书架上。当需要借阅的时候，图书管理员会同时从多个书架上获取所有page。 可以加速查找和组装书。因为可以有多个图书管理员。</p>
+</blockquote>
+<blockquote>
+<p>RAID1, 图书馆的每本书都放在 不同的位置。 但是都有一个copy放在不同位置。当书本丢失可以复制。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>Optimize disk defragmentation</p>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<p>horizontal: Spreading the computation over many computers ----&gt; Dstribution System</p>
+<p><strong>tips</strong></p>
+<p>vertical optimization</p>
+<blockquote>
+<p>The CMU textbook CSAPP provides a number of examples.</p>
+</blockquote>
+<p>horizontial optimization</p>
+<blockquote>
+<p>use NGINX to do loadbalance</p>
+<p>based on Map Reduce to do distribute calculation</p>
+<p>Redis Cluster</p>
+<p>ZooKeeper</p>
+<p>Etcd: KV store</p>
+</blockquote>
+<h5 id="what-is-etcd"><a class="markdownIt-Anchor" href="#what-is-etcd"></a> what is etcd?</h5>
+<p>Key-value distributed store.</p>
+<p>used in Raft, for the log replication.</p>
+<blockquote>
+<p>the information table in a large shopping mail.</p>
+<p>Whenever a new store opens or the old store closes, the map and list of the information desk will be updated.</p>
+</blockquote>
+<h4 id="pre-knowledge"><a class="markdownIt-Anchor" href="#pre-knowledge"></a> Pre-Knowledge</h4>
+<p>what is distribute System?</p>
+<p>what is redis cluster？</p>
+<blockquote>
+<p>using sharding and replication to distribute data into diff nodes. —&gt; improve performance and data redundancy.</p>
+</blockquote>
+<p>what is zookeeper?</p>
+<p>waht is etcd</p>
+<h2 id="real-question"><a class="markdownIt-Anchor" href="#real-question"></a> Real Question</h2>
+<h3 id="raft-and-pixo-protocols-consensus-agreement"><a class="markdownIt-Anchor" href="#raft-and-pixo-protocols-consensus-agreement"></a> Raft and Pixo protocols —&gt; Consensus Agreement</h3>
+<p>They are all algorithms used to solve problems in distributed systems.</p>
+<p>确保 多个分布式节点 能够 就 某个值 一致</p>
+<p>Consensus Agreement 共识协议</p>
+<h4 id="raft-russia-集权"><a class="markdownIt-Anchor" href="#raft-russia-集权"></a> Raft  ----&gt; Russia 集权</h4>
+<p>Mast and slave structure</p>
+<blockquote>
+<p>Leader selection</p>
+<p>Log copying: once the leader has been selected, all the modifcation will be send to master firstly. and leader will add these changes into their logs. and then send repelica to others.</p>
+<p>Consistency confirmation: when most of slaves finish logs copy from the master. the leader notifies all servers to submit the entities.</p>
+</blockquote>
+<h4 id="paxos-america-分权"><a class="markdownIt-Anchor" href="#paxos-america-分权"></a> Paxos —&gt; America 分权</h4>
+<blockquote>
+<p>perfect in theory but complicated to implement.</p>
+</blockquote>
+<p>there gonna be four basic components:</p>
+<blockquote>
+<p>propose</p>
+<blockquote>
+<p>Each node can propose an porposal</p>
+</blockquote>
+<p>promise</p>
+<blockquote>
+<p>After receiving proposal,  the node will check the serial number of proposal</p>
+<p>if the serial number is the largest number they have even seen</p>
+<p>they will send promise to the proposed node</p>
+</blockquote>
+<p>accept</p>
+<blockquote>
+<p>After receving the promise of most mode, the proposed node would send accept to other nodes.</p>
+</blockquote>
+<p>Learn</p>
+<blockquote>
+<p>Once the propose is accept by most modes,  others node will update its own state</p>
+<p>and when node updating its own state, we call it learn.</p>
+</blockquote>
+</blockquote>
+<h5 id="using-two-example-to-exlpain-raft-protocol-and-paxos-protocol"><a class="markdownIt-Anchor" href="#using-two-example-to-exlpain-raft-protocol-and-paxos-protocol"></a> Using Two Example to Exlpain Raft Protocol and Paxos Protocol</h5>
+<p>Eg:</p>
+<p><strong>Raft Protocol</strong></p>
+<p>Online Voting System</p>
+<blockquote>
+<p>we have an online voting system</p>
+<p>users can vote on different issues</p>
+<p>this system consists mutiple servers to ensure reliability and availability.</p>
+<blockquote>
+<p>Leader Selection:</p>
+<p>when the system starts, on of the five servers trigger the leader election through a timeout(超时器).</p>
+<p>the server would become a candiate.</p>
+<p>sending requests votes to other servers.</p>
+</blockquote>
+<blockquote>
+<p>Handling Voting:</p>
+<p>Every vote submmited by users would be send to leader firstly.</p>
+<p>the leader will record the vote as a log and send the log to other servers.</p>
+</blockquote>
+<blockquote>
+<p>Log Replication and Submition:</p>
+<p>when most servers have confired it has record the logs, the leader will record this log submmited status and apply it in System.</p>
+<p>the leader will notifies other servers this commit and</p>
+<p>Other servers will update their status.</p>
+</blockquote>
+</blockquote>
+<p>there are also other detial conception in Raft.</p>
+<p>Heartbeat Mechanism:</p>
+<blockquote>
+<p>int Raft, the leader will send heartbeat signals to all followers.</p>
+<blockquote>
+<p>the heartbeat usually be empty additional log entries.</p>
+</blockquote>
+</blockquote>
+<p>Election Trigger:</p>
+<blockquote>
+<p>if the follower does not recevie the leader’s heartbeat for a certain time(election time out)</p>
+<p>they would turn their status into a candidate and start a new roud of election.</p>
+</blockquote>
+<p>Term Number:</p>
+<blockquote>
+<p>the candidate will increase their term number,</p>
+<p>which is used to prevent the old leader from regaining power.</p>
+</blockquote>
+<p>request Voting:</p>
+<blockquote>
+<p>the vote that candidate send to other services will include current term number and candidate’s information(latest date of updating logs and term number)</p>
+</blockquote>
+<p>Voting Strategy:</p>
+<blockquote>
+<p>each server can only vote once in a term.</p>
+<p>they will only vote for candidate whose log is at least as new as themself.</p>
+<p>New:</p>
+<blockquote>
+<p>the update and integrity of the log.</p>
+</blockquote>
+</blockquote>
+<p>Election Result:</p>
+<blockquote>
+<p>once canciadte recevie most vote from other service(including itself)</p>
+<p>it will become the new leader</p>
+<p>New leader will immedicately send heartbeat mechanism to others and prevent others from initiating elections.</p>
+</blockquote>
+<p><strong>Paxos Protocol</strong></p>
+<p>Eg:</p>
+<p>Distributed Bookkeeping System 分布式记账系统</p>
+<p>we have five node: A, B, C, D, E.</p>
+<p>the new record: “Transfer 100 from account1 to account2”</p>
+<p>Prepare Phase:</p>
+<blockquote>
+<p>Assume it is node A to start the new proposal</p>
+<p>it generate a proposal number n</p>
+<p>n is greater than the previous proposal number</p>
+</blockquote>
+<p>Promise Phase:</p>
+<blockquote>
+<p>after other nodes recevied n, they will compare it with the largest known proposal number.</p>
+<p>if n is the largest number,  node send commit message to proposal node A.</p>
+</blockquote>
+<p>Accept Phase:</p>
+<blockquote>
+<p>if proposal node A receive most promise from the nodes group, it will make the final decision based on the content of proposal.</p>
+<p>and A send acceptance request to other nodes and finalized the content.</p>
+</blockquote>
+<p>Learn Phase:</p>
+<blockquote>
+<p>accept the request and update in the account books.</p>
+</blockquote>
+<p><strong>The Different beteween Raft and Paxos</strong></p>
+<p><em>Raft</em></p>
+<p>simplified leader election</p>
+<p>one leader and many slaves</p>
+<p>heatbeat</p>
+<p>failure recovery: reelection</p>
+<p><em>Paxos</em></p>
+<p>Muti-stage consensus process</p>
+<p>decentralization</p>
+<p>example to undersand the different beteween Raft and Paxos</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Raft 协议的类比：选举班长方式</span><br><span class="line">假设一班学生需要组织一次班级野餐。在Raft的模式下，班级首先需要选举出一个班长：</span><br><span class="line"></span><br><span class="line">领导者选举：如果当前班长不可用（比如生病了），班级会快速举行一次新的班长选举。每个想成为班长的学生可以自荐。</span><br><span class="line">统一指挥：一旦选出新班长，这位班长将负责所有野餐的安排，包括日期、地点、食物等。</span><br><span class="line">执行决策：班长定期“报告”（心跳）给同学们关于准备进展的最新情况，确保大家知道正在发生什么，并保持班级的秩序。</span><br><span class="line">简单直接：整个过程中，班长的角色非常清晰，所有决策和沟通都通过班长来协调和更新。</span><br><span class="line">Paxos 协议的类比：全体学生协商方式</span><br><span class="line">在Paxos的模式下，组织野餐的方式更加民主和分散：</span><br><span class="line"></span><br><span class="line">多个提议：任何学生都可以提出野餐的提议，比如野餐的地点或日期。</span><br><span class="line">承诺阶段：当一个学生提出提议时，他们需要从大多数同学那里获取支持（承诺）。同学们承诺支持的提议通常是基于提议的详细程度和合理性。</span><br><span class="line">选择最终提议：一旦一个提议获得了足够的支持，该提议就会被接受。如果出现了更好的提议，同学们可能会改变主意，支持新的提议。</span><br><span class="line">逐步达成共识：这个过程可能需要多轮讨论和投票，直到所有人都同意一个最终的计划。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Raft 类似于有一个明确的领导者（班长），他或她负责做出决策并保持班级的信息同步。这使得决策过程更快，但依赖于领导者的能力和可用性。</span><br><span class="line"></span><br><span class="line">Paxos 更像是一个无领导的协商过程，每个人都可以提出建议，并通过一系列的讨论和修改逐步达成共识。这可能更复杂，但在没有明显领导者的情况下提供了灵活性和鲁棒性。</span><br></pre></td></tr></table></figure>
+<h3 id="what-is-the-difference-beteween-key-and-index"><a class="markdownIt-Anchor" href="#what-is-the-difference-beteween-key-and-index"></a> What is the difference beteween key and index?</h3>
+<p>key is only one unique identifier</p>
+<blockquote>
+<p>primary key</p>
+<p>foreign key</p>
+</blockquote>
+<p>index is used to find target quickly</p>
+<p><strong>example to understand the key and index?</strong></p>
+<p>we have a student table, including student id, student name, class and birthdate.</p>
+<p>the key can be student id, make sure each student is identiftied unique.</p>
+<p>the index can be based on class or birthdate.</p>
+<p>if we often use class field, we can chose class to build index.</p>
+<p>when we need to search all the students belongs to 10 class, it gonna be quicker.</p>
+<p><strong>How does index to achieve quick search and query?</strong></p>
+<p>using B tree and Hash Index</p>
+<p>B tree is a self balance tree</p>
+<p>we normal use B+ tree as the index in database.</p>
+<p>举个例子解释一下</p>
+<blockquote>
+<p>Books tables</p>
+<blockquote>
+<p>Book_id</p>
+<p>Title</p>
+<p>Autohr</p>
+<p>Genre(type类型)</p>
+<p>Public_date(出版日期)</p>
+</blockquote>
+<p>without index, if we want to search a book name:</p>
+<p>we need a full table scan</p>
+</blockquote>
+<p>when using index</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">                [60]</span><br><span class="line">               /    \</span><br><span class="line">          [50]      [70, 80]</span><br><span class="line">         /    \     /      \</span><br><span class="line">[30, 40, 45] [55, 58] [65, 68] [75, 90]</span><br></pre></td></tr></table></figure>
+<p>we have a student table, the field including id, name, grade and score.</p>
+<blockquote>
+<p>Internal node: the root node of a tree is 60.</p>
+<p>it split the tree into two parts.</p>
+<p>the left subtree is small than 60.</p>
+<p>the right subree is equal or greater than or equal 60.</p>
+</blockquote>
+<blockquote>
+<p>when searching a student who’s score is 68.</p>
+<p>from root start, we compare 68 and 60 —&gt;  68 is greater than 60 —&gt; go right</p>
+<p>in the next layer, we compare 68 with 70 and 80 —&gt; 68 is greater than 70  and 68 is smaller than 80 —&gt; choose the middle one</p>
+<p>in the leaft node find 68.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>we have an online library system</p>
+<p>we want to use B+ tree to implement the index of our database.</p>
+<p>We have a reservations table</p>
+<blockquote>
+<p>revervation_id</p>
+<p>customer_name</p>
+<p>restaurant_name</p>
+<p>reservation_date</p>
+<p>Num_of_Guests</p>
+</blockquote>
+<p>using index</p>
+<blockquote>
+<p>for example, we want to search a restaurant which name is Olive Garden</p>
+<p>without index in the restaurant_name</p>
+<p>We need to iterate through the whole table</p>
+</blockquote>
+<blockquote>
+<p>setting restaurant_name as the index</p>
+<p>B+tree structure</p>
+<p>we do not need to iterate through the who table, we can jump into the record including ‘Olive Garden’ through index</p>
+<blockquote>
+<p>search all the record, whose date is 2023-07-15</p>
+<p>start from root node of B+Tree</p>
+<p>chosing suitable sub branch</p>
+<p>untill find the 2023-07-15 leaf node</p>
+<p>in the leaf node, it including all the record information related with the 2023-07-15</p>
+<p>the leaf node are composed by two parts:</p>
+<p>Key: the reservation date</p>
+<p>Value: the pointer, which pointed to a complete row of data</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>summary</p>
+<p>within th helper of B plus tree, the Mysql Database can quickly find the actually row data by using the pointer in the leaf node tree.</p>
+<h4 id="why-we-need-primary-key-in-mysql-database"><a class="markdownIt-Anchor" href="#why-we-need-primary-key-in-mysql-database"></a> why we need primary key in mysql DataBase?</h4>
+<ol>
+<li>
+<p>unique identifier</p>
+<blockquote>
+<p>it is the unique idetifier in talbe</p>
+<p>we can quickly find the record in our table.</p>
+</blockquote>
+</li>
+<li>
+<p>data integrity</p>
+<blockquote>
+<p>make sure there is not repeatable row in table</p>
+</blockquote>
+</li>
+<li>
+<p>build the connection among relational database</p>
+<blockquote>
+<p>in RD, primary key is used to establish a relationship  with foreign key in other tables.</p>
+<p>These relationships enable data to be effectively associated with different tables.</p>
+</blockquote>
+</li>
+<li>
+<p>Query performance optimization</p>
+<blockquote>
+<p>Most database management System would create index for primary key.</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="datastructure-of-database"><a class="markdownIt-Anchor" href="#datastructure-of-database"></a> DataStructure of DataBase</h2>
+<h3 id="lsm-tree"><a class="markdownIt-Anchor" href="#lsm-tree"></a> LSM tree</h3>
+<p>Log-Structured Merge-tree</p>
+<blockquote>
+<p>commonly used in Apache Cassandra, RocksDB, LevelDB.</p>
+</blockquote>
+<p>focus on handling large amount of writing</p>
+<p>Used in database and index system</p>
+<p>Core ideas of LSMT</p>
+<blockquote>
+<ol>
+<li>optimization of write</li>
+</ol>
+<blockquote>
+<p>Put all the insertion, update and delete operation records into a structure in memory(memTable)</p>
+</blockquote>
+<ol start="2">
+<li>compaction</li>
+</ol>
+<blockquote>
+<p>when memTable achieve to a certain size, it will be converted into a unchangeable disk.</p>
+<p>Call SSTable(Sorted Strings Table)</p>
+<p>SSTable will be merged and compressed. it called compaction.</p>
+</blockquote>
+<blockquote>
+<p>memTable data structure: jump table or red-black tree</p>
+<blockquote>
+<p><strong>What is jump table</strong></p>
+<p>also called branch table</p>
+<p>by using if else condition to hdanling the data</p>
+<p>create a arry, which strore mutiple function</p>
+<p>when the new request/transaction coming in</p>
+<p>according to the state in the array to call corresponding function to handle data.</p>
+<p>eg:</p>
+<p>it looks like a hashtable</p>
+<p>key is the status</p>
+<p>value is the function’s address</p>
+<p>Real example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">order_status_to_function = &#123;</span><br><span class="line">    <span class="string">&#x27;placed&#x27;</span>: handle_placed,</span><br><span class="line">    <span class="string">&#x27;shipped&#x27;</span>: handle_shipped,</span><br><span class="line">    <span class="string">&#x27;delivered&#x27;</span>: handle_delivered,</span><br><span class="line">    <span class="string">&#x27;canceled&#x27;</span>: handle_canceled</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">update_order_status</span>(<span class="params">order_id, status</span>):</span><br><span class="line">    <span class="comment"># 调用对应状态的处理函数</span></span><br><span class="line">    <span class="keyword">if</span> status <span class="keyword">in</span> order_status_to_function:</span><br><span class="line">        handler = order_status_to_function[status]</span><br><span class="line">        handler(order_id)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Unknown status&quot;</span>)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><strong>What is black-red tree</strong></p>
+<p>High speed response —&gt; 可以确保 insert data 到 MemTable中，每次时间复杂度都为 log(n)</p>
+<blockquote>
+<p>Black Red Tree</p>
+<p>self balance tree</p>
+<ol>
+<li>each node either red or black</li>
+<li>root node is black</li>
+<li>all leaf node is red</li>
+<li>the children of red must be black</li>
+<li>the total num of black node beteween a random node and each leaf node is equal.</li>
+</ol>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h5 id="black-red-tree"><a class="markdownIt-Anchor" href="#black-red-tree"></a> Black Red Tree</h5>
+<blockquote>
+<p><strong>节点颜色</strong>：每个节点要么是红色，要么是黑色。</p>
+<p><strong>根节点是黑色</strong>：红黑树的根节点总是黑色的。</p>
+<p><strong>所有叶子节点都是黑色</strong>：这里的叶子节点是指树尾端的空（NIL）节点，它们都是黑色的。</p>
+<p><strong>红色节点的子节点必须是黑色</strong>：如果一个节点是红色的，那么它的两个子节点都必须是黑色的。这条规则防止了路径上出现连续的红色节点。</p>
+<p><strong>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点</strong>：这个属性保证了没有任何一条路径会比其他路径长出两倍以上，因此树大致是平衡的。</p>
+</blockquote>
+<p>Eg：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">      40(B)</span><br><span class="line">     /     \</span><br><span class="line">  20(B)     60(B)</span><br><span class="line">  /   \     /   \</span><br><span class="line">10(R) 30(R) 50(R) 70(R)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><strong>The path from the root node to the leaf node</strong>:
+<ul>
+<li>
+<p>40 -&gt; 20 -&gt; 10 (black -&gt; black -&gt; red)</p>
+</li>
+<li>
+<p>40 -&gt; 20 -&gt; 30 (black -&gt; black -&gt; red)</p>
+</li>
+<li>
+<p>40 -&gt; 60 -&gt; 50 (black -&gt; black -&gt; red)</p>
+</li>
+<li>
+<p>40 -&gt; 60 -&gt; 70 (black -&gt; black -&gt; red)</p>
+</li>
+</ul>
+</li>
+<li><strong>The path from the node 20 to the leaf node</strong>:</li>
+<li><strong>20 -&gt; 10</strong>: on this path, only node 20 is black.</li>
+<li><strong>20 -&gt; 30</strong>: again, only node 20 is black.</li>
+</ul>
+</blockquote>
+<h3 id="b-tree"><a class="markdownIt-Anchor" href="#b-tree"></a> B+ tree</h3>
+<p>Self-balance tree</p>
+<p>focus on frequently used database.</p>
+<blockquote>
+<p>Logs stroage</p>
+<p>Time serious database</p>
+<p>NoSQL database</p>
+<blockquote>
+<p>Cassandra and RocksDB</p>
+</blockquote>
+</blockquote>
+<p><strong>Summary</strong></p>
+<p>frequently writen —&gt; use LSM Tree(Logs structure Merge Tree)</p>
+<p>frequently read —&gt; use B+ Tree</p>
+<h2 id="llm-combined-with-database"><a class="markdownIt-Anchor" href="#llm-combined-with-database"></a> LLM combined with DataBase</h2>
+<p>Mainly used for enhancing user interface data analysis, and system maintance</p>
+<h4 id="user-interface"><a class="markdownIt-Anchor" href="#user-interface"></a> User Interface</h4>
+<p>users can use natural language to do complex searching without using SQL</p>
+<p>Eg:</p>
+<blockquote>
+<p>Which region grew the fastest in sales in the last quarter?</p>
+<p>The model is responsible for analyzing this problem and converting it into an appropriate database query.</p>
+</blockquote>
+<h4 id="data-consistency-monitor-and-control"><a class="markdownIt-Anchor" href="#data-consistency-monitor-and-control"></a> Data Consistency Monitor and Control</h4>
+<p>eg:</p>
+<blockquote>
+<p>for a Ditributed Database System</p>
+<p>we have 3 different Node:</p>
+<p>Node1, Node2, Node3</p>
+<p>we want these tree node remian synchronized.</p>
+<p>we can design a LLM. it receive snapshots from three nodes regually.</p>
+<p>Analyse the snapshots and compare data diffreences among them.</p>
+</blockquote>
+<p>Step 1: Data collection</p>
+<p>Each node regularly generates data snapshots containing a summary of transaction records and sends these data snapshots to the central monitoring system.</p>
+<p>Step 2: Data analysis</p>
+<p>In the central monitoring system, a well-trained large language model has been deployed. This model is specially trained to understand and analyze database status reports and log files.</p>
+<ul>
+<li><strong>Model task</strong>: Compare data snapshots generated by different nodes and identify the problem of inconsistent data.</li>
+<li><strong>Analysis method</strong>: The model will check the key fields, such as customer ID, transaction amount and timestamp, and compare the record differences between different nodes.</li>
+</ul>
+<p>Step 3: Report Generation</p>
+<p>Once the model detects data inconsistency, it will automatically generate a detailed report.</p>
+<ul>
+<li>
+<p>Report content</p>
+</li>
+<li>
+<p>There are data inconsistencies between which nodes.</p>
+</li>
+<li>
+<p>Analysis of specific examples and possible causes of inconsistent data.</p>
+</li>
+<li>
+<p>Provide repair suggestions based on past experience of successfully solving similar problems.</p>
+</li>
+</ul>
+<p>Step 4: Response and Optimization</p>
+<ul>
+<li>
+<p><strong>Response measures</strong>: The database administrator takes measures according to the report of the model, such as manually triggering data synchronization or adjusting the configuration of automatic synchronization.</p>
+</li>
+<li>
+<p><strong>Continuous optimization</strong>: The model learns and adjusts according to the results of each event to improve the accuracy and usefulness of future reports.</p>
+</li>
+</ul>
+<p><strong>Sample report</strong></p>
+<p>Assume that the model finds inconsistencies between North American and Asian nodes in processing the transaction records of a high-frequency customer. The report may include:</p>
+<ul>
+<li>
+<p><strong>Problem description</strong>: The North American node shows that the customer’s transaction is $1,000, while the Asian node shows $1,200.</p>
+</li>
+<li>
+<p><strong>Analysis</strong>: Preliminary analysis shows that time difference and concurrent transactions may lead to update delays.</p>
+</li>
+<li>
+<p><strong>Recommendation</strong>: Immediately check the last synchronization time of the two nodes, confirm the network connection status, and manually trigger a forced synchronization.</p>
+</li>
+</ul>
+<p>In this way, the large language model helps to automate and simplify the process of monitoring and maintaining the consistency of distributed databases, reduces the need for manual intervention, and accelerates the diagnosis and response of problems. This not only improves the overall reliability of the database system, but also optimizes the work efficiency of the operation and maintenance team.</p>
+<p>C++技术栈</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Interview/" rel="tag"># Interview</a>
+              <a href="/tags/Tiktok/" rel="tag"># Tiktok</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/06/06/DDVO/" rel="prev" title="DDVO">
+                  <i class="fa fa-angle-left"></i> DDVO
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/06/10/InventionEvery/" rel="next" title="InventionEvery">
+                  InventionEvery <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Joe</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">159k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:37</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+  <a href="https://github.com/DonkeyBoy001" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/4.20.0/algoliasearch-lite.umd.js" integrity="sha256-DABVk+hYj0mdUzo+7ViJC6cwLahQIejFvC+my2M/wfM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/4.57.0/instantsearch.production.min.js" integrity="sha256-foJtB+Wd0wvvK+VU3KO0/H6CjwSwJfB1RnWlgx0Ov9U=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"rZsuavEmZYP4PEa5niaZG6rn-MdYXbMMI","app_key":"iv0iSNLUTfYodhD0RwdwW9bn","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script>
+((window.gitter = {}).chat = {}).options = {
+  room: 'your-room-name',
+  activationElement: false
+};
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+</html>
