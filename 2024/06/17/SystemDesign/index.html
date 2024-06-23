@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-corner-indicator.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="System Design 大家好，这是我从头系统整理如何学习SD的笔记，这是SD的开头。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SystemDesign">
+<meta property="og:url" content="https://www.zhoujoe.us/2024/06/17/SystemDesign/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="System Design 大家好，这是我从头系统整理如何学习SD的笔记，这是SD的开头。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://p.ipic.vip/spp3vl.png">
+<meta property="og:image" content="https://p.ipic.vip/c8vlcm.png">
+<meta property="og:image" content="https://p.ipic.vip/9ll00o.png">
+<meta property="og:image" content="https://www.zhoujoe.us/.us//image-20240619225131031.png">
+<meta property="og:image" content="https://p.ipic.vip/g6uo2o.png">
+<meta property="og:image" content="https://p.ipic.vip/dqk8ge.png">
+<meta property="og:image" content="https://p.ipic.vip/7pj54k.png">
+<meta property="og:image" content="https://p.ipic.vip/k7i2et.png">
+<meta property="article:published_time" content="2024-06-17T20:49:10.000Z">
+<meta property="article:modified_time" content="2024-06-23T06:23:14.043Z">
+<meta property="article:author" content="Joe">
+<meta property="article:tag" content="System Design">
+<meta property="article:tag" content="System Design Begain">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p.ipic.vip/spp3vl.png">
+
+
+<link rel="canonical" href="https://www.zhoujoe.us/2024/06/17/SystemDesign/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.zhoujoe.us/2024/06/17/SystemDesign/","path":"2024/06/17/SystemDesign/","title":"SystemDesign"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SystemDesign | Notes</title>
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Notes</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#system-design"><span class="nav-number">1.</span> <span class="nav-text"> System Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87"><span class="nav-number">1.1.</span> <span class="nav-text"> 如何准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#usful-tip"><span class="nav-number">1.2.</span> <span class="nav-text"> Usful Tip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sd-%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text"> SD 面试问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concept"><span class="nav-number">1.4.</span> <span class="nav-text"> Basic Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text"> 延迟和吞吐量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cap"><span class="nav-number">1.4.2.</span> <span class="nav-text"> CAP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#availability-model"><span class="nav-number">1.4.2.0.1.</span> <span class="nav-text"> Availability model</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8C%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%9A%84%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="nav-number">1.4.2.0.2.</span> <span class="nav-text"> 并行和顺序的可用性</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#classic-example"><span class="nav-number">2.</span> <span class="nav-text"> Classic Example</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tiny-url-design-pastebincom-or-bitly"><span class="nav-number">2.1.</span> <span class="nav-text"> Tiny URL —&gt; Design Pastebin.com (or Bit.ly)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-outline-use-cases-and-constraints"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 1. Outline use cases and constraints</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-function"><span class="nav-number">2.1.2.</span> <span class="nav-text"> main function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-create-a-high-level-design"><span class="nav-number">2.1.3.</span> <span class="nav-text"> 2. Create a high level design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-20240618155504491"><span class="nav-number">2.1.4.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-design-core-components"><span class="nav-number">2.1.5.</span> <span class="nav-text"> 3. Design core components</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-scale-the-design"><span class="nav-number">2.1.6.</span> <span class="nav-text"> 4. Scale the Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-additional-talking-points"><span class="nav-number">2.1.7.</span> <span class="nav-text"> 5. Additional talking points</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#design-slack"><span class="nav-number">2.2.</span> <span class="nav-text"> Design Slack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tips"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#script-api-%E5%92%8C-rest-api"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Script API 和 Rest API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-design-a-twitter"><span class="nav-number">2.2.3.</span> <span class="nav-text"> How to design a Twitter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%E8%80%83%E5%AF%9F%E7%82%B9"><span class="nav-number">2.2.4.</span> <span class="nav-text"> 面试官考察点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.2.5.</span> <span class="nav-text"> 系统设计主要步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#step-1-clarify-the-requirements"><span class="nav-number">2.2.5.1.</span> <span class="nav-text"> Step 1: Clarify the requirements</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-2-capacity-estimation"><span class="nav-number">2.2.5.2.</span> <span class="nav-text"> Step 2: Capacity Estimation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-3-system-apis"><span class="nav-number">2.2.5.3.</span> <span class="nav-text"> Step 3: System APIs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-4-high-level-system-design"><span class="nav-number">2.2.5.4.</span> <span class="nav-text"> Step 4: High-level System Design</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-5-data-storage"><span class="nav-number">2.2.5.5.</span> <span class="nav-text"> Step 5: Data Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-6-scalability"><span class="nav-number">2.2.5.6.</span> <span class="nav-text"> Step 6: Scalability</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.3.</span> <span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Joe"
+      src="https://avatars.githubusercontent.com/u/91183483?v=4">
+  <p class="site-author-name" itemprop="name">Joe</p>
+  <div class="site-description" itemprop="description">Festina lente</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/DonkeyBoy001" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;DonkeyBoy001" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100081303083864" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100081303083864" rel="noopener me" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/06/17/SystemDesign/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="SystemDesign | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SystemDesign
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-06-17 13:49:10" itemprop="dateCreated datePublished" datetime="2024-06-17T13:49:10-07:00">2024-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-06-22 23:23:14" itemprop="dateModified" datetime="2024-06-22T23:23:14-07:00">2024-06-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/System-Design/" itemprop="url" rel="index"><span itemprop="name">System Design</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/06/17/SystemDesign/" class="post-meta-item leancloud_visitors" data-flag-title="SystemDesign" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>18 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="system-design"><a class="markdownIt-Anchor" href="#system-design"></a> System Design</h1>
+<p>大家好，这是我从头系统整理如何学习SD的笔记，这是SD的开头。</p>
+<span id="more"></span>
+<h2 id="如何准备"><a class="markdownIt-Anchor" href="#如何准备"></a> 如何准备</h2>
+<ol>
+<li>
+<p>先看Alex Xu的书</p>
+</li>
+<li>
+<p>然后直接找5个经典的case进行阅读和设计</p>
+</li>
+</ol>
+<h2 id="usful-tip"><a class="markdownIt-Anchor" href="#usful-tip"></a> Usful Tip</h2>
+<p>常用的几个SD答案：</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1068786-1-1.html">https://www.1point3acres.com/bbs/thread-1068786-1-1.html</a></p>
+<p>Scott Shi:</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-683982-1-1.html">https://www.1point3acres.com/bbs/thread-683982-1-1.html</a></p>
+<p>DDIA:</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-981203-1-1.html">https://www.1point3acres.com/bbs/thread-981203-1-1.html</a></p>
+<h2 id="sd-面试问题"><a class="markdownIt-Anchor" href="#sd-面试问题"></a> SD 面试问题</h2>
+<p>SD是开放式对话， 你应该领导它。</p>
+<ol>
+<li>
+<p>收集需求，明确问题范围。</p>
+<p>1.1 who is the users ?</p>
+<p>1.2 how do they use ?</p>
+<p>1.3 how many users ?</p>
+<p>1.4 the effect of system?</p>
+</li>
+<li>
+<p>创建高级设计</p>
+<blockquote>
+<p>宏观有哪些大的模块</p>
+<p>模块之间是如何交互</p>
+</blockquote>
+</li>
+<li>
+<p>核心组件设计</p>
+<blockquote>
+<p>深入某个核心组件的细节</p>
+<p>比如 要求设计一个短的url</p>
+<blockquote>
+<p>生成和存储完整 url 的哈希</p>
+<p>• MD5和DBase62</p>
+<p>• 哈希冲突</p>
+<p>• SQL 和 NoSQL</p>
+<p>• 数据库架构</p>
+<p>将散列网址转换为完整网址</p>
+<p>•  数据库查找</p>
+<p>API和面向对象设计</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>识别bottomnecks</p>
+<blockquote>
+<p>loadbalancer</p>
+<p>Horizontal scaling</p>
+<p>Cache</p>
+<p>Database sharding</p>
+</blockquote>
+<p>多个解决方案，权衡利弊，选择好的。</p>
+</li>
+<li>
+<p>粗略估算</p>
+<blockquote>
+<p>快速手动估算</p>
+<blockquote>
+<p>估算系统的RPS,吞吐量，磁盘空间</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<h2 id="basic-concept"><a class="markdownIt-Anchor" href="#basic-concept"></a> Basic Concept</h2>
+<h3 id="延迟和吞吐量"><a class="markdownIt-Anchor" href="#延迟和吞吐量"></a> 延迟和吞吐量</h3>
+<p>latency 延迟： 执行某些操作或产生某些结果的时间。</p>
+<blockquote>
+<p>假设你在网上购物，当你点击“提交订单”按钮时，系统需要处理你的订单请求，</p>
+<p>包括验证支付信息、更新库存、生成订单确认等。延迟就是从你点击“提交订单”按钮到你在屏幕上看到订单确认页面所花费的时间。如果这个时间是200毫秒，那么延迟就是200毫秒。</p>
+</blockquote>
+<p>Throughput 吞吐量： 单位时间内此类操作或结果的数量。—&gt;RPS</p>
+<p>在一定时间内系统能够处理的请求数量</p>
+<blockquote>
+<p>the request per second for a System.</p>
+</blockquote>
+<h3 id="cap"><a class="markdownIt-Anchor" href="#cap"></a> CAP</h3>
+<p>Consistency</p>
+<blockquote>
+<p>每次读取都会收到最近的写入或错误</p>
+</blockquote>
+<p>Avaliability</p>
+<blockquote>
+<p>每个请求都会收到响应，但不保证它包含最新版本的信息</p>
+</blockquote>
+<p>Partition Tolerancy</p>
+<blockquote>
+<p>尽管由于网络故障导致任意分区，系统仍继续运行</p>
+</blockquote>
+<p>CP: 一致性和分区容错</p>
+<blockquote>
+<p>等待来自分区节点的响应可能会导致超时错误。</p>
+</blockquote>
+<p>AP: 可用性和分区容错</p>
+<blockquote>
+<p>响应返回任何节点上可用的最容易获得的数据版本，这可能不是最新的。</p>
+</blockquote>
+<p>Cassandra 是可以调配consisteny 的level</p>
+<p>如果调成strong，就是 CP</p>
+<p>调成低level，就是AP</p>
+<blockquote>
+<p>除了cassandra以外，CockroachDB(SQL)， Amazon DynamoDB, MongoDB(NonSQL)</p>
+<p>都可以调节consistency</p>
+</blockquote>
+<p>zookeeper是偏向于CP的。</p>
+<p>严格的CP和AP是没有的，只可以说是倾向于CP还是AP。</p>
+<p><strong>Weak consistency</strong> —&gt; 弱一致性</p>
+<blockquote>
+<p>写入后，读取可能会或可能不会看到它。采取了尽力而为的方法。</p>
+<p>real time case: video talking, Real-time multiplayer</p>
+</blockquote>
+<p><strong>Final Consistency</strong>—&gt; 最终一致性</p>
+<blockquote>
+<p>写入后，读取最终会看到它（通常在几毫秒内）。数据是异步复制的。</p>
+<p>DNS and email</p>
+</blockquote>
+<p>Strong Consistency —&gt; 强一致性</p>
+<blockquote>
+<p>写入后，读取将看到它。数据同步复制。</p>
+<p>RDBMS</p>
+</blockquote>
+<h5 id="availability-model"><a class="markdownIt-Anchor" href="#availability-model"></a> Availability model</h5>
+<p>There gonna be two models to support avaliability: Failover and replication.</p>
+<p><strong>Failover</strong></p>
+<p>主动–被动</p>
+<blockquote>
+<p>有两台，主服务器 运行 和 处理流量。</p>
+<p>被动服务器，在备动状态。</p>
+<p>只有当主动服务器坏了，切换到被动服务器运行。</p>
+<blockquote>
+<p>Eg:</p>
+<p>假设有一个在线电商网站，正常情况下，所有用户的请求都由主服务器处理。如果主服务器发生故障（例如，硬件故障或软件崩溃），系统会自动将用户请求转移到被动服务器，以确保网站持续可用。在这个过程中，被动服务器从备用状态切换到活动状态，接管所有用户请求。</p>
+</blockquote>
+</blockquote>
+<p>主动-主动</p>
+<blockquote>
+<p>两台，服务器都在运行，同时处理流量，并且load balance.</p>
+<p>但其中一台坏了，另一台会处理所有的流量。</p>
+<blockquote>
+<p>Eg:</p>
+<p>假设有两台服务器 A 和 B，平时用户请求分散到两台服务器上共同处理。如果服务器 A 出现故障，服务器 B 会接管所有用户请求，而不会中断服务。</p>
+</blockquote>
+</blockquote>
+<p>Failover 会存在数据丢失的问题。</p>
+<p>在主服务坏掉，有一些request会发送给主服务器，这些数据会丢失的。</p>
+<p><strong>Replication</strong></p>
+<p><strong>999和9999</strong></p>
+<p>99.9%</p>
+<table>
+<thead>
+<tr>
+<th>期间</th>
+<th>可接受的停机时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每年停机时间</td>
+<td>8小时45分57秒</td>
+</tr>
+<tr>
+<td>每月停机时间</td>
+<td>43分49.7秒</td>
+</tr>
+<tr>
+<td>每周停机时间</td>
+<td>10分4.8秒</td>
+</tr>
+<tr>
+<td>每天停机时间</td>
+<td>1分26.4秒</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>如果某个服务承诺提供99.9%的可用性，那么意味着每年可以接受的最大停机时间为8小时45分57秒。</p>
+<p>例如，一个在线购物网站在一年中可能因为各种原因（如系统维护、网络故障等）累计停机时间达到了8小时以内，这对于提供99.9%可用性的网站来说是可以接受的。</p>
+</blockquote>
+<p>99.99%</p>
+<table>
+<thead>
+<tr>
+<th>期间</th>
+<th>可接受的停机时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每年停机时间</td>
+<td>52分35.7秒</td>
+</tr>
+<tr>
+<td>每月停机时间</td>
+<td>4分23秒</td>
+</tr>
+<tr>
+<td>每周停机时间</td>
+<td>1分5秒</td>
+</tr>
+<tr>
+<td>每天停机时间</td>
+<td>8.6秒</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>如果某个服务承诺提供99.99%的可用性，那么意味着每年可以接受的最大停机时间为52分35.7秒。</p>
+<p>例如，同样是一个在线购物网站，如果它的服务目标是99.99%的可用性，那么在一年中，该网站因为任何原因累计的停机时间不应超过52分钟。这样的网站对停机时间的要求更严格，可能需要更加完善的容错和冗余措施以确保高可用性。</p>
+</blockquote>
+<h5 id="并行和顺序的可用性"><a class="markdownIt-Anchor" href="#并行和顺序的可用性"></a> 并行和顺序的可用性</h5>
+<p>sequences</p>
+<p>当可用性&lt;100% 的两个组件按顺序排列时，整体可用性会降低：</p>
+<blockquote>
+<p>Availability (Total) = Availability (Foo) * Availability (Bar)</p>
+</blockquote>
+<p>在parallelism下</p>
+<p>当可用性&lt;100% 的两个组件并行时，整体可用性会提高：</p>
+<blockquote>
+<p>Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability(Bar))</p>
+</blockquote>
+<p>如果两者 Foo 都 Bar 具有99.9%的可用性，那么它们并行的总可用性将为 99.9999%。</p>
+<h1 id="classic-example"><a class="markdownIt-Anchor" href="#classic-example"></a> Classic Example</h1>
+<h2 id="tiny-url-design-pastebincom-or-bitly"><a class="markdownIt-Anchor" href="#tiny-url-design-pastebincom-or-bitly"></a> Tiny URL —&gt; Design <a target="_blank" rel="noopener" href="http://Pastebin.com">Pastebin.com</a> (or <a target="_blank" rel="noopener" href="http://Bit.ly">Bit.ly</a>)</h2>
+<p>设计一个缩短url的网站</p>
+<h3 id="1-outline-use-cases-and-constraints"><a class="markdownIt-Anchor" href="#1-outline-use-cases-and-constraints"></a> 1. Outline use cases and constraints</h3>
+<p>clarify questions, define use cases and constraints</p>
+<p>Questions:</p>
+<p>1.1 users</p>
+<p>User enters a block of text and gets a randomly generated link</p>
+<blockquote>
+<p>Expiration</p>
+<p>default setting: not</p>
+<p>but can set timed expirartion’</p>
+</blockquote>
+<p>user enter the generated link and views the contents</p>
+<p>user annymous</p>
+<p>1.2 service</p>
+<p>tracks analytics of pages</p>
+<p>deletes expired pastes</p>
+<p>high availability</p>
+<p><strong>Out of Scope</strong></p>
+<ul>
+<li>
+<p>User registers for an account</p>
+<ul>
+<li><strong>User</strong> verifies email</li>
+</ul>
+<blockquote>
+<p>用户访问 <a target="_blank" rel="noopener" href="http://Bit.ly">Bit.ly</a> 网站，选择“注册”或“创建账户”。用户需要填写必要的信息，如电子邮件地址、用户名和密码。提交这些信息后，用户的账户将被创建。</p>
+</blockquote>
+</li>
+<li>
+<p>User logs into a registered account</p>
+<ul>
+<li><strong>User</strong> edits the document</li>
+</ul>
+<blockquote>
+<p>在注册过程中，<a target="_blank" rel="noopener" href="http://Bit.ly">Bit.ly</a> 会发送一封验证邮件到用户提供的电子邮件地址。用户需要打开这封邮件并点击其中的验证链接，以确认他们的电子邮件地址是有效的，完成注册过程。</p>
+</blockquote>
+<blockquote>
+<p>在注册过程中，<a target="_blank" rel="noopener" href="http://Bit.ly">Bit.ly</a> 会发送一封验证邮件到用户提供的电子邮件地址。用户需要打开这封邮件并点击其中的验证链接，以确认他们的电子邮件地址是有效的，完成注册过程。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>User</strong> can set visibility</p>
+<blockquote>
+<p>用户可以设置他们的短链接的可见性选项。例如，他们可以决定这个链接是否公开可见，或者仅对特定的人群可见。这有助于控制谁可以查看和使用这个链接。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>User</strong> can set the shortlink</p>
+<blockquote>
+<p>“编辑文档”指的是用户在创建或修改一个链接的过程中，用户可以输入一个长链接，并选择“缩短”来生成一个短链接。用户也可以编辑该链接的后缀，使之更符合个人或品牌的风格。</p>
+</blockquote>
+<blockquote>
+<p>用户可以自定义短链接，而不是使用自动生成的随机字符串。例如，如果用户是一家公司，他们可能希望链接包含公司名或相关的关键词，以增强品牌识别度和相关性。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>Constrains and assumptions</strong></p>
+<p>state assumption</p>
+<p>Traffic is not evenly distributed</p>
+<p>Following a short link should be fast Pastes are text only</p>
+<p>Page view analytics do not need to be realtime 10 million users</p>
+<blockquote>
+<p>10 million paste writes per month</p>
+<p>100 million paste reads per month</p>
+<p>10:1 read to write ratio</p>
+</blockquote>
+<p><strong>Back of Envelop</strong></p>
+<p>下面是面试的一个快速估计的例子</p>
+<blockquote>
+<p>our system support 1 trillion urls</p>
+<p>One usr space is 1 kb(kill byte)</p>
+<p>the total storage will be 1 pb(petabyte)</p>
+<ol>
+<li>
+<p>definately do partitioning</p>
+</li>
+<li>
+<p>based on the actual use pattern,</p>
+<p>people who use short url, more click than genrate links</p>
+</li>
+</ol>
+</blockquote>
+<p>size per paste:</p>
+<blockquote>
+<p>Content: 1kb</p>
+<blockquote>
+<p>Example: about 200 words</p>
+</blockquote>
+<p>short url: 7 bye</p>
+<blockquote>
+<p>Eg:  7 characters in total</p>
+<p><a target="_blank" rel="noopener" href="http://bit.ly/abc123X">http://bit.ly/abc123X</a></p>
+</blockquote>
+<p>expiration_length_in_minutes: 5 bytes</p>
+<p>Create_at: 5 bytes</p>
+<p>Paste_path: 255bytes</p>
+<p>total: 1.27 KB</p>
+</blockquote>
+<p>userage calcumation:</p>
+<p>Store:</p>
+<blockquote>
+<p>we will generate 10 million text fragement each month</p>
+<p>one month: 1.27kb * 10 000 000 = 1.27 gb</p>
+<p>one year: 12.7 gb * 36 = 450 GB</p>
+<p>three year: 360 million shortlinks in 3 years</p>
+</blockquote>
+<p>DAU:</p>
+<blockquote>
+<p>Average number of write operations per second: 4</p>
+<p>Average read requests per second: 40</p>
+<blockquote>
+<p>2.5 million seconds per month</p>
+</blockquote>
+<p>writen each month: 2.5 million request</p>
+<p>read each month: 1000 miliion request</p>
+</blockquote>
+<h3 id="main-function"><a class="markdownIt-Anchor" href="#main-function"></a> main function</h3>
+<p><strong>link generation</strong></p>
+<p>url evenly distributed</p>
+<blockquote>
+<p>we use <strong>hash function</strong> to make sure the len of generated url evenly distributed</p>
+</blockquote>
+<p>hash (longURL, userId, craeteTimeStamp)</p>
+<p>How many characters do we need in our output of hash function?</p>
+<p>assume we gonna use 0-9 and a-z, it will be 36 in total.</p>
+<p>If the len is n ----&gt; 36^n</p>
+<p>n is the num of chars we gonna generated.</p>
+<p>n == 8</p>
+<p>we gnna have around 2 trillion combinations</p>
+<p><strong>hash collisions</strong></p>
+<ol>
+<li>
+<p>Channing</p>
+<blockquote>
+<p>have a linkedlist out of each hash key</p>
+</blockquote>
+<p><img src="https://p.ipic.vip/spp3vl.png" alt="image-20240618162159046"></p>
+</li>
+<li>
+<p>probing</p>
+<blockquote>
+<p>this bucket is already taken, move the another next empty position</p>
+</blockquote>
+</li>
+</ol>
+<p>in database, we cannot have linkedlist, so we gnnna use probing.</p>
+<p><strong>assign the url</strong></p>
+<h3 id="2-create-a-high-level-design"><a class="markdownIt-Anchor" href="#2-create-a-high-level-design"></a> 2. Create a high level design</h3>
+<h3 id="image-20240618155504491"><a class="markdownIt-Anchor" href="#image-20240618155504491"></a> <img src="https://p.ipic.vip/c8vlcm.png" alt="image-20240618155504491"></h3>
+<h3 id="3-design-core-components"><a class="markdownIt-Anchor" href="#3-design-core-components"></a> 3. Design core components</h3>
+<h3 id="4-scale-the-design"><a class="markdownIt-Anchor" href="#4-scale-the-design"></a> 4. Scale the Design</h3>
+<h3 id="5-additional-talking-points"><a class="markdownIt-Anchor" href="#5-additional-talking-points"></a> 5. Additional talking points</h3>
+<h2 id="design-slack"><a class="markdownIt-Anchor" href="#design-slack"></a> Design Slack</h2>
+<blockquote>
+<p>两种面试官disagree</p>
+<ol>
+<li>
+<p>Fundamental disagree</p>
+</li>
+<li>
+<p>不是best design</p>
+<blockquote>
+<p>不是最好的，但是符合当下的</p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li>
+<p>搞定出business sense</p>
+<p>use case</p>
+<p>MVP(Minimun Active Users) (discuss with the interviewer)</p>
+<blockquote>
+<p>• Direct Message</p>
+<p>• Channel: Group Chat</p>
+<p>• Multimedia msg</p>
+<p>• Link preview</p>
+</blockquote>
+<p>Goal:</p>
+<blockquote>
+<p>• High available</p>
+<p>• High reliable</p>
+<p>• Consistent</p>
+<p>• High performance: real-time</p>
+</blockquote>
+<p>Bonus features</p>
+<blockquote>
+<p>• Group Membership</p>
+<p>• Msg Notification</p>
+<p>• Hightlight unread msg</p>
+</blockquote>
+<p>Non-Goals</p>
+<blockquote>
+<p>• Authentication/Authorization</p>
+<p>• Mobile/Web Client Side</p>
+</blockquote>
+<p>首先说分为两个部分： 第一个部分是MVP部分，另一个是Bonus features</p>
+<p>然后 问 有哪些assumption (Goals)</p>
+<p>这个System是为什么服务的—&gt; HA HR C Real-Time</p>
+</li>
+<li>
+<p>Constraints</p>
+<p>one domain</p>
+<blockquote>
+<p>这意味着整个应用或服务将在一个单一的域名下运行。</p>
+</blockquote>
+<p>DAU: 10 million active users</p>
+<p>peak Direct Message: 5 * 10M * 100 / 86400 = 50K Msg/s</p>
+<blockquote>
+<p>高峰时刻和普通时刻数量的差距倍数 —&gt; 5</p>
+<blockquote>
+<p>The multiple of the gap between  peak time and ordinary times</p>
+</blockquote>
+<p>86400s ----&gt; 1 day’s seconds</p>
+</blockquote>
+<blockquote>
+<p>1个user，每天发100条信息，peak hour 是 normal的5倍</p>
+<p>1 msg: 100 bytes</p>
+<p>10M是日活跃用户数，每个用户在普通时发送100条消息，高峰翻5倍，总消息数除以一天的秒数（86400秒）得到每秒平均50,000条直接消息。</p>
+</blockquote>
+<p>Throughout: 50k * 100 = 5 MBs</p>
+<blockquote>
+<p>每秒 50k</p>
+<p>每条消息100 byte</p>
+<p>每秒throughout为5MB</p>
+</blockquote>
+<p>Storage: 5MB * 86400 * 365 * 10 = 1200 TB</p>
+<blockquote>
+<blockquote>
+<p>一天产生100MB，一年需要10TB</p>
+</blockquote>
+<p>Group chat #</p>
+<blockquote>
+<p>1000 members in a group</p>
+<p>每个群有1000个成员</p>
+</blockquote>
+</blockquote>
+<p>主要集中在两个方面 QPS 和 Data storage</p>
+<p>QPS ==&gt; 50k</p>
+<p>Throughout ==&gt; 5MB</p>
+<p>Database ==&gt; 1200TB / 1.2 PB</p>
+<h3 id="tips"><a class="markdownIt-Anchor" href="#tips"></a> Tips</h3>
+<blockquote>
+<p>B -&gt; KB -&gt; MB -&gt;  GB -&gt; TB --&gt;PB  每个间隔之间差1000个</p>
+<p>QPS 超过 1k —&gt; 至少2台 ， 超过1w 一定要多台</p>
+<p>Constraints 通常在下面找</p>
+<blockquote>
+<p>limitation 基本上都是database read 和 write</p>
+<p>memory utilization read</p>
+<p>disk utilization read</p>
+<p>network bandwidth</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>Architecture &amp;&amp; DataBase</p>
+<p>Account service: manage user account info.</p>
+<p>Friends service: manage user friendship info. <strong>May not need in slack</strong></p>
+<p>Group service: manage group membership info</p>
+<p>Media service: process multi-media / link info.</p>
+<p>Message Storage Service: store message.</p>
+<p>Notification Service: notify the users.</p>
+<p>Channel service: master service serve all requests from user.</p>
+<p>Message search service: manage mssage searching index and lookup.</p>
+<p><img src="https://p.ipic.vip/9ll00o.png" alt="image-20240619002732847"></p>
+<p>Friend service 这里用Mysql</p>
+<blockquote>
+<p>我读了facebook套的paper，</p>
+<p>所有的graph的问题 可以用 normalized mysql 来解决， 而且没有 fundamental red flag。</p>
+</blockquote>
+<p>Emoji service 要独立于 redis， 而不是和message service 关联</p>
+<blockquote>
+<p>emoji 可以经常unpdate，而mesg 不需要经常update。</p>
+</blockquote>
+</li>
+<li>
+<p>API design</p>
+<p>4.1打开界面需要查看不同的channel</p>
+<p>4.2也需要发msg</p>
+<p>GetChannels(user_id):</p>
+<ul>
+<li>Store last viewed channel</li>
+<li>Store visible channels: recent direct message/membership of the group</li>
+<li>Show unread msg / last msg preview: denormalized data</li>
+</ul>
+<p>SendMessage(Sender_id, receiver_id, message_type, message, media_id)</p>
+<ul>
+<li>message_type is one of [direct message, group message]</li>
+<li><strong>create_timestamp, update_timestamp, expired_time, STATE</strong> will be appended by channel service.</li>
+<li>STATE could be one of [received, sent, viewed,notification_sent, deleted], the multimedia message may need to be processed, therefore need some time between received and sent</li>
+</ul>
+<h3 id="script-api-和-rest-api"><a class="markdownIt-Anchor" href="#script-api-和-rest-api"></a> Script API 和 Rest API</h3>
+<p>还有一个grp API</p>
+<p>Script API 是基于language-specific脚本的API</p>
+<p>REST API (Representational State Transfer) 利用http标准方法获取和操作资源。</p>
+<p><strong>Script API</strong></p>
+<blockquote>
+<p>以python script为例子</p>
+<p>get 获取user信息</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_user_info</span>(<span class="params">user_id</span>):</span><br><span class="line">    url = <span class="string">f&#x27;https://yourapi.com/api/users/<span class="subst">&#123;user_id&#125;</span>&#x27;</span></span><br><span class="line">    headers = &#123;<span class="string">&#x27;Authorization&#x27;</span>: <span class="string">&#x27;Bearer your_token_here&#x27;</span>&#125;  <span class="comment"># 如果API需要认证</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 发送GET请求</span></span><br><span class="line">    response = requests.get(url, headers=headers)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 检查响应状态码</span></span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;用户信息获取成功！&quot;</span>)</span><br><span class="line">        <span class="comment"># 打印响应内容</span></span><br><span class="line">        <span class="built_in">print</span>(response.json())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取失败：&quot;</span>, response.status_code)</span><br><span class="line">        <span class="built_in">print</span>(response.text)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用示例</span></span><br><span class="line">get_user_info(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+<p>post 创建user</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_user</span>(<span class="params">name, email</span>):</span><br><span class="line">    url = <span class="string">&#x27;https://yourapi.com/api/users&#x27;</span></span><br><span class="line">    headers = &#123;<span class="string">&#x27;Authorization&#x27;</span>: <span class="string">&#x27;Bearer your_token_here&#x27;</span>, <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>&#125;  <span class="comment"># 如果API需要认证</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&#x27;name&#x27;</span>: name,</span><br><span class="line">        <span class="string">&#x27;email&#x27;</span>: email</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 发送POST请求</span></span><br><span class="line">    response = requests.post(url, json=data, headers=headers)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 检查响应状态码</span></span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">201</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;用户创建成功！&quot;</span>)</span><br><span class="line">        <span class="comment"># 打印响应内容</span></span><br><span class="line">        <span class="built_in">print</span>(response.json())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;创建失败：&quot;</span>, response.status_code)</span><br><span class="line">        <span class="built_in">print</span>(response.text)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用示例</span></span><br><span class="line">create_user(<span class="string">&quot;Alice Johnson&quot;</span>, <span class="string">&quot;alice.johnson@example.com&quot;</span>)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<p><strong>Rest API</strong></p>
+<blockquote>
+<p>GET</p>
+<p>POST</p>
+<p>PUT</p>
+<p>DELETE</p>
+<blockquote>
+<p>Eg: Get API</p>
+<p>Request</p>
+<blockquote>
+<p>请求ID为123的用户信息</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /api/users/123</span><br></pre></td></tr></table></figure>
+<p>response</p>
+<blockquote>
+<p>获得一个包含用户ID、姓名、电子邮件和状态的JSON对象</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;johndoe@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;active&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Eg: Post API</p>
+<blockquote>
+<p>创建一个新用户: (包含用户的姓名和电子邮件信息)</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">POST /api/users</span><br><span class="line">Content-Type<span class="punctuation">:</span> application/json</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Alice Johnson&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alice.johnson@example.com&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>response</p>
+<blockquote>
+<p>可能会返回一个包含新创建用户的详细信息的响应</p>
+<p>Reponse返回新用户分配的唯一ID和其他可能的默认设置或状态信息</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">201</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Alice Johnson&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alice.johnson@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;active&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;createdAt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2024-06-01T12:00:00Z&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<p>一个完成的前后端交互使用REST的例子</p>
+<p>前端</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取任务</span></span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/api/tasks&#x27;</span>)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> response.<span class="title function_">json</span>())</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">tasks</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(tasks));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建任务</span></span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/api/tasks&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  <span class="attr">headers</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; <span class="attr">title</span>: <span class="string">&#x27;Buy groceries&#x27;</span>, <span class="attr">due_date</span>: <span class="string">&#x27;2024-06-30&#x27;</span> &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> response.<span class="title function_">json</span>())</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">task</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(task));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新任务</span></span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/api/tasks/123&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;PUT&#x27;</span>,</span><br><span class="line">  <span class="attr">headers</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; <span class="attr">title</span>: <span class="string">&#x27;Buy groceries&#x27;</span>, <span class="attr">due_date</span>: <span class="string">&#x27;2024-07-05&#x27;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> response.<span class="title function_">json</span>())</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">updatedTask</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(updatedTask));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除任务</span></span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/api/tasks/123&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;DELETE&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Task deleted&#x27;</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>DB choice</p>
+</li>
+<li>
+<p>Data model</p>
+</li>
+</ol>
+<h3 id="how-to-design-a-twitter"><a class="markdownIt-Anchor" href="#how-to-design-a-twitter"></a> How to design a Twitter</h3>
+<p>Online social networking websites</p>
+<p>Post Tweet —&gt; 发布tweet</p>
+<p>Timeline —&gt; 展示主页</p>
+<p>Follw —&gt; 关注别的用户</p>
+<h3 id="面试官考察点"><a class="markdownIt-Anchor" href="#面试官考察点"></a> 面试官考察点</h3>
+<ol>
+<li>
+<p>系统设计能力 work solution</p>
+<blockquote>
+<p>是否了解 和 设计 常见应用模式</p>
+</blockquote>
+</li>
+<li>
+<p>分析和交流能力  analysis and communication</p>
+</li>
+<li>
+<p>tradeoff pros and cons</p>
+<blockquote>
+<p>提出不同的解决方案</p>
+<p>评估不同解决方案的优缺点</p>
+<p>根据需求和条件 做取舍</p>
+</blockquote>
+</li>
+<li>
+<p>知识面深度</p>
+<blockquote>
+<p>过滤掉只对 系统一知半解的candidate</p>
+<p>eg:</p>
+<p>cache</p>
+<p>cache的存放位置</p>
+<p>cache的存放内容</p>
+<p>更新cache的算法</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="系统设计主要步骤"><a class="markdownIt-Anchor" href="#系统设计主要步骤"></a> 系统设计主要步骤</h3>
+<p>Step 1: Clarify the requirements</p>
+<p>Step 2: Capacity Estimation</p>
+<p>Step 3: System APIs</p>
+<p>Step 4: High-level System Design</p>
+<p>Step 5: Data Storage</p>
+<p>Step 6: Scalability</p>
+<h4 id="step-1-clarify-the-requirements"><a class="markdownIt-Anchor" href="#step-1-clarify-the-requirements"></a> Step 1: Clarify the requirements</h4>
+<p>requirements</p>
+<p>traffic size（DAU）</p>
+<blockquote>
+<p>没有人期待你设计一个SD在30-45min</p>
+<p>设计重点的features就可以</p>
+</blockquote>
+<p><strong>设计features注意两点</strong></p>
+<ol>
+<li>
+<p>本系统特有的features(Functional Requirement)</p>
+</li>
+<li>
+<p>所有系统的common features(Non-Functional Requirement)</p>
+</li>
+<li>
+<p>Functional Requirement</p>
+<p>特有feature</p>
+<p>1.1 Tweet： 发布和删除tweet</p>
+<blockquote>
+<p>create tweet</p>
+<p>post tweet</p>
+</blockquote>
+<p>1.2 timeline/feed: Home 和 user</p>
+<blockquote>
+<p>Home Timeline</p>
+<p>用户刷新自己的home，会展示 他 follow的人的Tweet</p>
+<blockquote>
+<p><img src="/.us//image-20240619225131031.png" alt="image-20240619225131031"></p>
+</blockquote>
+<p>User Timeline</p>
+<p>每个用户都有timeline，会展示他自己最近的Tweet</p>
+<p>比如 你follow elon musk，点开home page of elon musk，你就会看到 musk最近所有的tweets.</p>
+<blockquote>
+<p><img src="https://p.ipic.vip/g6uo2o.png" alt="image-20240619225207966"></p>
+</blockquote>
+</blockquote>
+<ol>
+<li>
+<p>4 follow a user</p>
+</li>
+<li>
+<p>5 like a tweet</p>
+</li>
+<li>
+<p>6 search tweets</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Non-Functional Requirement</p>
+</li>
+</ol>
+<p>所有系统的common features</p>
+<p>CAP</p>
+<p>Consistency</p>
+<blockquote>
+<p>musk发了一条tweet，我follow了他，但是第一时间没有出来，我refresh了一下之后，才出来。</p>
+<p>就是enventual consistency。</p>
+</blockquote>
+<p>Availability</p>
+<blockquote>
+<p>each request都可以收到 non-error response,而不是return error or empty page.</p>
+<p>系统是scalable—&gt; System接收到很多traffic时候，也可以返回response。</p>
+</blockquote>
+<p>Partition tolerance</p>
+<blockquote>
+<p>System有几个disk坏掉了，也不影响System 运行。</p>
+</blockquote>
+<h4 id="step-2-capacity-estimation"><a class="markdownIt-Anchor" href="#step-2-capacity-estimation"></a> Step 2: Capacity Estimation</h4>
+<p>这里要跟面试官沟通得到parameters</p>
+<p>DAU:  200M</p>
+<p>How many tweet we gnna have per day: 100 M</p>
+<blockquote>
+<p>每天有多少tweet产生</p>
+</blockquote>
+<p>Timeline:</p>
+<blockquote>
+<p>each user visit home timeline 5 times</p>
+<p>each user visit other user timeline 3 times</p>
+<p>ceach timeline/pages has 20 tweets</p>
+</blockquote>
+<p>Tweet</p>
+<blockquote>
+<p>each tweet has size 280(140 characters) bytes, metadata 30 bytes</p>
+<blockquote>
+<p>Metadata: tweet public time and location</p>
+</blockquote>
+<p>per photo: 200 KB, 20% tweet has images</p>
+<p>per video: 2MB, 10% tweet has video, 30% video will be watched(影响stream video的估算)</p>
+</blockquote>
+<p><strong>Storage Evaluation</strong></p>
+<p>write size daily:</p>
+<p>Text:</p>
+<blockquote>
+<p>100M * (280 + 30) = 31000 MB = 31 GB</p>
+</blockquote>
+<p>Image:</p>
+<blockquote>
+<p>100M * 0.2 * 200KB = 20 * 200GB = 4TB</p>
+</blockquote>
+<p>Video</p>
+<blockquote>
+<p>100M * 0.1 * 2MB = 10M * 2M = 20 TB</p>
+</blockquote>
+<p>Total</p>
+<blockquote>
+<p>24TB</p>
+</blockquote>
+<p><strong>Bandwidth estimate</strong></p>
+<p>Daily Read Tweets Volume:</p>
+<p>200M * (5 + 3) * 20 = 200M * 8 * 20 = 4000M * 8 = 32 GB</p>
+<blockquote>
+<p>每个user 访问home page 5次，user page 3次</p>
+<p>每个page 有 20个 tweet</p>
+</blockquote>
+<p>Daily Read Bandwidth</p>
+<p>Text: 32GB * 280/86400 = 9000 / 90000 = 0.1 GB = 100 MB/s</p>
+<p>Image: 32GB * 200KB * 0.2/86400=  32GB * 40KB / 1000 00 = 32GB * 4B / 10 = 120 GB /10  = 12 GB/s</p>
+<p>Video: 32GB * 0.1 * 0.3 * 2MB/86400 = 1.8G * M/1000 00 = 18 GB/s</p>
+<p>Total 30GB/s</p>
+<blockquote>
+<p>bandwidth的估算 可以帮助我们找到System的bottomneck----&gt; how to scale system</p>
+</blockquote>
+<h4 id="step-3-system-apis"><a class="markdownIt-Anchor" href="#step-3-system-apis"></a> Step 3: System APIs</h4>
+<p>定义SD的API来cover SD的requirements</p>
+<ol>
+<li>
+<p>发布tweet</p>
+<p>postTweet(userToken, string tweet)</p>
+</li>
+<li>
+<p>删除tweet</p>
+<p>deleteTweet(userToken, string tweetId)</p>
+</li>
+<li>
+<p>LikeOrUnlike</p>
+<p>likeOrUnlikeTweet(userToken, string tweetId, bool like)</p>
+</li>
+<li>
+<p>Timeline</p>
+<p>4.1 readHomeTimeLine(userToken, int pageSize, opt string pageToken)</p>
+<blockquote>
+<p>pageToken是optional ----&gt; 当前读到tweet的位置</p>
+<p>pageSize重要，因为不同user使用不同设备，应该返回不同条的tweets</p>
+</blockquote>
+<p>4.2 readUserTimeLine(userToken, int pageSize, opt string pageToken, int userId)</p>
+<blockquote>
+<p>int userld to specify the user</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="step-4-high-level-system-design"><a class="markdownIt-Anchor" href="#step-4-high-level-system-design"></a> Step 4: High-level System Design</h4>
+<ol>
+<li>Post Tweets —&gt; 用户想发布一条tweet</li>
+</ol>
+<blockquote>
+<p>Loadbalancer: divers user requests and distribute them to relatively idle servers.</p>
+<p>Tweet Writer: 是一组服务器，处理tweet的发布，把用户发布的内容写到后台数据库。</p>
+</blockquote>
+<p><img src="https://p.ipic.vip/dqk8ge.png" alt="image-20240619234646207"></p>
+<ol start="2">
+<li>
+<p>UserTime</p>
+<p>用户点击user，访问其主页</p>
+<p>请求到达 loadbalancer</p>
+<p>loadbalancer 把 request发送到 对应的服务器</p>
+<p>timeline service去DB 获取 elon musk的最近的tweet，然后返回给用户</p>
+<blockquote>
+<p>这里有个bottomneck是直接去DB读，速度慢</p>
+<p>为了solve 这个 latency，采用cache —&gt; 把user最近的tweet写入到cache里面</p>
+<p>timeline直接从cache读，获取</p>
+<blockquote>
+<p>当musk发布新的tweet的时候，除了写入DB，也写入Cache。</p>
+</blockquote>
+</blockquote>
+<p><img src="https://p.ipic.vip/7pj54k.png" alt="image-20240619234938960"></p>
+</li>
+<li>
+<p>Home TimeLine</p>
+<p>用来展示用户follow的人的最近tweet动态。</p>
+<p><img src="https://p.ipic.vip/k7i2et.png" alt="image-20240619235515287"></p>
+</li>
+</ol>
+<blockquote>
+<p>TimeLine Service 从DB获取这个user follow的人</p>
+<p>然后再去cache里获取这些人最近的tweets —&gt; merge all of them into a List</p>
+<p>return the list to our users</p>
+</blockquote>
+<blockquote>
+<p>因为上面获取 该用户follow的人需要读取DB，消耗时间</p>
+<p>在cache中，存好要展示给每个用户的timeline</p>
+<p>这样 timeline service 就可以通过 query cache直接获取 homeTimeLine返还给user</p>
+<p>我们如何存储数据到cache中呢，当用户在post tweet的时候，我们除了直接写入到DB，还需要找到该用户的fans, 拿到他们在cache中的timeline。</p>
+<blockquote>
+<p>也就是说 马斯克发了一个tweet，根据他的followers，将他们的timeline跟新到cache中</p>
+</blockquote>
+</blockquote>
+<p>Hometimeline的两种更新方法</p>
+<p>方法1： pull mode</p>
+<p>获取user timeline的时候，从DB中读取user的idols的信息, 获取他们的latest tweet，merge list —&gt; return it.</p>
+<p>好处：write的时候快。O（1）</p>
+<p>坏处：read的时候比较慢。O（n）</p>
+<p>方法2：push mode</p>
+<p>在cache里maintain每个用户的timeline</p>
+<p>当用户发表tweet时候，将其更新到其followers的 cache中的 timelines —&gt; fan out on write</p>
+<p>好处： read 快</p>
+<p>坏处：write的时候，比较慢。</p>
+<p>但是使用eventual consistency 更新，每个followers最终都会看到跟新的tweet。</p>
+<p><strong>基于fan out strategy的优化</strong></p>
+<p>使用fan out</p>
+<blockquote>
+<p>Not efficient for users with huge amount of followers (~&gt;10k)</p>
+</blockquote>
+<p>比如 对于 泰勒来说。使用fan out write方法</p>
+<p>她有很多粉丝，有一些是活跃粉丝，有一些是僵尸粉</p>
+<p>如果都需要更新cache的话，速度回很慢</p>
+<p>可以采用 hybrid的 solution方法</p>
+<p>Non-hot users</p>
+<p>Hot users</p>
+<h4 id="step-5-data-storage"><a class="markdownIt-Anchor" href="#step-5-data-storage"></a> Step 5: Data Storage</h4>
+<h4 id="step-6-scalability"><a class="markdownIt-Anchor" href="#step-6-scalability"></a> Step 6: Scalability</h4>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<p>Scott Shi</p>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/vasanthk/485d1c25737e8e72759f">https://gist.github.com/vasanthk/485d1c25737e8e72759f</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=-UXWETzHG38&amp;t=574s">https://www.youtube.com/watch?v=-UXWETzHG38&amp;t=574s</a></p>
+<p>DDIA 电子书：</p>
+<p><a target="_blank" rel="noopener" href="http://ddia.vonng.com/#/en-us/">http://ddia.vonng.com/#/en-us/</a></p>
+<p>SD从零开始 github</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98">https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#如何处理一个系统设计的面试题</a></p>
+<p>Design Twitter</p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=wqSnp49gGbg&amp;t=946s">https://www.youtube.com/watch?v=wqSnp49gGbg&amp;t=946s</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/System-Design/" rel="tag"># System Design</a>
+              <a href="/tags/System-Design-Begain/" rel="tag"># System Design Begain</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/06/11/parkingSystem/" rel="prev" title="parkingSystem">
+                  <i class="fa fa-angle-left"></i> parkingSystem
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/06/22/tt%E5%85%AB%E8%82%A1/" rel="next" title="Tiktok Basic Knowledge">
+                  Tiktok Basic Knowledge <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Joe</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">169k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">10:15</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+  <a href="https://github.com/DonkeyBoy001" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/4.20.0/algoliasearch-lite.umd.js" integrity="sha256-DABVk+hYj0mdUzo+7ViJC6cwLahQIejFvC+my2M/wfM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/4.57.0/instantsearch.production.min.js" integrity="sha256-foJtB+Wd0wvvK+VU3KO0/H6CjwSwJfB1RnWlgx0Ov9U=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"rZsuavEmZYP4PEa5niaZG6rn-MdYXbMMI","app_key":"iv0iSNLUTfYodhD0RwdwW9bn","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script>
+((window.gitter = {}).chat = {}).options = {
+  room: 'your-room-name',
+  activationElement: false
+};
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+</html>
