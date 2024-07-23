@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-corner-indicator.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="SRE SRE是什么呢 Site Reliability Engineer 中文就是运维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sre">
+<meta property="og:url" content="https://www.zhoujoe.us/2024/06/30/sre/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="SRE SRE是什么呢 Site Reliability Engineer 中文就是运维">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://p.ipic.vip/s6t1g4.png">
+<meta property="article:published_time" content="2024-07-01T03:20:35.000Z">
+<meta property="article:modified_time" content="2024-07-07T03:13:09.161Z">
+<meta property="article:author" content="Joe">
+<meta property="article:tag" content="Interview">
+<meta property="article:tag" content="SRE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p.ipic.vip/s6t1g4.png">
+
+
+<link rel="canonical" href="https://www.zhoujoe.us/2024/06/30/sre/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.zhoujoe.us/2024/06/30/sre/","path":"2024/06/30/sre/","title":"sre"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>sre | Notes</title>
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Notes</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sre"><span class="nav-number">1.</span> <span class="nav-text"> SRE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%BB%B4%E5%B2%97%E4%BD%8D%E4%B8%89%E6%AD%A5%E8%B5%B0"><span class="nav-number">1.1.</span> <span class="nav-text"> 运维岗位三步走</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%94%B6%E9%9B%86%E7%AE%80%E5%8E%86"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 1. 收集简历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%B5%84%E6%96%99"><span class="nav-number">1.1.2.</span> <span class="nav-text"> 2. 快速入门资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.3.</span> <span class="nav-text"> 3. 面试问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-jd%E8%A6%81%E6%B1%82"><span class="nav-number">1.1.4.</span> <span class="nav-text"> 4. JD要求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#why-sre"><span class="nav-number">1.2.</span> <span class="nav-text"> Why SRE?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#reference"><span class="nav-number">1.2.1.1.</span> <span class="nav-text"> Reference</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Joe"
+      src="https://avatars.githubusercontent.com/u/91183483?v=4">
+  <p class="site-author-name" itemprop="name">Joe</p>
+  <div class="site-description" itemprop="description">Festina lente</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/DonkeyBoy001" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;DonkeyBoy001" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100081303083864" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100081303083864" rel="noopener me" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/06/30/sre/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="sre | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          sre
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-06-30 20:20:35" itemprop="dateCreated datePublished" datetime="2024-06-30T20:20:35-07:00">2024-06-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-06 20:13:09" itemprop="dateModified" datetime="2024-07-06T20:13:09-07:00">2024-07-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Inteviews/" itemprop="url" rel="index"><span itemprop="name">Inteviews</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/06/30/sre/" class="post-meta-item leancloud_visitors" data-flag-title="sre" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>14 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="sre"><a class="markdownIt-Anchor" href="#sre"></a> SRE</h1>
+<p>SRE是什么呢 Site Reliability Engineer</p>
+<p>中文就是运维</p>
+<span id="more"></span>
+<h2 id="运维岗位三步走"><a class="markdownIt-Anchor" href="#运维岗位三步走"></a> 运维岗位三步走</h2>
+<ol>
+<li>
+<p>收集简历</p>
+</li>
+<li>
+<p>整理快速入门资料</p>
+</li>
+<li>
+<p>收集面试题</p>
+</li>
+</ol>
+<h3 id="1-收集简历"><a class="markdownIt-Anchor" href="#1-收集简历"></a> 1. 收集简历</h3>
+<p>1.1 简历</p>
+<p><img src="https://p.ipic.vip/s6t1g4.png" alt="image-20240630202510888"></p>
+<p>1.2 简历</p>
+<p>1、负责Linux平台下的系统应用部署以及管理；<br>
+2、负责系统性能分析,优化,问题跟踪排查等相关工作；<br>
+3、负责Web容器以及MySQL数据库日常运维及故障解决；<br>
+4、负责主流应用软件的安装、调试与维护（如JDK、Tomcat、Redis、Nginx、MySQL主从等）；<br>
+5、负责日常监控…。</p>
+<p>提高了网站和系统性能， Nginx处理静态请求，Tomcat处理动态请求，实现动静分离和session同步；<br>
+我的职责<br>
+1、安装 配置tomcat，测试服务正常启停工作；<br>
+2、更改环境变量；<br>
+3、安装 配置nginx，测试服务正常启停工作；</p>
+<p>项目时间：2014-07 - 2017-02</p>
+<p>项目名称：搭建LNMP平台并部署Zabbix监控服务器</p>
+<p>项目描述：<br>
+项目介绍<br>
+搭建Linux+Nginx+MySQL+PHP平台并部署Zabbix监控服务<br>
+项目实施：1、在监控服务器上搭建LNMP平台<br>
+2、部署Zabbix监控服务器用于监控另一台服务器数据<br>
+3、基于Zabbix监控服务器上利用自带监控模板和自定义模板监控服务器数据</p>
+<p>了解kvm及docker 等虚拟化技术<br>
+zabbix等监控软件安装配置，能够配置对web,数据库，负载均衡，存储等服务器进行监控<br>
+linux系统安全及其防火墙iptables部署优化，并根据生产环境具体要求进行配置<br>
+熟悉mysql基本的sql语句，日常应用调优，对mysql存储过程有一定了解<br>
+mysql数据库的日常定时备份和（增量）恢复<br>
+mysql数据库应用，包括主从同步，主主同步集群的部署及读写分离的实现和配置<br>
+lvs+keepalived四层负载均衡集群及haproxy，nginx七层负载均衡与反向代理构建及优化<br>
+lnmp,lamp架构，tomcat，php等Web服务的构建及优化<br>
+shell编程，熟练使用shell及其文本处理工具grep,awk，sed，cut，tr等进行服务器日志分析，监控，数据备份等日常工作<br>
+部署ssh key结合rsync备份和文件分发解决方案，了解puppet分发部署<br>
+nfs共享存储的部署应用及rsync,inotify,等数据(实时)同步工具的使用<br>
+centos/rhel等linux系列系统安装及性能调优，安全优化</p>
+<h3 id="2-快速入门资料"><a class="markdownIt-Anchor" href="#2-快速入门资料"></a> 2. 快速入门资料</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/taogen-docs/resources-of-learning/blob/master/_cs-software-development-and-engineering.md">https://github.com/taogen-docs/resources-of-learning/blob/master/_cs-software-development-and-engineering.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://changchen.me/blog/20180403/impressions-of-google-sre/">https://changchen.me/blog/20180403/impressions-of-google-sre/</a></p>
+<h3 id="3-面试问题"><a class="markdownIt-Anchor" href="#3-面试问题"></a> 3. 面试问题</h3>
+<p>Https： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/cxuanBlog/p/12490862.html">https://www.cnblogs.com/cxuanBlog/p/12490862.html</a></p>
+<p>3.1</p>
+<p>OSI七层模型说一下<br>
+路由器工作在哪一层<br>
+交换机工作在哪一层<br>
+说一下DNS、DHCP<br>
+讲一下VLAN是什么<br>
+Fat32和NTFS的区别  不知道<br>
+一个文件4G传输中途失败了是什么原因  不知道<br>
+AD域的五种策略     不知道</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/feed/main/detail/01b8e13676ad4a87a3b4416f6e76f604?sourceSSR=search">https://www.nowcoder.com/feed/main/detail/01b8e13676ad4a87a3b4416f6e76f604?sourceSSR=search</a></p>
+<p>3.2</p>
+<p>讲一下NAT<br>
+TCP和UDP的区别<br>
+虚拟专用网络是什么</p>
+<p>3.3</p>
+<p>2.为什么想从事运维呢？</p>
+<p>3.Linux 内核都有哪些呢？</p>
+<ol start="4">
+<li>
+<p>Linux开机的过程</p>
+</li>
+<li>
+<p>Linux的目录结构是什么？</p>
+</li>
+<li>
+<p>Linux删除/tmp目录会有什么结果？</p>
+</li>
+</ol>
+<p>7.数据库范式有哪些？</p>
+<p>8.说一下你的实习经历</p>
+<p>9.实习当中你最大的收获是什么？ 10．你有什么想问的吗？</p>
+<p>3.4</p>
+<p>TCP三次握手</p>
+<p>python传参</p>
+<p>linux常见指令</p>
+<p>top查看内存是哪个</p>
+<p>数据库会么？</p>
+<p>python你在项目中什么有用过么</p>
+<p>Linux在项目中有用过么</p>
+<p>交换机学校有学过么？有配置过么？</p>
+<p>你所了解的运维体系</p>
+<p>普罗米修斯有试着用过吧</p>
+<p>3.5</p>
+<p>项目介绍。其中用到的算法有哪些，着重讲一下。</p>
+<p>​			项目开发过程中遇到的难点，怎么解决。</p>
+<p>​			项目中用到的技术是什么。</p>
+<p>​			深度学习模型在运维上可以怎么应用上去。</p>
+<p>​			主键，外键，候选键。</p>
+<p>​			索引存储结构，索引作用。</p>
+<p>​			数据结构三要素。</p>
+<p>​			数组与列表的区别。</p>
+<p>​			冒泡，快速排序的思想，时间复杂度。</p>
+<p>​			整数相加求和思想。大整数相加求和。<br>
+链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/353158028306358272?sourceSSR=search">https://www.nowcoder.com/discuss/353158028306358272?sourceSSR=search</a><br>
+3.6</p>
+<p>面试超级无敌简单，学校里可以上门cloud computing的课，YouTube上看看怎么写python automation script就可以速成了。. ----<br>
+我之前做过devOps 实习，面试的时候，老板完全招不到人，问了几个巨简单的aws 基础和一题2 sum难度的leetcode就进去了，面full time的话，在这个基础上多一轮python面试，面试真的水中之水。</p>
+<p>只要上过cloud computing的课，把jd 上的关键词全班上去，水的一批的面试</p>
+<p>3.7</p>
+<p>meta PE</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=682346&amp;ctid=228784">https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=682346&amp;ctid=228784</a></p>
+<p>3.8</p>
+<p>第一个题目，我遇到的就是准备材料里面的原题。<br>
+讨论一下思路 （不一定要最优解，用你最擅长的方式写）<br>
+写一些 Testcase,<br>
+然后讨论一下 big O<br>
+第二个题, 比较偏应用。<br>
+用CSV去parse两个文档然后排序。<br>
+过了大概一两天，然后HR发邮件说有没有时间可以聊一下，然后就说电话面试过了，让我准备onsite.</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=627260&amp;ctid=228784">https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=627260&amp;ctid=228784</a></p>
+<h3 id="4-jd要求"><a class="markdownIt-Anchor" href="#4-jd要求"></a> 4. JD要求</h3>
+<p>4.0 SRE任务</p>
+<ul>
+<li>
+<ul>
+<li>管理变更</li>
+<li>管理故障</li>
+<li>制定 SLA 服务标准</li>
+<li>开发、选型、管理 各类中间件</li>
+<li>开发、管理 分布式监控系统</li>
+<li>开发、管理 分布式追踪系统</li>
+<li>开发、管理 性能监控、探测系统（dtrace、火焰图）</li>
+<li>开发、选型、培训 性能调优工具</li>
+</ul>
+</li>
+<li>
+<p>能力要求</p>
+</li>
+<li>
+<ul>
+<li>
+<p>语言和工程实现</p>
+</li>
+<li>
+<ul>
+<li>
+<p>深入理解开发语言（假设是 Java）</p>
+</li>
+<li>
+<ul>
+<li>业务部门使用开发框架</li>
+<li>并发、多线程和锁</li>
+<li>资源模型理解：网络、内存、CPU</li>
+<li>故障处理能力（分析瓶颈、熟悉相关工具、还原现场、提供方案）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>常见业务设计方案和陷阱（比如 Business Modeling，N+1、远程调用、不合理 DB 结构）</li>
+<li>MySQL / Mongo OLTP 类型查询优化</li>
+<li>多种并发模型，以及相关 Scalable 设计</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<p>问题定位工具</p>
+</li>
+<li>
+<ul>
+<li>容量管理</li>
+<li>Tracing 链路追踪</li>
+<li>Metrics 度量工具</li>
+<li>Logging 日志系统</li>
+</ul>
+</li>
+<li>
+<p>运维架构能力</p>
+</li>
+<li>
+<ul>
+<li>Linux 精通，理解 Linux 负载模型，资源模型</li>
+<li>熟悉常规中间件（MySQL Nginx Redis Mongo ZooKeeper 等），能够调优</li>
+<li>Linux 网络调优，网络 IO 模型以及在语言里面实现</li>
+<li>资源编排系统（Mesos / Kubernetes）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<p>理论</p>
+</li>
+<li>
+<ul>
+<li>容量规划方案</li>
+<li>熟悉分布式理论（Paxos / Raft / BigTable / MapReduce / Spanner 等），能够为场景决策合适方案</li>
+<li>性能模型（比如 Pxx 理解、Metrics、Dapper）</li>
+<li>资源模型（比如 Queuing Theory、负载方案、雪崩问题）</li>
+<li>资源编排系统（Mesos / Kurbernetes）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/87598465">https://zhuanlan.zhihu.com/p/87598465</a></p>
+</li>
+</ul>
+<p>4.1 字节</p>
+<p>Network Software Development Engineer</p>
+<blockquote>
+<p>掌握一种或多种主流编程语言，包括但不限于：C/C++、Python、Go、bash</p>
+<p>• 对高速IP网络、软硬件交互、硬件卸载技术有浓厚兴趣</p>
+<p>• 了解Linux或Unix，精通Linux命令行、vim/emacs • 了解交换机/路由器的工作原理、嵌入式系统硬件架构、处理器架构、交换机/路由器OS</p>
+<p>• 具有主流商家交换机软件开发或SONiC开源开发经验，有BSP开发经验者优先</p>
+<p>• 熟悉交换机ASIC SDK，有XGS驱动或SAI开发经验者优先</p>
+<p>• 熟悉或协议开发，有路由协议、遥测开发经验</p>
+<p>• 较强的解决问题和软件故障排除能力</p>
+<p>• 在有限的监督下自我激励和自我驱动</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jobs.bytedance.com/referral/pc/position/6886962456363731213/detail?token=NTsxNzEyMDkzMjM1MjE3OzcxNzExMzg0MTQwODU5MzI1NTI7NzM1MzM4MTgwMTM2NjI0MzYxMDsx">https://jobs.bytedance.com/referral/pc/position/6886962456363731213/detail?token=NTsxNzEyMDkzMjM1MjE3OzcxNzExMzg0MTQwODU5MzI1NTI7NzM1MzM4MTgwMTM2NjI0MzYxMDsx</a></p>
+<p><a target="_blank" rel="noopener" href="https://jobs.bytedance.com/referral/pc/position/6886957643597678855/detail?token=NTsxNzEyMDkzMjM1MjE3OzcxNzExMzg0MTQwODU5MzI1NTI7NzM1MzM4MTgwMTM2NjI0MzYxMDsx">https://jobs.bytedance.com/referral/pc/position/6886957643597678855/detail?token=NTsxNzEyMDkzMjM1MjE3OzcxNzExMzg0MTQwODU5MzI1NTI7NzM1MzM4MTgwMTM2NjI0MzYxMDsx</a></p>
+<p>4.2</p>
+<p>Oracle</p>
+<blockquote>
+<p>Active TS/SCI Security ClearanceStrong understanding of cloud concepts, platforms, and distributed systems.</p>
+<p>Strong ability to convey complex technical issues effectively in both written and verbal form.</p>
+<p>Knowledge of server hardware and software configuration, networking, standard internet services, scripting languages, cloud computing patterns, technology security and compliance.</p>
+<p>Experience running large scale customer facing web services.Knowledge of Load Balancing Technology, big data stores and container technologies.</p>
+<p>Experience defining and documenting technical architecture of a complex and highly scalable product to include development and refinement of operating procedures and troubleshooting guides (runbooks).</p>
+<p>**3 - 5 years’ experience running large scale customer facing web services.**一个SRD要两年有点不要脸</p>
+<p><strong>Preferred Qualifications</strong></p>
+<p>COMPTIA Security or equivalent in accordance with DOD 8570 workforce training requirementsWilling to sit for and obtain a polygraph</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/search/?currentJobId=3950543723&amp;keywords=site%20reliability%20developing&amp;origin=BLENDED_SEARCH_RESULT_NAVIGATION_JOB_CARD&amp;originToLandingJobPostings=3915674591%2C3964137587%2C3962589667">https://www.linkedin.com/jobs/search/?currentJobId=3950543723&amp;keywords=site reliability developing&amp;origin=BLENDED_SEARCH_RESULT_NAVIGATION_JOB_CARD&amp;originToLandingJobPostings=3915674591%2C3964137587%2C3962589667</a></p>
+<p>4.3 meta</p>
+<p>校招岗位 开了2天了，目前只有21个申请人 CA</p>
+<p>32个人 NY， 50个人 WA，</p>
+<blockquote>
+<p>Minimum Qualifications:</p>
+<ul>
+<li>Experience in *nix (Linux, BSDs, or another UNIX-like OS)</li>
+<li>Experience coding in an industry-standard language (e.g. Java, Python, C++, PHP)</li>
+<li>Experience picking up software, frameworks and APIs</li>
+<li>Currently has, or is in the process of obtaining a Bachelor’s degree in Computer Science, Computer Engineering, relevant technical field, or equivalent practical experience. Degree must be completed prior to joining Meta.</li>
+<li>Must obtain work authorization in country of employment at the time of hire, and maintain ongoing work authorization during employment</li>
+</ul>
+<p>Preferred Qualifications:</p>
+<ul>
+<li>Understanding of TCP/IP networking fundamentals</li>
+<li>Experience with an RDBMS like MySQL or Postgres</li>
+<li>Knowledge of internet service architectures (such as load balancing, LAMP, CDN’s)</li>
+<li>Experience performing ‘guerrilla capacity planning’ for internet service architectures</li>
+<li>Experience solving complex problems and comparing alternative solutions, tradeoffs, and diverse points of view to determine a path forward</li>
+<li>Experience working and communicating cross functionally in a team environmen</li>
+</ul>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsv3.recruitics.com/redirect?rx_cid=3239&amp;rx_jobId=a1KDp00000E1YSBMA3_1001&amp;rx_url=https%3A%2F%2Fwww.metacareers.com%2Fjobs%2F477195844990625%2F%3Frx_campaign%3DLinkedin1%26rx_ch%3Dconnector%26rx_group%3D126320%26rx_job%3Da1KDp00000E1YSBMA3_1001%26rx_medium%3Dpost%26rx_r%3Dnone%26rx_source%3DLinkedin%26rx_ts%3D20240701T004802Z%26rx_vp%3Dslots%26utm_campaign%3DJob%252Bboard%26utm_medium%3Djobs%26utm_source%3DLIpaid">https://jsv3.recruitics.com/redirect?rx_cid=3239&amp;rx_jobId=a1KDp00000E1YSBMA3_1001&amp;rx_url=https%3A%2F%2Fwww.metacareers.com%2Fjobs%2F477195844990625%2F%3Frx_campaign%3DLinkedin1%26rx_ch%3Dconnector%26rx_group%3D126320%26rx_job%3Da1KDp00000E1YSBMA3_1001%26rx_medium%3Dpost%26rx_r%3Dnone%26rx_source%3DLinkedin%26rx_ts%3D20240701T004802Z%26rx_vp%3Dslots%26utm_campaign%3DJob%252Bboard%26utm_medium%3Djobs%26utm_source%3DLIpaid</a></p>
+<p>4.4 抖音 SRE cloud platform</p>
+<p>3天，41个人申请</p>
+<blockquote>
+<p>2年以上 Kubernetes 管理经验。</p>
+<p>拥有 3 年以上 Unix/Linux 系统经验（从内核到 shell 等）。</p>
+<p>具有 Kubernetes CNI 部署和故障排除经验，包括（但不限于）以下 CNI：Cilium、Kube-Router、Calico、Flannel。</p>
+<p>CKA（认证 Kubernetes 管理员）认证。</p>
+<p>具有使用和贡献 Kubernetes 生态系统中开源项目的经验，例如 Kubespray、CNI、Helm、KubeEdge、Istio/Linkerd、Prometheus、ArgoCD、OPA、Harbor、Envoy 等。</p>
+<p>具有 TCP/IP、BGP、DNS、负载均衡器等网络技术经验。 具有 CI/CD 管道设计和开发经验。</p>
+<p>具有 Kubernetes API、Operator 和自定义资源定义 (CRD) 开发经验。</p>
+<p>具有为大规模复杂系统设计、分析和构建自动化工具的经验。</p>
+</blockquote>
+<p>4.5</p>
+<p>Devp infra SDE</p>
+<p>3天 92个人</p>
+<blockquote>
+<ol>
+<li>Bachelor’s degree or above in Computer Science or a related field, with 2+ years of development experience;</li>
+<li>Proficient in one or more programming languages such as Java, Python, or Go, and familiar with the principles and usage of databases and middleware such as MySQL, Redis, and MQ;</li>
+<li>Familiar with the development process, understanding of efficiency measurement, built-in quality, CI/CD, and stability assurance practices;</li>
+<li>Strong team collaboration skills, good communication skills, a sense of responsibility, proactive, and a passion for researching and applying new technologies.</li>
+</ol>
+<p>Preferred Qualification:<br>
+- Experienced in developing platforms and tools for testing, deployment and operations.</p>
+</blockquote>
+<p>4.6 字节</p>
+<p>SRE ML System</p>
+<p>4天14个申请人 圣何塞</p>
+<p>4天6个申请人 西雅图</p>
+<p>2周 37个人</p>
+<blockquote>
+<p>本科及以上学历，计算机科学、计算机工程或相关专业 熟练掌握Linux环境下至少一种编程语言，如Go/Python/Shell 具有丰富的 Kubernetes 和容器技术实践经验，</p>
+<p>并有 2 年以上相关运维经验</p>
+<p>从事大规模ML分布式系统运维工作 具有GPU服务器运维经验</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/view/3928774930/?alternateChannel=search&amp;refId=18iMDuVN9uVQkBa3nBVIYQ%3D%3D&amp;trackingId=NaUuW2oaSIKp2xx%2F6Xmwhg%3D%3D&amp;trk=d_flagship3_search_srp_jobs">DevOps/Site Reliability Engineer (SRE) with TS/SCI (on site Northern Virginia)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/view/3960437162">https://www.linkedin.com/jobs/view/3960437162</a></p>
+<p>4.7 Coinbase</p>
+<p>ASRE</p>
+<p>3天 85个人</p>
+<p>3天 40个人</p>
+<blockquote>
+<p>至少 1-2 年支持网络基础设施的经验</p>
+<p>至少 1-2 年云基础设施自动化经验至少精通一种脚本语言（Bash、python、Ruby、Go 等）具</p>
+<p>有使用 CI/CD（Git）进行版本控制的经验</p>
+<p>具有使用 Terraform 或同等框架支持 AWS 服务和 CI/CD 工作流程的经验</p>
+<p>具有 Terraform、Ansible、Chef、Puppet 或 Salt 等配置管理系统的相关经验</p>
+<p>具有 Docker 和 Kubernetes 等容器和容器编排的相关经验</p>
+<p>最好有</p>
+<p>精通 Linux、Bash、Ruby、Python 和/或 Go熟练使用 Terraform 实现 EC2 或容器部署自动化强大的网络安全基础拥有管理和利用日志聚合的经验 在高度监管的环境中工作的经验在快节奏、高增长公司的工作经验具有远程优先 IT 环境经验</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/view/3939479653">https://www.linkedin.com/jobs/view/3939479653</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/view/3939480569">https://www.linkedin.com/jobs/view/3939480569</a></p>
+<p>4.8 Oracle</p>
+<p>SRE -database</p>
+<p>1周 7个人</p>
+<blockquote>
+<p>拥有两个或多个领域的技术专长： Terraform，基础设施即代码 Oracle 数据库 Linux 远程管理 数据库云服务器 零数据丢失恢复设备</p>
+<p>此外，我们正在寻找有上进心的个人，</p>
+<p>拥有管理生产云服务的 SRE 经验具有发布和维护云服务的经验出色的口头和书面沟通能力管理系统或数据库环境的生产经验 具有通用系统语言使用经验，例如： - Python、Perl、Unix Shell 和/或数据库语言 SQL、PL/SQL</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/view/3954907158">https://www.linkedin.com/jobs/view/3954907158</a></p>
+<p>4.9 字节</p>
+<p>SRE CapCut</p>
+<p>1周 61个人申请</p>
+<blockquote>
+<p>计算机科学或相关技术学科学士或更高学位。 2-5年互联网行业工作经验。</p>
+<p>具有扎实的计算机科学知识，熟悉操作系统、计算机存储、计算机网络等原理。</p>
+<p>优先资格</p>
+<p>具有 Redis、MySQL、Nginx、Kubernetes、Docker 等经验者优先。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/view/3856609465/?alternateChannel=search&amp;refId=s%2FCIV8yfeIAXXWcapfK2ww%3D%3D&amp;trackingId=f9vp6P18y0l8P94%2FiXklcQ%3D%3D&amp;trk=d_flagship3_search_srp_jobs">Site Reliability Engineer - CapCut - San Jose</a></p>
+<p>SRE Video Platform</p>
+<p>1周 44个人</p>
+<blockquote></blockquote>
+<p>4.10 Splunk</p>
+<p>SRE</p>
+<p>1周9个人</p>
+<blockquote>
+<p>You have experience or an interest in working with regulated computing environments such as FISMA and/or FedRAMP and are enthusiastic about doing it better</p>
+<p>.Experience working within an Azure environment</p>
+<p>Experience working in a fully remote position and team</p>
+<p>You are passionate about building and running distributed systems at scale in production.</p>
+<p>You understand the challenges and trade-offs to be made when building and deploying systems to production.</p>
+<p>You constantly consider &quot;How can I automate this process?&quot;Knowledge of best practices related to security, performance, and disaster recovery.</p>
+<p>Skilled in identifying performance bottlenecks, spotting anomalous system behavior, and determining the root cause of incidents.</p>
+<p>Experience monitoring cloud environments using tools like Splunk, VictorOps and Nagios</p>
+<p>Deep understanding of linux systems or equivalent certification, (network stack, file system, OS services) and networking (L2 vs. L3, network architecture, VLANs, etc)</p>
+<p>Must have AZ-900 Azure Fundamentals or preferred AZ-104 Azure Administrator Certification</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/view/3952875698">https://www.linkedin.com/jobs/view/3952875698</a></p>
+<h2 id="why-sre"><a class="markdownIt-Anchor" href="#why-sre"></a> Why SRE?</h2>
+<ol>
+<li>
+<p>devOps可以证明你有快速 build up service能力</p>
+<blockquote>
+<p>增加面试机会</p>
+<p>类似 make it works</p>
+</blockquote>
+</li>
+<li>
+<p>快速累计各种tool的使用经验</p>
+<blockquote>
+<p>产品端和面向客户的domain knowledge固然没啥积累，但对于各种infra的上手和理解比较容易，分析新问题时考虑得也更全面。</p>
+<p>搭建infra比写一般code复杂</p>
+</blockquote>
+</li>
+<li>
+<p>devops 要求全面，往往是通才</p>
+<blockquote>
+<p>其实我个人觉得devops做好了是真牛b，计算机理论，代码，基础设施体系样样不落下。一个人就是一个小公司了。</p>
+<p>devops也分很多种了，就像你是数据库核心系统开发，还是网页页面开发。</p>
+</blockquote>
+</li>
+<li>
+<p>google 和 meta的SRE比较好</p>
+<blockquote>
+<p>google的SRE是非常值得， 比较有机会碰到Distributed相关,比SDE多</p>
+<p>做很多的Distributed System 和 Infra 在CV非常之前</p>
+<p>on call 人性化</p>
+<p>SRE和SWE可以转</p>
+</blockquote>
+</li>
+<li>
+<p>救火队，越老越吃香</p>
+<blockquote>
+<p>google加的SRE是真的SRE</p>
+<p>比SWE更难做，而且更有挑战。</p>
+<p>其它公司的SRE就是ops，给SWE擦屁股</p>
+<p>SRE的知识不论去哪个组都可以用</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="缺点"><a class="markdownIt-Anchor" href="#缺点"></a> 缺点</h3>
+<ol>
+<li>
+<p>代码量不高，全是一些脚本</p>
+<blockquote>
+<p>做的东西很多是cloud native，kubernetes，docker之类的</p>
+</blockquote>
+</li>
+<li>
+<p>公司里没有visibility</p>
+<blockquote>
+<p>公司好坏与你无关，基本就是按部就班</p>
+</blockquote>
+</li>
+<li>
+<p>deveops需要马上修</p>
+<blockquote>
+<p>production出了bug的时候，devops要马上修的，有时候可能是半夜</p>
+</blockquote>
+</li>
+<li>
+<p>dev改名</p>
+<blockquote>
+<p>比如最早叫 DevOps</p>
+<p>后来叫 SRE 或者有叫 SDE - Engineering Productivity</p>
+<p>然后又改称 SDE - Tools and Infra，然后干脆改叫 SDE-Infra</p>
+<p>然后现在有的更隐蔽，直接包装成 SDE- Platform 组，但是你一问他们own 什么 service 就发现他们不 own service 只 own infra。。 工作描述都是 enable/support xyz use case 这些字眼</p>
+</blockquote>
+</li>
+<li></li>
+</ol>
+<h4 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h4>
+<p><a target="_blank" rel="noopener" href="https://medium.com/@LadyNoBug/devops%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95-82ded8e8370e">https://medium.com/@LadyNoBug/devops职业发展-82ded8e8370e</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-770714-1-1.html">https://www.1point3acres.com/bbs/thread-770714-1-1.html</a> Devops 不好</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-657599-1-1.html">https://www.1point3acres.com/bbs/thread-657599-1-1.html</a> googleSRE</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-559730-1-1.html">https://www.1point3acres.com/bbs/thread-559730-1-1.html</a> google 救火队</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-908163-1-1.html">https://www.1point3acres.com/bbs/thread-908163-1-1.html</a> google 和 meta好</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Interview/" rel="tag"># Interview</a>
+              <a href="/tags/SRE/" rel="tag"># SRE</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/06/27/leadership/" rel="prev" title="leadership">
+                  <i class="fa fa-angle-left"></i> leadership
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/07/02/mask/" rel="next" title="mask">
+                  mask <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Joe</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">210k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">12:43</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+  <a href="https://github.com/DonkeyBoy001" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/4.20.0/algoliasearch-lite.umd.js" integrity="sha256-DABVk+hYj0mdUzo+7ViJC6cwLahQIejFvC+my2M/wfM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/4.57.0/instantsearch.production.min.js" integrity="sha256-foJtB+Wd0wvvK+VU3KO0/H6CjwSwJfB1RnWlgx0Ov9U=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"rZsuavEmZYP4PEa5niaZG6rn-MdYXbMMI","app_key":"iv0iSNLUTfYodhD0RwdwW9bn","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script>
+((window.gitter = {}).chat = {}).options = {
+  room: 'your-room-name',
+  activationElement: false
+};
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+</html>
