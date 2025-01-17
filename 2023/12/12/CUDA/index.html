@@ -28,12 +28,25 @@
 <meta property="og:site_name" content="Notes">
 <meta property="og:description" content="CUDA">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://p.ipic.vip/9s8k3y.png">
+<meta property="og:image" content="https://p.ipic.vip/d9j6vz.png">
+<meta property="og:image" content="https://p.ipic.vip/dltqm2.png">
+<meta property="og:image" content="https://p.ipic.vip/8j3fcv.png">
+<meta property="og:image" content="https://p.ipic.vip/9alm5y.png">
+<meta property="og:image" content="https://p.ipic.vip/3fc5i4.png">
+<meta property="og:image" content="https://p.ipic.vip/6xktss.png">
+<meta property="og:image" content="https://p.ipic.vip/u3rk8g.png">
+<meta property="og:image" content="https://p.ipic.vip/wrmxea.png">
+<meta property="og:image" content="https://p.ipic.vip/91grap.png">
+<meta property="og:image" content="https://p.ipic.vip/i7iqek.png">
+<meta property="og:image" content="https://p.ipic.vip/mxnlul.png">
 <meta property="article:published_time" content="2023-12-13T06:48:19.000Z">
-<meta property="article:modified_time" content="2023-12-17T01:17:13.000Z">
+<meta property="article:modified_time" content="2025-01-16T02:44:38.006Z">
 <meta property="article:author" content="Joe">
 <meta property="article:tag" content="Technical stack">
 <meta property="article:tag" content="CUDA">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p.ipic.vip/9s8k3y.png">
 
 
 <link rel="canonical" href="https://www.zhoujoe.us/2023/12/12/CUDA/">
@@ -138,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA"><span class="nav-number">1.</span> <span class="nav-text">CUDA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-Learn-CUDA"><span class="nav-number">2.</span> <span class="nav-text">How to Learn CUDA</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cuda"><span class="nav-number">1.</span> <span class="nav-text"> CUDA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#how-to-learn-cuda"><span class="nav-number">2.</span> <span class="nav-text"> How to Learn CUDA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#what-is-cuda"><span class="nav-number">2.1.</span> <span class="nav-text"> What is cuda?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gpu-%E5%92%8C-cuda-%E7%9A%84%E7%94%9F%E6%80%81%E7%8E%AF%E5%A2%83"><span class="nav-number">2.2.</span> <span class="nav-text"> GPU 和 Cuda 的生态环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cpu-%E6%9E%B6%E6%9E%84"><span class="nav-number">2.2.1.</span> <span class="nav-text"> CPU 架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E6%83%B3%E6%83%85%E5%86%B5%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 理想情况（顺序执行）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E6%83%85%E5%86%B5%E4%B9%B1%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="nav-number">2.2.3.</span> <span class="nav-text"> 实际情况（乱序执行）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text"> 并行处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cuda-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.3.1.</span> <span class="nav-text"> CUDA 环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-word"><span class="nav-number">2.3.2.</span> <span class="nav-text"> hello word</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cuda-thread-model"><span class="nav-number">2.3.3.</span> <span class="nav-text"> Cuda Thread Model</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#thread-model-%E5%B1%82%E6%AC%A1"><span class="nav-number">2.3.3.1.</span> <span class="nav-text"> Thread Model 层次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="nav-number">2.3.3.2.</span> <span class="nav-text"> 计算过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvcc-%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E5%92%8Cgpu%E8%AE%A1%E7%AE%97%E8%83%BD%E5%8A%9B"><span class="nav-number">2.3.4.</span> <span class="nav-text"> NVCC 编译流程和GPU计算能力</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1nvcc%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.4.1.</span> <span class="nav-text"> 1.NVCC编译流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2gpu%E8%AE%A1%E7%AE%97%E8%83%BD%E5%8A%9B"><span class="nav-number">2.3.4.2.</span> <span class="nav-text"> 2.GPU计算能力</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">2.4.</span> <span class="nav-text"> Reference</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -153,18 +166,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">76</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -239,7 +252,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-16 17:17:13" itemprop="dateModified" datetime="2023-12-16T17:17:13-08:00">2023-12-16</time>
+      <time title="Modified: 2025-01-15 18:44:38" itemprop="dateModified" datetime="2025-01-15T18:44:38-08:00">2025-01-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -276,14 +289,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>67</span>
+      <span>6.7k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>25 mins.</span>
     </span>
 </div>
 
@@ -293,12 +306,13 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="CUDA"><a href="#CUDA" class="headerlink" title="CUDA"></a>CUDA</h1><span id="more"></span>
-
-<h1 id="How-to-Learn-CUDA"><a href="#How-to-Learn-CUDA" class="headerlink" title="How to Learn CUDA"></a>How to Learn CUDA</h1><ol>
+    <div class="post-body" itemprop="articleBody"><h1 id="cuda"><a class="markdownIt-Anchor" href="#cuda"></a> CUDA</h1>
+<span id="more"></span>
+<h1 id="how-to-learn-cuda"><a class="markdownIt-Anchor" href="#how-to-learn-cuda"></a> How to Learn CUDA</h1>
+<ol>
 <li>Base Knowledge</li>
 </ol>
-<p>GPU architecture understanding </p>
+<p>GPU architecture understanding</p>
 <blockquote>
 <p>Understand how GPUs work, especially when compared to CPUs.</p>
 </blockquote>
@@ -309,7 +323,7 @@
 <ol start="2">
 <li>relevant tools</li>
 </ol>
-<p>NVIDIA’s ‘GPU</p>
+<p>NVIDIA’s 'GPU</p>
 <p>CUDA Toolkit</p>
 <p>Online Platform to learn CUDA</p>
 <p><strong>Google Colab</strong></p>
@@ -317,13 +331,823 @@
 <p><strong>Microsoft Azure</strong></p>
 <p><strong>Amazon AWS</strong></p>
 <ol start="3">
-<li><p>C&#x2F;C++ basic gramma</p>
+<li>
+<p>C/C++ basic gramma</p>
 </li>
-<li><p>Introduction Project</p>
+<li>
+<p>Introduction Project</p>
 </li>
-<li><p>Communities and forums</p>
+<li>
+<p>Communities and forums</p>
 </li>
 </ol>
+<h2 id="what-is-cuda"><a class="markdownIt-Anchor" href="#what-is-cuda"></a> What is cuda?</h2>
+<p>2024/12/25 back to learn how to use cuda</p>
+<p>CUDA: Compute Unified Devices Architecture</p>
+<p>统一计算架构</p>
+<p><strong>cuda历史</strong></p>
+<p>计算机的图形处理 主要 依赖于 CPU</p>
+<blockquote>
+<p>640x480的分辨率，每一帧的图片，需要30w个像素需要计算</p>
+<p>internel 368/486 运行频率 在 16Mhz到66Mhz之间</p>
+<blockquote>
+<p>把完成任务 比作 配送快递</p>
+<p>16Hz 步行</p>
+<p>66Hz 自行车</p>
+</blockquote>
+</blockquote>
+<p>3D加速卡 Vodoo 3DFX开发 雷神之锤</p>
+<p>1999 GPU GeForce256， 处理能力和灵活性大大提升</p>
+<blockquote>
+<p>Shader 着色器: 可以灵活控制 3D model 顶点的位置 颜色等属性</p>
+<p>图形处理的核心组件</p>
+</blockquote>
+<p>2002 GPGPU</p>
+<p>2006 GeFroce 8800 GTX， 支持通用计算的GPU, 引用的cuda 核心</p>
+<p><strong>cuda 核心 和 GPU核心的不同</strong></p>
+<blockquote>
+<p>CUDA 核心是 NVIDIA GPU 中的基础计算单元，专门用于处理并行任务。</p>
+<p>GPU 核心指的是 GPU 的计算核心，是更大的逻辑单元，包括了多个 CUDA 核心和其他硬件模块。</p>
+<p>一个计算的基本单元</p>
+<p>一个是管理和调度多个cuda核心</p>
+<blockquote>
+<ul>
+<li><strong>CUDA 核心</strong> 类似于工厂里的工人，每个工人负责完成一小部分具体的任务。</li>
+<li><strong>GPU 核心</strong> 类似于工厂的生产线，每条生产线包含多个工人，还负责协调和管理工人分工。</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>SIMD</p>
+<p>Single Instruction, Multiple Data</p>
+<p>同时对多个数据执行相同指令的计算方式。</p>
+<p>SI</p>
+<blockquote>
+<p>指计算机指令的类型，比如加法、乘法、逻辑运算等。</p>
+<p>在SIMD 模型中，所有计算单元执行的指令是相同的。</p>
+</blockquote>
+<p>MD</p>
+<blockquote>
+<p>指多个数据元素，这些数据通常是成组的，比如一组浮点数或一组整型数。</p>
+<p>SIMD 的计算单元会同时对这组数据中的所有元素执行相同的运算。</p>
+</blockquote>
+<p>eg</p>
+<blockquote>
+<p>处理一个包含 1000 个数据的数组时，</p>
+<p>SIMD 可以一次性对 4、8 或更多数据并行执行加法，而不是一个一个处理。</p>
+<blockquote>
+<p>• 传统逐个处理（非SIMD）：</p>
+<p>假设你在邮寄信件，每次只能处理一封信（比如贴邮票）。</p>
+<p>如果有100 封信，你需要重复这个动作100次。</p>
+<p>• SIMD 并行处理：</p>
+<p>假设你有一个机器可以一次性为4封信贴邮票。</p>
+<p>这个机器（SIMD 模型）执行的指令是相同的（贴邮票），但它能同时处理多封信（多数据）。</p>
+</blockquote>
+</blockquote>
+<p><strong>Cuda 核心工具包 cuda tool kit</strong></p>
+<p><strong>Tera Floating Point Operations Per Second</strong></p>
+<p>TFLOPS: 用来衡量GPU的浮点计算能力</p>
+<p>each second 可以进行 多少万亿次的 浮点计算</p>
+<blockquote>
+<p>浮点运算指的是加、减、乘、除等操作，通常用于处理小数和科学计算。</p>
+</blockquote>
+<p>eg</p>
+<blockquote>
+<p>假设 TFLOPS 表示一个工厂的生产能力：</p>
+<ul>
+<li><strong>CUDA 核心数</strong> 是工厂中的工人数量。</li>
+<li><strong>时钟频率（GHz）</strong> 是工人的工作速度。</li>
+<li><strong>每周期浮点运算数</strong> 是工人在每一轮操作中完成的任务数量。</li>
+<li>更高的 TFLOPS 表示工厂生产能力更强，但实际产量还受原材料（内存带宽）和管理效率（架构优化）的影响。</li>
+</ul>
+</blockquote>
+<p>**Tensor核心： Volta 架构 **</p>
+<p>专门为matrix 运算设计</p>
+<p>专门为AI定制的</p>
+<h2 id="gpu-和-cuda-的生态环境"><a class="markdownIt-Anchor" href="#gpu-和-cuda-的生态环境"></a> GPU 和 Cuda 的生态环境</h2>
+<p><img src="https://p.ipic.vip/9s8k3y.png" alt="image-20241225220332227"></p>
+<p>多核系统 是 因为 单核系统遇到了瓶颈</p>
+<h3 id="cpu-架构"><a class="markdownIt-Anchor" href="#cpu-架构"></a> CPU 架构</h3>
+<p>Pipelining</p>
+<p>Branch Prediction： 怎么去预测下一个分支要执行什么</p>
+<p>Superscalar</p>
+<p>Out-of-Order (OoO) Execution Memory Hierarchy</p>
+<p>Vector Operations</p>
+<p>Multi-Core</p>
+<p><strong>什么是CPU？</strong></p>
+<p>完成基本的逻辑 和 算术指令 instruction</p>
+<p><strong>什么是指令</strong></p>
+<p>operation: add</p>
+<p>get: access</p>
+<p>control</p>
+<p>对于Desktop Applcation来说，大部分时间是 在 搬运数据，很少是需要计算的。</p>
+<p><strong>Moore’s Law</strong></p>
+<p>芯片集成密度2年翻一倍，成本降一半。</p>
+<p><strong>一颗芯片图</strong></p>
+<p><img src="https://p.ipic.vip/d9j6vz.png" alt="image-20241225221617197"></p>
+<blockquote>
+<p>8核</p>
+<p>访存面积很大，主要是把data搬来搬去是占大头</p>
+</blockquote>
+<p><strong>Pipelining</strong></p>
+<p>CPU处理步骤</p>
+<p>Fetch–&gt; Decode–&gt; Execute–&gt; memory --&gt; writeback</p>
+<p>eg:</p>
+<blockquote>
+<p>R1 = R2 + R3</p>
+<ol>
+<li><strong>Fetch</strong>：从内存中取出 R1 = R2 + R3\text{R1 = R2 + R3}R1 = R2 + R3 这条指令。</li>
+<li><strong>Decode</strong>：解码指令，理解需要从 R2 和 R3 取值，执行加法，并将结果存入 R1。</li>
+<li><strong>Execute</strong>：将 R2 和 R3 的值通过 ALU 加法器相加。</li>
+<li><strong>Memory</strong>：如果涉及内存读取或写入操作（此例中不需要）。</li>
+<li><strong>Writeback</strong>：将计算结果写入寄存器 R1。</li>
+</ol>
+</blockquote>
+<p>利用指令集 并行 instruction-level paralleism IIP</p>
+<blockquote>
+<p>split the tasks into small basic steps and solve it</p>
+</blockquote>
+<p>**Bypassing **</p>
+<blockquote>
+<p>假设你有两个工人：</p>
+<ol>
+<li><strong>工人 A</strong>：负责从仓库取货。</li>
+<li><strong>工人 B</strong>：需要工人 A 的货物进行加工。</li>
+</ol>
+<ul>
+<li><strong>无 bypassing</strong>：
+<ul>
+<li>工人 A 必须先把货物送到存储区（Register），工人 B 才能取货加工。</li>
+<li>如果存储区（Register）很远，工人 B 只能等，效率很低。</li>
+</ul>
+</li>
+<li><strong>有 bypassing</strong>：
+<ul>
+<li>工人 A 直接把货物递给工人 B，跳过存储区（Register），节省时间。</li>
+<li>工人 B 无需等待，可以立即开始加工。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>Stalls</strong></p>
+<blockquote>
+<p>假设流水线是一个快递配送中心：</p>
+<ol>
+<li><strong>数据相关性</strong>：
+<ul>
+<li>第一位员工（指令 1）需要先完成包裹贴标签，第二位员工（指令 2）才能开始扫描包裹。</li>
+<li>如果贴标签的工作没完成，扫描就得等待，这就造成了停滞。</li>
+</ul>
+</li>
+<li><strong>控制相关性</strong>：
+<ul>
+<li>如果快递分拣线中有分岔点（条件跳转），系统需要知道包裹该往哪个方向送。</li>
+<li>如果分岔方向不确定，所有工作就会停下来。</li>
+</ul>
+</li>
+<li><strong>结构相关性</strong>：
+<ul>
+<li>如果分拣中心只有一条传送带，但同时有多个包裹需要运送，包裹就会堆积，造成停滞。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<p><strong>Branches</strong></p>
+<p>分支是实现循环、条件语句、函数调用的基础。</p>
+<p>分支允许程序根据不同的条件执行不同的代码块，使程序更灵活。</p>
+<blockquote>
+<p>假设你是一名司机，在一个十字路口前需要决定向左、向右还是直行：</p>
+<ol>
+<li>条件分支
+<ul>
+<li>你观察红绿灯的状态（条件判断），根据灯的颜色决定是否直行或转弯。</li>
+</ul>
+</li>
+<li>无条件分支
+<ul>
+<li>你根据导航仪的指示，直接向某个方向前进，无需判断。</li>
+</ul>
+</li>
+</ol>
+<p>如果你提前预测方向（比如认为会是绿灯），但结果是错误的，就需要重新调整路径（类似于分支预测失败）。</p>
+</blockquote>
+<p><strong>Branch Prediction</strong></p>
+<blockquote>
+<p>你是一名送货员，来到一个十字路口，需要决定是否向左、向右或直行：</p>
+<ul>
+<li><strong>条件</strong>：如果客户下了订单，就往左送（左边是客户家）。</li>
+<li><strong>否则</strong>：如果订单未下，就直行回仓库。</li>
+</ul>
+<p>但系统需要一定时间来确认客户是否下单。</p>
+<ol>
+<li><strong>没有分支预测：</strong>
+<ul>
+<li>你站在路口等待客户订单确认。</li>
+<li>如果系统需要 5 秒确认，你的车停在路口 5 秒后，才能决定往哪个方向走。</li>
+<li><strong>问题</strong>：时间浪费，效率低。</li>
+</ul>
+</li>
+<li><strong>有分支预测：</strong>
+<ul>
+<li>你根据历史经验（比如过去 90% 的客户都会下单），直接预测客户下了订单，于是你先往左行驶。</li>
+<li>如果预测正确，你的选择是对的，时间没有浪费。</li>
+<li>如果预测错误（客户没下单），你掉头返回仓库，这会造成时间浪费，但仍比完全等待更高效。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<p><strong>Another option: Predication</strong></p>
+<blockquote>
+<p>Predication 可以类比为在多人团队中并行处理多个任务：</p>
+<ol>
+<li><strong>传统分支（Branching）</strong>：
+<ul>
+<li>如果某个任务需要判断条件（例如谁来完成任务 A 和任务 B），一个人等条件结果再行动，另一个人闲置。</li>
+<li>如果判断条件错了，得重新安排任务。</li>
+</ul>
+</li>
+<li><strong>Predication</strong>：
+<ul>
+<li>两个人同时执行任务 A 和任务 B，但只有满足条件的任务结果被保留，另一个人的结果被丢弃。</li>
+<li>虽然多消耗了一些资源，但避免了等待时间。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<p><strong>IPC</strong>：像是一个流水线生产线的效率指标，表示每秒能完成的产品数量。</p>
+<blockquote>
+<p>Instructions Per Cycle: 完成一条instruction需要的clock sign frequency.</p>
+</blockquote>
+<p><strong>Superscalar</strong>：像是多个平行的生产线，它允许在同一时间处理多个产品，从而提高生产效率。</p>
+<p><strong>时钟周期 clock sign</strong></p>
+<blockquote>
+<p>一个clock sign就是 一个规律的 high low 电平交替</p>
+</blockquote>
+<p>Sandy Bridge</p>
+<blockquote>
+<ol>
+<li><strong>取指（Fetch）</strong>：
+<ul>
+<li>从指令缓存（L1 Cache）中提取多条指令。</li>
+</ul>
+</li>
+<li><strong>解码（Decode）</strong>：
+<ul>
+<li>每个时钟周期可以解码 4 条指令。</li>
+<li>复杂指令被拆分为多个微操作。</li>
+</ul>
+</li>
+<li><strong>调度（Schedule）</strong>：
+<ul>
+<li>将微操作分配到合适的执行单元。</li>
+<li>动态调度可以重排序指令，以减少数据相关性导致的停滞。</li>
+</ul>
+</li>
+<li><strong>执行（Execute）</strong>：
+<ul>
+<li>多个执行单元并行处理微操作，包括 ALU、FPU 和 SIMD 单元。</li>
+</ul>
+</li>
+<li><strong>写回（Writeback）</strong>：
+<ul>
+<li>执行结果写回到寄存器或内存。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>单发射 vs 超标量</strong>：</p>
+<ul>
+<li>单发射处理器：像一个单车道的道路，一次只能通过一辆车。</li>
+<li>超标量处理器：像多车道高速公路，同一时间可以通过多辆车（多条指令）。</li>
+</ul>
+<p><strong>流水线与超标量结合</strong>：</p>
+<ul>
+<li>流水线：不同阶段的工作并行执行。</li>
+<li>超标量：每个阶段可以同时处理多条指令，就像每条车道上有多辆车。</li>
+</ul>
+<p><strong>动态调度器</strong>：</p>
+<ul>
+<li>相当于交通信号灯，智能分配车流，避免拥堵。</li>
+</ul>
+</blockquote>
+</blockquote>
+<p><strong>Scheduling</strong></p>
+<p>将有限的资源高效分配给任务</p>
+<p><strong>Register Renaming</strong></p>
+<blockquote>
+<p>假设几名学生（指令）需要写作业，而每个人都有自己的作业纸（操作目标）。</p>
+<p>学生们要使用一套有限的笔（Regiser）写作业。如果所有人都试图同时使用相同的笔，就会冲突。</p>
+<p>为了解决这个问题，老师（<strong>Register Renaming</strong>硬件）给每位学生分配“编号”的笔（物理Register），而不是直接使用“共享的笔”（逻辑寄存器名）。这些编号对学生来说是透明的。</p>
+</blockquote>
+<p><strong>OoO</strong></p>
+<p>Out-of-Order Execution</p>
+<blockquote>
+<p>假设一家餐厅有多张桌子，每张桌子点了多道菜，厨师需要尽快完成所有订单。</p>
+<hr>
+<h3 id="理想情况顺序执行"><a class="markdownIt-Anchor" href="#理想情况顺序执行"></a> 理想情况（顺序执行）</h3>
+<p>在顺序执行中，厨师会按照每桌点菜的顺序依次完成：</p>
+<ol>
+<li>拿到第一个桌子的所有菜的订单。</li>
+<li>开始逐道菜准备，直到第一个桌子的菜全部做好，再开始第二桌子的订单。</li>
+<li>每张桌子的等待时间可能会很长，因为要等前面所有订单完成。</li>
+</ol>
+<hr>
+<h3 id="实际情况乱序执行"><a class="markdownIt-Anchor" href="#实际情况乱序执行"></a> 实际情况（乱序执行）</h3>
+<p>为了提高效率，餐厅会采用如下乱序策略：</p>
+<ol>
+<li>厨师会查看所有订单，优先处理那些<strong>原料已经准备好</strong>、或者<strong>简单快做的菜</strong>。</li>
+<li>如果某道菜的食材暂时不足（例如，需要等待肉解冻），厨师会暂时搁置这道菜，先去做其他可以立即准备的菜。</li>
+<li>最终，所有桌子的菜都会端上去，但<strong>实际制作的顺序可能完全乱了</strong>。</li>
+</ol>
+</blockquote>
+<p><strong>Memory Hierarchy</strong></p>
+<ol>
+<li>
+<p>Register</p>
+</li>
+<li>
+<p>Cache</p>
+<blockquote>
+<p>将数据放在尽可能接近的位置</p>
+</blockquote>
+</li>
+<li>
+<p>Main Memory/DRAM</p>
+</li>
+<li>
+<p>Secondary Storage</p>
+</li>
+<li>
+<p>Tertiary Storage</p>
+</li>
+</ol>
+<p><img src="https://p.ipic.vip/dltqm2.png" alt="image-20241226051431823"></p>
+<p><strong>Memory Wall</strong></p>
+<p>散热原因导致 性能不能无限增加</p>
+<blockquote>
+<p>Eg:</p>
+<p>一辆车想要更快（更高时钟频率），需要更多的燃油（功耗）。</p>
+<p>但车的油箱容量有限（散热能力有限），跑得太快会导致燃油消耗过快甚至损坏引擎（芯片过热）。</p>
+<p>因此，汽车制造商不再单纯追求更高速度，而是选择更高效的引擎（多核处理）、更轻量化的设计（低功耗优化），以达到更高的整体性能。</p>
+</blockquote>
+<p>从而导致 单核 走向 多核</p>
+<p>还有 register wall等等</p>
+<h2 id="并行处理"><a class="markdownIt-Anchor" href="#并行处理"></a> 并行处理</h2>
+<p>并行计算是同时应用多个计算资源解决一个计算问题</p>
+<p><strong>Flynn matrix</strong></p>
+<p>SISD, SIMD, MISD, MIMD</p>
+<blockquote>
+<p>一个工人在流水线上一次操作一个产品。</p>
+<p>一群工人在流水线上做同样的工作，但处理不同的产品。</p>
+<p>多个专家对同一份文档进行不同的分析。</p>
+<p>多个工人在各自的流水线上独立完成不同的任务。</p>
+</blockquote>
+<p><strong>Observed Speedup</strong></p>
+<blockquote>
+<ul>
+<li>如果搬砖任务可以被完美拆分，且没有其他限制：
+<ul>
+<li>1 个人需要 <strong>100 分钟</strong>。</li>
+<li>2 个人只需要 <strong>50 分钟</strong>，加速比是 2。</li>
+<li>4 个人只需要 <strong>25 分钟</strong>，加速比是 4。</li>
+<li>换句话说，人数越多，加速比线性增长。</li>
+</ul>
+</li>
+</ul>
+<p>这就是 <strong>理想加速比</strong>，即理论上随着处理器数量增加，性能成比例提升。</p>
+</blockquote>
+<p><strong>Parallel Overhead</strong></p>
+<p>执行并行程序时，额外增加的计算、时间或资源消耗，而这些消耗并不会直接用于完成实际的计算任务。</p>
+<blockquote>
+<p>Task Partitioning Overhead</p>
+<p>Task Scheduling Overhead</p>
+<p>Communication Overhead</p>
+<p>Synchronization Overhead</p>
+<p>Resource Contention</p>
+<p>Load Imbalance Overhead</p>
+<blockquote>
+<ol>
+<li>
+<p><strong>任务分割开销</strong>：将一个大项目分解为多个小任务需要时间和精力</p>
+<p>例如，为每个人分配工作、写清楚需求说明。</p>
+</li>
+<li>
+<p><strong>调度开销</strong>：项目经理需要分配任务、分配资源、跟进每个人的进度，这需要额外时间。</p>
+</li>
+<li>
+<p><strong>通信开销</strong>：团队成员之间需要开会讨论任务进展和问题（数据交换），这会占用工作时间。</p>
+</li>
+<li>
+<p><strong>同步开销</strong>：有些任务需要等待其他人完成，某人完成了部分设计后，另一个人才能开始编写代码。</p>
+</li>
+<li>
+<p><strong>资源竞争</strong>：如果团队只有一台打印机或有限的电脑，大家可能需要排队使用（资源争用）。</p>
+</li>
+<li>
+<p><strong>负载不均</strong>：如果某些人工作量较少，而其他人工作量繁重，就会导致效率下降。</p>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<p><strong>并行编程模型</strong></p>
+<blockquote>
+<p>Shared Memory Model</p>
+<p>共享存储模型就像一家共享厨房的餐厅，多个厨师在同一个厨房中做菜。如果他们使用相同的锅，需要协调避免互相干扰。</p>
+<p>Threads Model</p>
+<p>线程模型就像一个项目团队，每个成员（线程）有自己的工作任务，同时也可以协作完成共享任务。</p>
+<p>Message Passing Model</p>
+<p>消息传递模型就像一个远程协作团队，每个人独立工作，但通过电子邮件或聊天工具传递信息进行协作。</p>
+<p>Data Parallel Model</p>
+<p>数据并行模型就像一群人在不同的地块同时种植相同的作物，每个人负责自己的一块地。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>模型</strong></th>
+<th><strong>内存类型</strong></th>
+<th><strong>通信方式</strong></th>
+<th><strong>适用场景</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shared Memory Model</strong></td>
+<td>共享内存</td>
+<td>通过共享变量</td>
+<td>多线程、GPU并行</td>
+</tr>
+<tr>
+<td><strong>Threads Model</strong></td>
+<td>共享内存</td>
+<td>通过本地或共享数据</td>
+<td>多线程编程</td>
+</tr>
+<tr>
+<td><strong>Message Passing Model</strong></td>
+<td>独立内存</td>
+<td>通过显式消息</td>
+<td>分布式计算、网络通信</td>
+</tr>
+<tr>
+<td><strong>Data Parallel Model</strong></td>
+<td>通用</td>
+<td>数据分片并分发</td>
+<td>图形处理、大规模数据计算</td>
+</tr>
+</tbody>
+</table>
+<p><strong>syn</strong></p>
+<p>braodcast</p>
+<p><img src="https://p.ipic.vip/8j3fcv.png" alt="image-20241226061101109"></p>
+<p>scatter</p>
+<p><img src="https://p.ipic.vip/9alm5y.png" alt="image-20241226061113421"></p>
+<p>gather</p>
+<p><img src="https://p.ipic.vip/3fc5i4.png" alt="image-20241226061127628"></p>
+<p>Reduction</p>
+<p><img src="https://p.ipic.vip/6xktss.png" alt="image-20241226061138524"></p>
+<p><strong>Amdahl’s Law</strong></p>
+<p>程序可能的加速比取決于可以被并行化的部分。</p>
+<p><img src="https://p.ipic.vip/u3rk8g.png" alt="image-20241226061354860"></p>
+<blockquote>
+<p>假设你和朋友在搬家，任务分为两部分：</p>
+<ol>
+<li>打包物品（只能一个人完成，串行部分）。</li>
+<li>搬运物品（可以多人同时搬，完全并行化）。</li>
+</ol>
+<ul>
+<li>如果打包物品占总时间的 20%，即使请更多的人帮忙搬运，打包部分始终限制了整体效率。</li>
+<li>即使你有 100 个朋友，搬家的效率仍然不会超过打包的限制。</li>
+</ul>
+</blockquote>
+<h3 id="cuda-环境搭建"><a class="markdownIt-Anchor" href="#cuda-环境搭建"></a> CUDA 环境搭建</h3>
+<p>下载 cuda toolkit</p>
+<p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-zone">https://developer.nvidia.com/cuda-zone</a></p>
+<p>本人是使用的mac系统，所以只能在线学习，下面是一个google 提供的平台学习cuda</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/depctg/udacity-cs344-colab">https://github.com/depctg/udacity-cs344-colab</a></p>
+<p>我是直接去google codelab创建一个notebook</p>
+<p>然后runing time 切换为 GPU</p>
+<p>输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!nvidia-smi</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Thu Dec 26 14:44:54 2024       </span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br><span class="line">| NVIDIA-SMI 535.104.05             Driver Version: 535.104.05   CUDA Version: 12.2     |</span><br><span class="line">|-----------------------------------------+----------------------+----------------------+</span><br><span class="line">| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |</span><br><span class="line">| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |</span><br><span class="line">|                                         |                      |               MIG M. |</span><br><span class="line">|=========================================+======================+======================|</span><br><span class="line">|   0  Tesla T4                       Off | 00000000:00:04.0 Off |                    0 |</span><br><span class="line">| N/A   45C    P8              10W /  70W |      0MiB / 15360MiB |      0%      Default |</span><br><span class="line">|                                         |                      |                  N/A |</span><br><span class="line">+-----------------------------------------+----------------------+----------------------+</span><br><span class="line">                                                                                         </span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br><span class="line">| Processes:                                                                            |</span><br><span class="line">|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |</span><br><span class="line">|        ID   ID                                                             Usage      |</span><br><span class="line">|=======================================================================================|</span><br><span class="line">|  No running processes found                                                           |</span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+<p>安装 cuda toolkit在google cloud</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!sudo apt update</span><br><span class="line">!sudo apt install -y nvidia-cuda-toolkit</span><br></pre></td></tr></table></figure>
+<p>检查是否成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!nvcc --version</span><br></pre></td></tr></table></figure>
+<h3 id="hello-word"><a class="markdownIt-Anchor" href="#hello-word"></a> hello word</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!sudo apt-get install g++</span><br><span class="line">!sudo apt update</span><br><span class="line">!sudo apt install -y gcc</span><br></pre></td></tr></table></figure>
+<p>创建一个 hello.cu文件</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello, World!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!nvcc hello.cu -o hello</span><br><span class="line">!./hello</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 <strong>NVIDIA CUDA 编译器</strong> (<code>nvcc</code>) 编译一个名为 <code>hello.cu</code> 的 CUDA 源文件，并生成一个名为 <code>hello</code> 的可执行文件。</p>
+<blockquote>
+<ol>
+<li><strong><code>nvcc</code></strong>:
+<ul>
+<li>NVIDIA 的 CUDA 编译器，用于编译 <code>.cu</code> 文件（CUDA C/C++ 源文件）。</li>
+<li>它会将代码中的主机代码（CPU 执行部分）交给主机编译器（如 <code>g++</code>），同时编译设备代码（GPU 执行部分）。</li>
+</ul>
+</li>
+<li><strong><code>hello.cu</code></strong>:
+<ul>
+<li>是您的 CUDA 源文件，包含 GPU 相关的代码。</li>
+</ul>
+</li>
+<li><strong><code>-o hello</code></strong>:
+<ul>
+<li>指定输出的可执行文件名称为 <code>hello</code></li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<p><strong>Kernel function</strong></p>
+<p>kernel fuc 在<strong>GPU</strong>上执行， cuda的核心部分。</p>
+<p>通过 kernel 进行 parallel computing.(assign data into many thread on GPU)</p>
+<p>在主机代码CPU中调用kernel func,  需要通过 cuda 配置 thread 和 block的数量。</p>
+<p>使用方法：</p>
+<p>kernel fuc 必须 使用`` <strong>global</strong>`修饰 —&gt; 表示是 运行在 GPU上的function</p>
+<p>return必须是 void</p>
+<p>调用方式：<br>
+kernel fuc必须通过 <code>&lt;&lt;&lt;blocks, threads&gt;&gt;&gt;</code> 调用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kernel_function&lt;&lt;&lt;number_of_blocks, number_of_threads_per_block&gt;&gt;&gt;(arguments);</span><br></pre></td></tr></table></figure>
+<p>hello world from GPU</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">helloFromGPU</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello, CUDA!\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// call kernel function</span></span><br><span class="line">    <span class="comment">// seting 1 block and 1 thread</span></span><br><span class="line">    helloFromGPU&lt;&lt;&lt;<span class="number">1</span>, <span class="number">1</span>&gt;&gt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// synchronize the kernel execution</span></span><br><span class="line">    <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>define kernel func：</strong></p>
+<ul>
+<li>使用 <code>__global__</code> 修饰，声明一个运行在 GPU 上的函数</li>
+<li>返回值必须是 <code>void</code></li>
+</ul>
+<p><strong>call kernel func：</strong></p>
+<ul>
+<li>
+<p>在主机代码（CPU）中通过 <code>&lt;&lt;&lt;blocks, threads&gt;&gt;&gt;</code> 调用</p>
+</li>
+<li>
+<p>例如：<code>helloFromGPU&lt;&lt;&lt;1, 1&gt;&gt;&gt;();</code> 表示 GPU 上运行 1 个 block，每个 block 中 1 个thread</p>
+<blockquote>
+<p><strong>GPU 是一个公司</strong></p>
+<ul>
+<li>GPU 是一个处理大量计算任务的大型平台，就像一个公司，负责完成某些复杂的项目。</li>
+</ul>
+<p><strong>Block 是一个部门</strong></p>
+<ul>
+<li>GPU 上的 block 就像公司中的一个部门。</li>
+<li>每个部门可以独立完成分配给它的任务。</li>
+</ul>
+<p><strong>Thread 是一个员工</strong></p>
+<ul>
+<li>每个 block 内的 thread 就像部门中的员工。</li>
+<li>每个员工负责一个具体的任务。</li>
+</ul>
+<p><strong>1 个 block, 1 个 thread 的情况</strong></p>
+<ul>
+<li>这就像整个公司中，只有一个部门，且这个部门只有一个员工。</li>
+<li>这个员工需要完成部门的所有任务，因为没有其他人协助。</li>
+</ul>
+<p>打印 “Hello, GPU!”。</p>
+<ul>
+<li>任务分配：
+<ul>
+<li>只有一个部门（1 个 block），负责整个任务。</li>
+<li>部门里只有 1 个员工（1 个 thread），这个员工会完成全部任务。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><strong>Synchronization:</strong></p>
+<p>使用 <code>cudaDeviceSynchronize()</code> 确保 GPU 上的任务完成后再继续执行主机代码。</p>
+<blockquote>
+<p><strong>线程同步</strong> 就像团队合作时，大家需要在某个阶段一起停下来，确认所有人完成了当前任务，再继续执行后续任务。</p>
+</blockquote>
+</blockquote>
+<p>在google code中执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!nvcc hello_cuda.cu -o hello</span><br><span class="line">!./hello</span><br></pre></td></tr></table></figure>
+<p>kernel function 不支持C++的istream</p>
+<h3 id="cuda-thread-model"><a class="markdownIt-Anchor" href="#cuda-thread-model"></a> Cuda Thread Model</h3>
+<p>Compute Unified Device Architecture</p>
+<p>NVDIA 提供GPU parallel computing framework</p>
+<p>CUDA 线程模型是通过 <strong>Grid -&gt; Block -&gt; Thread</strong> 的分层结构实现的。</p>
+<p><img src="https://p.ipic.vip/wrmxea.png" alt="image-20241226075044975"></p>
+<blockquote>
+<p><strong>Grid</strong> 是最高层次的网格，包含多个 <strong>Block</strong>。</p>
+<p><strong>Block</strong> 是线程的集合，负责更小范围的任务。</p>
+<p><strong>Thread</strong> 是最小单位，执行具体计算。</p>
+</blockquote>
+<h4 id="thread-model-层次"><a class="markdownIt-Anchor" href="#thread-model-层次"></a> Thread Model 层次</h4>
+<p><strong>1. Grid（网格）</strong></p>
+<ul>
+<li>
+<p><strong>定义</strong>：由多个 Block 组成，是Thread的最高组织单位。</p>
+<p>可以想象为城市, 每个城市（Grid）包含多个社区（Block）。</p>
+</li>
+</ul>
+<p><strong>2. Block（线程块）</strong></p>
+<ul>
+<li>
+<p><strong>定义</strong>：由多个线程组成的计算单元。</p>
+<p>可以想象为一个社区, 每个社区（Block）包含许多居民（Thread）。</p>
+</li>
+</ul>
+<p><strong>3. Thread（线程）</strong></p>
+<ul>
+<li>
+<p><strong>定义</strong>：GPU 执行任务的最小单位。</p>
+<p>可以想象为居民, 每个居民（Thread）负责具体的一小部分任务。</p>
+</li>
+</ul>
+<p>在cuda中，thread的层次结构用 三维坐标表示</p>
+<p><strong>1. Grid 的结构</strong></p>
+<ul>
+<li>Grid 是 <strong>二维（x, y）</strong> 的网格。</li>
+<li>每个 Grid 包含多个 Block。</li>
+</ul>
+<p><strong>2. Block 的结构</strong></p>
+<ul>
+<li>Block 是 <strong>三维（x, y, z）</strong> 的线程块。</li>
+<li>每个 Block 包含多个 Thread。</li>
+</ul>
+<p><strong>3. Thread 的唯一标识</strong></p>
+<p>每个线程在 Grid 中的唯一 ID 是由以下公式计算得到的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">globalThreadID = blockIdx.x * blockDim.x + threadIdx.x;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>blockidx：Block 在 Grid 中的index。</p>
+<p>blockDim：每个 Block 中Thread的数量。</p>
+<p>threadIdx：Thread在 Block 中的index。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 核函数</span></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">simpleKernel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> threadId = threadIdx.x;    <span class="comment">// 当前线程在 Block 中的索引</span></span><br><span class="line">    <span class="type">int</span> blockId = blockIdx.x;      <span class="comment">// 当前 Block 在 Grid 中的索引</span></span><br><span class="line">    <span class="type">int</span> globalId = blockId * blockDim.x + threadId; <span class="comment">// 全局线程 ID</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Thread %d in Block %d has Global ID %d\n&quot;</span>, threadId, blockId, globalId);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> blocks = <span class="number">2</span>;  <span class="comment">// Grid 中 Block 的数量</span></span><br><span class="line">    <span class="type">int</span> threads = <span class="number">5</span>; <span class="comment">// 每个 Block 中的线程数</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 启动 CUDA 核函数</span></span><br><span class="line">    simpleKernel&lt;&lt;&lt;blocks, threads&gt;&gt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 同步 CPU 和 GPU</span></span><br><span class="line">    <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>配置thread</p>
+<p>&lt;&lt;&lt;grid_size, block_size&gt;&gt;&gt;</p>
+<p>最大运行thread block 1024</p>
+<blockquote>
+<p>在 CUDA 中，一个线程块（Block）最多可以包含 1024 个线程(Thread)。</p>
+<p><code>blockDim.x * blockDim.y * blockDim.z ≤ 1024</code>。</p>
+<blockquote>
+<p>线程块可以是 1D、2D 或 3D 结构，例如：</p>
+<ul>
+<li>1D：<code>blockDim.x = 1024</code></li>
+<li>2D：<code>blockDim.x = 32, blockDim.y = 32</code>（32×32 = 1024）</li>
+<li>3D：<code>blockDim.x = 8, blockDim.y = 8, blockDim.z = 16</code>（8×8×16 = 1024）</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>最大运行block size 2^31 - 1 (1维网格)</p>
+<blockquote>
+<p>网格（Grid）是由多个线程块（Block）组成的，最大支持 231−12^{31} - 1231−1 个线程块。</p>
+<blockquote>
+<ul>
+<li>针对一维网格，这个值是 2,147,483,647。</li>
+<li>针对二维网格，<code>gridDim.x</code> 和 <code>gridDim.y</code> 的最大值一般在 216−12^{16} - 1216−1 左右（具体限制根据硬件）。</li>
+<li>针对三维网格，<code>gridDim.z</code> 也有类似限制。</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>代码解释 &lt;&lt;&lt;grid_size, block_size&gt;&gt;&gt;</p>
+<p><img src="https://p.ipic.vip/91grap.png" alt="image-20241226080224633"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">kernelExample</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> threadId = threadIdx.x;                     <span class="comment">// 当前线程在 Block 内的索引</span></span><br><span class="line">    <span class="type">int</span> blockId = blockIdx.x;                       <span class="comment">// 当前 Block 在 Grid 内的索引</span></span><br><span class="line">    <span class="type">int</span> globalId = blockId * blockDim.x + threadId; <span class="comment">// 全局线程 ID</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Block %d, Thread %d: Global ID = %d\n&quot;</span>, blockId, threadId, globalId);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> numBlocks = <span class="number">2</span>;  <span class="comment">// 网格中 Block 数量</span></span><br><span class="line">    <span class="type">int</span> numThreads = <span class="number">4</span>; <span class="comment">// 每个 Block 中的线程数量</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 启动 Kernel 函数</span></span><br><span class="line">    kernelExample&lt;&lt;&lt;numBlocks, numThreads&gt;&gt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 同步 CPU 和 GPU</span></span><br><span class="line">    <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><strong>gridDim.x = 2</strong>：网格有 2 个block.</li>
+<li><strong>blockDim.x = 4</strong>：each block中有 4 thread.</li>
+</ul>
+<h4 id="计算过程"><a class="markdownIt-Anchor" href="#计算过程"></a> <strong>计算过程</strong></h4>
+<ul>
+<li>
+<p>Block 0</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blockIdx.x = 0</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>threadIdx.x = 0</code>，全局 ID = <code>0 * 4 + 0 = 0</code></li>
+<li><code>threadIdx.x = 1</code>，全局 ID = <code>0 * 4 + 1 = 1</code></li>
+<li><code>threadIdx.x = 2</code>，全局 ID = <code>0 * 4 + 2 = 2</code></li>
+<li><code>threadIdx.x = 3</code>，全局 ID = <code>0 * 4 + 3 = 3</code></li>
+</ul>
+</li>
+<li>
+<p>Block 1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blockIdx.x = 1</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>threadIdx.x = 0</code>，全局 ID = <code>1 * 4 + 0 = 4</code></li>
+<li><code>threadIdx.x = 1</code>，全局 ID = <code>1 * 4 + 1 = 5</code></li>
+<li><code>threadIdx.x = 2</code>，全局 ID = <code>1 * 4 + 2 = 6</code></li>
+<li><code>threadIdx.x = 3</code>，全局 ID = <code>1 * 4 + 3 = 7</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>多维thread</strong></p>
+<p>Cuda 可以是  3维的block 和 thread</p>
+<p>网格可以在 <code>x, y, z</code> 三个维度上组织block</p>
+<p>每个block也可以在 <code>x, y, z</code> 三个维度上组织thread</p>
+<blockquote>
+<p>把 CUDA 的线程模型类比为一个高楼里的房间：</p>
+<ul>
+<li><strong>高楼（grid）</strong>
+<ul>
+<li>高楼由多层楼（线程块 block）组成</li>
+<li>每一层楼都有一个唯一编号（通过 <code>blockIdx.x, blockIdx.y, blockIdx.z</code> 表示）</li>
+</ul>
+</li>
+<li><strong>楼层（ block）</strong>
+<ul>
+<li>每一层楼里有很多房间（线程 thread）</li>
+<li>房间的位置通过 <code>threadIdx.x, threadIdx.y, threadIdx.z</code> 表示</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>注意 坐标和矩阵是相反的</p>
+<p><img src="https://p.ipic.vip/i7iqek.png" alt="image-20241226080903352"></p>
+<h3 id="nvcc-编译流程和gpu计算能力"><a class="markdownIt-Anchor" href="#nvcc-编译流程和gpu计算能力"></a> NVCC 编译流程和GPU计算能力</h3>
+<h4 id="1nvcc编译流程"><a class="markdownIt-Anchor" href="#1nvcc编译流程"></a> 1.NVCC编译流程</h4>
+<p>NVCC是 NVIDIA 提供的 editor</p>
+<p>负责将 CUDA source code 编译 为 execute program.</p>
+<p>NVCC will split the code into 2 parts:</p>
+<p>1.host code: run on CPU</p>
+<p>2.deveice code: run on GPU</p>
+<p>example to undestand NVCC</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// GPU 上执行的设备代码 (Device Code)</span></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">addKernel</span><span class="params">(<span class="type">int</span>* c, <span class="type">const</span> <span class="type">int</span>* a, <span class="type">const</span> <span class="type">int</span>* b)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = threadIdx.x;</span><br><span class="line">    c[i] = a[i] + b[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// __global__ decorator 修饰 kernel function ---&gt; addKernel是kernel 函数了</span></span><br><span class="line"><span class="comment">// 调用kernel function必须 configure thread 和 thread block</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里2个input pramater</span></span><br><span class="line"><span class="comment">// a and b</span></span><br><span class="line"><span class="comment">// c是 output pramater</span></span><br><span class="line"><span class="comment">// c &lt;= a + b</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// configure pramaters</span></span><br><span class="line"><span class="comment">// &lt;&lt;1, 5&gt;&gt;</span></span><br><span class="line"><span class="comment">// 1 block thread</span></span><br><span class="line"><span class="comment">// 1 block has 5 threads</span></span><br><span class="line"><span class="comment">// threadId.x = 0 1 2 3 4</span></span><br><span class="line"><span class="comment">// 每一个thread execute indepently</span></span><br><span class="line"><span class="comment">// thread0:   c[0] = a[0] + b[0]</span></span><br><span class="line"><span class="comment">// thread1:   c[1] = a[1] + b[1]</span></span><br><span class="line"><span class="comment">// thread2: 	c[2] = a[2] + b[2]</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="comment">// arrc == arrb + arra</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// CPU 上执行的主机代码 (Host Code)</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// define and intialization</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> arraySize = <span class="number">5</span>; <span class="comment">// size of arr is 5</span></span><br><span class="line">    <span class="type">int</span> a[arraySize] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="type">int</span> b[arraySize] = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</span><br><span class="line">    <span class="type">int</span> c[arraySize] = &#123;<span class="number">0</span>&#125;; <span class="comment">// intialization arr as &#123;0, 0, 0, 0, 0&#125; to store results</span></span><br><span class="line">	</span><br><span class="line">  	<span class="comment">// clarify global in-memory pointer</span></span><br><span class="line">    <span class="type">int</span> *dev_a, *dev_b, *dev_c;</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// 1. CPU</span></span><br><span class="line">    <span class="comment">// CUDA 内存分配</span></span><br><span class="line">  	<span class="comment">// allocate global memory in GPU</span></span><br><span class="line">  	<span class="comment">// each arr need space: size of arr * size of int single pointer</span></span><br><span class="line">  	<span class="comment">// (void**)&amp; 强制转换为GPUpinter type</span></span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_a, arraySize * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_b, arraySize * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_c, arraySize * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 数据传输到 GPU</span></span><br><span class="line">  	<span class="comment">// copy the data from CPU to GPU</span></span><br><span class="line">  	<span class="comment">// dev_a: GPU memory(target place)</span></span><br><span class="line">  	<span class="comment">// a: CPU memeory(source place)</span></span><br><span class="line">  	<span class="comment">// data_size: arrSize * sizeof(int)</span></span><br><span class="line">  	<span class="comment">// dirction: from CPU to GPU</span></span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(dev_a, a, arraySize * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(dev_b, b, arraySize * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// 2. GPU</span></span><br><span class="line">    <span class="comment">// 调用设备代码</span></span><br><span class="line">  	<span class="comment">// call GPU kernel function execute: c = a+b</span></span><br><span class="line">  	<span class="comment">// &lt;&lt;&lt;1, arrySize&gt;&gt;&gt;</span></span><br><span class="line">  	<span class="comment">// 1 is 1 threadBlock</span></span><br><span class="line">  	<span class="comment">// arraySize: each Block has 5 thread</span></span><br><span class="line">  	<span class="comment">// each thread will execute the add operation a+b=c</span></span><br><span class="line">    addKernel&lt;&lt;&lt;<span class="number">1</span>, arraySize&gt;&gt;&gt;(dev_c, dev_a, dev_b);</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// 3. CPU</span></span><br><span class="line">    <span class="comment">// 结果传回主机</span></span><br><span class="line">  	<span class="comment">// pass the GPU calculate result to CPU</span></span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(c, dev_c, arraySize * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyDeviceToHost);</span><br><span class="line">	</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Result: &quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; arraySize; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, c[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 释放 GPU 内存</span></span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_a);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_b);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_c);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>PTX</strong></p>
+<p>parallel Thread Execution</p>
+<p>虚拟架构，用来describe GPU command</p>
+<p>没有PTX，C/C++代码需要经过PTX转化为统一格式 (适用于不同的 GPU 架构)</p>
+<p><strong>CUBIN</strong></p>
+<p>CUDA binary</p>
+<p>真正二进制代码，直接和GPU hard device对应</p>
+<p>CUBIN是架构先关，必须为GPU的Compute Capability 编译。</p>
+<p><img src="https://p.ipic.vip/mxnlul.png" alt="image-20250115180603004"></p>
+<blockquote>
+<p>分为两个部分</p>
+<p>1.virtual compute architecture</p>
+<blockquote>
+<p>PTX 的generate</p>
+<p>和 hardware无关</p>
+</blockquote>
+<p>2.real sm architecture</p>
+<blockquote>
+<p>将PTX转化为CUBIN</p>
+<p>cuda运行时根据hardware生成</p>
+</blockquote>
+</blockquote>
+<p>举个例子类比解释</p>
+<p>将一本不知道什么语言书 翻译成 读者能看懂的书 让他阅读</p>
+<ol>
+<li>原版数据 CUDA source code</li>
+<li>通用英文版本 PTX</li>
+<li>地方化版本 CUBIN</li>
+<li>根据读者选择（CUDA runing）</li>
+</ol>
+<blockquote>
+<p>你有一本书，需要让全世界不同地区的读者阅读。两个阶段</p>
+<p>第一阶段：</p>
+<p>把原始书（CUDA 源代码）翻译成一种通用的、易于理解的语言（比如标准化的英语）。</p>
+<p>这个版本不包含地方特色，任何懂英语的人都能看懂</p>
+<blockquote>
+<p>相当于 CUDA 编译器将设备代码生成 PTX 中间代码。</p>
+</blockquote>
+<p>第二阶段：</p>
+<p>根据地区，将通用版本 翻译为 符合当地习惯的版本(比如美国口音、英国口音或澳大利亚口音的英语)。</p>
+<blockquote>
+<p>为美国读者提供“美国版技术书籍”，为英国读者提供“英国版技术书籍”。这就相当于 CUDA 的 PTX 被转译成适合具体 GPU 硬件（比如 <code>sm_50</code>、<code>sm_70</code>）的 CUBIN 二进制代码。</p>
+</blockquote>
+<p>运行阶段： 选择合适的版本</p>
+</blockquote>
+<p>第一阶段 CUDA 生成 PTX</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc -<span class="built_in">arch</span>=compute_50 -<span class="built_in">ptx</span> example.cu -o example.ptx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输入 example.cud --&gt; 包含host code 和 device code</p>
+<p>输出 exmaple.ptx --&gt; 生成的file</p>
+<p>架构制定 -arch=compute_50:  生成支持计算能力 5.0 的 PTX 代码。</p>
+</blockquote>
+<p>第二阶段 生成CUBIN</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc -<span class="built_in">arch</span>=compute_50 -code=sm_50 example.cu -o example.cubin</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将PTX 装华为 CUBIN</p>
+<p>输入： example.cud --&gt; 包含host code 和 device code</p>
+<p>输出： example.cubion 是生成 计算能力 5.0 的目标架构（如 Tesla Maxwell 架构）可直接运行的二进制文件。</p>
+<p>-code=sm_50 生成适用于计算能力 5.0 的 GPU 的二进制文件。</p>
+</blockquote>
+<p>运行CUDA</p>
+<ol>
+<li>
+<p>CUDA 运行时加载 CUBIN 或 PTX</p>
+<p>加载</p>
+<p>1.1 有对应 GPU 架构的 CUBIN 文件，直接运行</p>
+<p>1.2没有匹配的 CUBIN 文件，则运行时会动态编译 PTX 为目标硬件的二进制代码</p>
+</li>
+<li>
+<p>运行</p>
+<p>example.cubin 被加载并在目标GPU 上运行</p>
+<p>CUDA Runtime 调用核函数（如 addKerne l&lt;&lt;&lt;1，5&gt;&gt;&gt;），完成计算任务</p>
+</li>
+</ol>
+<h4 id="2gpu计算能力"><a class="markdownIt-Anchor" href="#2gpu计算能力"></a> 2.GPU计算能力</h4>
+<p>上次学习笔记到这为止</p>
+<p><a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1xM2qO5ibOkshYU-LrGrYMdl7iGimzZq_#scrollTo=AdkPlBexiXu2">https://colab.research.google.com/drive/1xM2qO5ibOkshYU-LrGrYMdl7iGimzZq_#scrollTo=AdkPlBexiXu2</a></p>
+<h2 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h2>
+<p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/educators/existing-courses">https://developer.nvidia.com/educators/existing-courses</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56374118?utm_source=chatgpt.com">https://zhuanlan.zhihu.com/p/56374118?utm_source=chatgpt.com</a></p>
 
     </div>
 
@@ -368,7 +1192,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
@@ -379,13 +1203,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">210k</span>
+    <span title="Word count total">271k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">12:43</span>
+    <span title="Reading time total">16:25</span>
   </span>
 </div>
 <div class="busuanzi-count">

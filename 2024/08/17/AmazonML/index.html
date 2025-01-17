@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-corner-indicator.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Amazon ML  面试总结 考察核心：  要求你能够理解business problem 把business problem 转化成一个ML problem 提出并且implement ML solutions —&gt; improve business metrics   所谓ML的经验: 就是一眼看出这个business problem适不适合用来做ML，有没有前途  amazon不同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AmazonML">
+<meta property="og:url" content="https://www.zhoujoe.us/2024/08/17/AmazonML/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="Amazon ML  面试总结 考察核心：  要求你能够理解business problem 把business problem 转化成一个ML problem 提出并且implement ML solutions —&gt; improve business metrics   所谓ML的经验: 就是一眼看出这个business problem适不适合用来做ML，有没有前途  amazon不同">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-08-17T22:48:38.000Z">
+<meta property="article:modified_time" content="2024-08-23T16:15:21.264Z">
+<meta property="article:author" content="Joe">
+<meta property="article:tag" content="Interview">
+<meta property="article:tag" content="Resume">
+<meta property="article:tag" content="Amazon">
+<meta property="article:tag" content="Meachine Learning">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zhoujoe.us/2024/08/17/AmazonML/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.zhoujoe.us/2024/08/17/AmazonML/","path":"2024/08/17/AmazonML/","title":"AmazonML"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>AmazonML | Notes</title>
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Notes</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#amazon-ml"><span class="nav-number">1.</span> <span class="nav-text"> Amazon ML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93"><span class="nav-number">1.1.</span> <span class="nav-text"> 面试总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E7%BB%8F%E5%9B%9E%E9%A1%BE"><span class="nav-number">1.2.</span> <span class="nav-text"> 面经回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ml-%E8%80%83%E5%AF%9F%E7%82%B9"><span class="nav-number">1.2.1.</span> <span class="nav-text"> ML 考察点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#how-to-prepare-a-ml-story-in-the-resume"><span class="nav-number">1.3.</span> <span class="nav-text"> How to prepare a ML story in the Resume?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#common-challenges-examples"><span class="nav-number">1.3.1.</span> <span class="nav-text"> Common Challenges Examples</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#how-to-prepare-ml-design"><span class="nav-number">1.4.</span> <span class="nav-text"> How to prepare ML Design?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%97%AE%E9%A2%98%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.4.1.</span> <span class="nav-text"> 1. 问题是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-diagram-on-a-whiteboard"><span class="nav-number">1.4.2.</span> <span class="nav-text"> 2. Diagram on a Whiteboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-discuss-the-model"><span class="nav-number">1.4.3.</span> <span class="nav-text"> 3. Discuss the Model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#terminology"><span class="nav-number">1.5.</span> <span class="nav-text"> Terminology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ml-infra"><span class="nav-number">1.5.1.</span> <span class="nav-text"> ML infra</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#preprocessing"><span class="nav-number">1.5.2.</span> <span class="nav-text"> Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post-processing"><span class="nav-number">1.5.3.</span> <span class="nav-text"> Post-processing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ml-model-traininginference"><span class="nav-number">1.5.4.</span> <span class="nav-text"> ML model training&#x2F;inference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#model-training-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="nav-number">1.5.5.</span> <span class="nav-text"> Model Training 模型训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inference-%E6%8E%A8%E7%90%86"><span class="nav-number">1.5.6.</span> <span class="nav-text"> Inference 推理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-company-ml-%E5%B8%B8%E8%A7%81%E8%80%83%E5%AF%9F%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.6.</span> <span class="nav-text"> Other Company ML 常见考察形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">1.7.</span> <span class="nav-text"> Reference</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Joe"
+      src="https://avatars.githubusercontent.com/u/91183483?v=4">
+  <p class="site-author-name" itemprop="name">Joe</p>
+  <div class="site-description" itemprop="description">Festina lente</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">76</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/DonkeyBoy001" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;DonkeyBoy001" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100081303083864" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100081303083864" rel="noopener me" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.zhoujoe.us/2024/08/17/AmazonML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/91183483?v=4">
+      <meta itemprop="name" content="Joe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+      <meta itemprop="description" content="Festina lente">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="AmazonML | Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AmazonML
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-08-17 15:48:38" itemprop="dateCreated datePublished" datetime="2024-08-17T15:48:38-07:00">2024-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-23 09:15:21" itemprop="dateModified" datetime="2024-08-23T09:15:21-07:00">2024-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Amazon-ML/" itemprop="url" rel="index"><span itemprop="name">Amazon ML</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Amazon-ML/Inteviews/" itemprop="url" rel="index"><span itemprop="name">Inteviews</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2024/08/17/AmazonML/" class="post-meta-item leancloud_visitors" data-flag-title="AmazonML" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>12 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="amazon-ml"><a class="markdownIt-Anchor" href="#amazon-ml"></a> Amazon ML</h1>
+<h2 id="面试总结"><a class="markdownIt-Anchor" href="#面试总结"></a> 面试总结</h2>
+<p><strong>考察核心</strong>：</p>
+<ol>
+<li>要求你能够理解business problem</li>
+<li>把business problem 转化成一个ML problem</li>
+<li>提出并且implement ML solutions —&gt; improve business metrics</li>
+</ol>
+<blockquote>
+<p>所谓ML的经验: 就是一眼看出这个business problem适不适合用来做ML，有没有前途</p>
+</blockquote>
+<p><strong>amazon不同岗位 从事的工作</strong></p>
+<p>engineering team —&gt; ML infra</p>
+<p>BI engineer/Data Scientist/Data Engineer —&gt; data pipeline</p>
+<p>Applied Science —&gt;  preprocessing, post-processing, ML model training/inference</p>
+<blockquote>
+<p>创建一个模型inference的endpoint从而跟engineering team来interact</p>
+</blockquote>
+<h2 id="面经回顾"><a class="markdownIt-Anchor" href="#面经回顾"></a> 面经回顾</h2>
+<ol>
+<li>
+<p>简单的leetcode + ML知识点</p>
+</li>
+<li>
+<p>ML知识点</p>
+</li>
+<li>
+<p>BQ (leadership principle)</p>
+<blockquote>
+<p>熟悉leadership principles会非常重要</p>
+<p>4轮中1轮考BQ</p>
+<p>而其它3轮，会有2个BQ问题</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="ml-考察点"><a class="markdownIt-Anchor" href="#ml-考察点"></a> ML 考察点</h3>
+<ol>
+<li>
+<p>ML breadth</p>
+<p>机器学习的广泛知识和理论基础</p>
+<p><strong>feature selection的方法</strong></p>
+<blockquote>
+<p>熟悉 <strong>常用的模型</strong>和<strong>简历中涉及到的模型</strong></p>
+<blockquote>
+<p>熟悉到 能够写出伪代码的程度</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>ML depth</p>
+<p>特定机器学习领域（如深度学习、自然语言处理等）的专业知识和技术深度</p>
+<p><strong>transformer模型比RNN family的优势在什么地方</strong></p>
+<p><strong>BERT集体的模型结构是什么</strong></p>
+<p><strong>为什么需要multi-head attention</strong></p>
+<p><strong>写一下logistic regression的loss并且计算gradient</strong></p>
+</li>
+<li>
+<p>ML application</p>
+<p>类似 机器学习设计面试</p>
+<blockquote>
+<p>重视**机器学习问题的形成 **  —&gt; 在给定的业务场景中正确地定义和构造问题</p>
+<p>而非仅仅是解决方案的设计</p>
+</blockquote>
+<p><strong>现在amazon search bar只支持general retail products，然后我现在也想同时支持amazon fresh的搜索，你会怎么设计</strong></p>
+</li>
+</ol>
+<h2 id="how-to-prepare-a-ml-story-in-the-resume"><a class="markdownIt-Anchor" href="#how-to-prepare-a-ml-story-in-the-resume"></a> How to prepare a ML story in the Resume?</h2>
+<p>重点： 科学创新（science innovation）+ 各种挑战（challenges）+ How to slove challenges</p>
+<h3 id="common-challenges-examples"><a class="markdownIt-Anchor" href="#common-challenges-examples"></a> Common Challenges Examples</h3>
+<ol>
+<li>
+<p>High Quality Labeling Data</p>
+<p>缺乏高质量的标注数据 --&gt;导致模型性能不佳 —&gt; 数据增强、伪标签等技术</p>
+</li>
+<li>
+<p>Legacy Systems</p>
+<p>整合新的机器学习解决方案—&gt;与旧的系统进行接口或完全替换—&gt;技术和兼容性的挑战</p>
+</li>
+<li>
+<p>Cross-team Communication</p>
+<p>项目需要多个团队的合作(如数据科学家、产品经理、工程师等 )—&gt; 跨团队沟通协调能力</p>
+</li>
+<li>
+<p>Latency/Scalability/Robustness</p>
+<p>模型的响应时间、可扩展性和鲁棒性(business areas 非常重要) —&gt; 用户体验和产品的可用性</p>
+</li>
+<li>
+<p>Formulate Business Problems</p>
+<p>将抽象的业务需求转化为具体的机器学习问题 —&gt; 深入理解业务本身并能提出可行的technical solution</p>
+</li>
+</ol>
+<h2 id="how-to-prepare-ml-design"><a class="markdownIt-Anchor" href="#how-to-prepare-ml-design"></a> How to prepare ML Design?</h2>
+<p>重点： 分模块： 问题是什么—&gt; 怎么解决 —&gt; 怎么衡量 —&gt; 上线</p>
+<blockquote>
+<ol>
+<li>
+<p>问题的概览，big picture聊一下（<strong>这里是用1-2句话描述项目</strong>）, 观察interviewer反应</p>
+<blockquote>
+<p>面试官反应继续： 觉得可以继续一部分一部分展开，就每一个小的模块，具体展开讲讲</p>
+</blockquote>
+<blockquote>
+<p>面试官有表达欲望：<strong>停下来</strong></p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<p>ML Design核心： train一个model来实现某个task</p>
+<blockquote>
+<p>比如prediction/ranking/classification。有经验的人都知道，实际上给定一个问题，好用/常用的solution基本上只有很少的几种。</p>
+</blockquote>
+<h3 id="1-问题是什么"><a class="markdownIt-Anchor" href="#1-问题是什么"></a> 1. 问题是什么</h3>
+<ol>
+<li>
+<p>可用信息</p>
+</li>
+<li>
+<p>输入和输出</p>
+</li>
+<li>
+<p>问题类型:  classification or regression 或者 relevance/matching/ranking</p>
+<p><strong>Relevance</strong></p>
+<p>某个文档、内容、或项与查询或需求之间的匹配程度  —&gt; 评估一个内容项（如网页、文档、产品）与用户查询的相关性</p>
+<p>相关性通常通过分配一个分数来表示，分数越高，表示内容与查询越匹配。</p>
+<blockquote>
+<p>搜索： 用户输入查询词，系统返回的网页应该与查询词高度相关。相关性算法会对每个页面打分，决定它在搜索结果中的排序位置。</p>
+<p>广告： 在广告推荐中，系统评估广告内容与用户兴趣的相关性，以展示最相关的广告。</p>
+</blockquote>
+<p><strong>Matching</strong></p>
+<p>两个实体（如文本、用户和物品等）之间的相似性或兼容性。能包括相关性、匹配度、点击率、用户反馈等</p>
+<blockquote>
+<p>匹配通常用于推荐系统、问答系统、语义相似性计算等场景。</p>
+<p>推荐： 根据用户的历史行为和偏好，匹配出最合适的商品或内容。</p>
+<p>NLP： 判断两个句子是否具有相同的语义或是否相似。</p>
+</blockquote>
+<p><strong>Ranking</strong></p>
+<p>根据某些标准对一组项目进行排序 —&gt; 确保最相关或最匹配的项目排在前面，满足用户的需求。</p>
+<blockquote>
+<p>搜素： 排序模型会根据网页的相关性和其他因素将搜索结果进行排序，最相关的结果排在最前面。</p>
+<p>推荐：对多个可能推荐的商品进行排序，确保用户最感兴趣的商品首先展示。</p>
+</blockquote>
+</li>
+<li>
+<p>根据问题类型，选择 需要train哪种类型的model</p>
+</li>
+</ol>
+<p>Relevance, Matching 和 Ranking的联合</p>
+<blockquote>
+<p>一个推荐系统中，首先需要判断哪些商品与用户需求具有<strong>相关性</strong>，</p>
+<p>接着根据用户的特定偏好对商品进行<strong>匹配</strong>，</p>
+<p>最后根据不同的权重和因素对匹配到的商品进行**排序22。</p>
+</blockquote>
+<h3 id="2-diagram-on-a-whiteboard"><a class="markdownIt-Anchor" href="#2-diagram-on-a-whiteboard"></a> 2. Diagram on a Whiteboard</h3>
+<p>明白问题后，需要draw一个overview 的 diagram展示work flow</p>
+<blockquote>
+<p>Workflow:</p>
+<ol>
+<li>training/testing data</li>
+<li>input representation</li>
+<li>model</li>
+<li>output</li>
+<li>evaluation</li>
+<li>optimization (parameter estimation)</li>
+</ol>
+</blockquote>
+<h3 id="3-discuss-the-model"><a class="markdownIt-Anchor" href="#3-discuss-the-model"></a> 3. Discuss the Model</h3>
+<p>基于任务，列出2-3个常用model，比较它们，选择一个常用的model.</p>
+<p>Depending on the task type, list possible models, compare 2-3 common ones, and choose a commonly used model.</p>
+<ol>
+<li>
+<p>分析你选的model的components</p>
+</li>
+<li>
+<p>每个components之间的关系</p>
+</li>
+<li>
+<p>visualize the model as needed</p>
+<blockquote>
+<p>e.g., layers in a DNN,</p>
+<p>log likelihood in logistic regression,</p>
+<p>L1 and L2 norms in regularization</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>OverView Visualization: Layers in a DNN</strong></p>
+<blockquote>
+<ol>
+<li>
+<p>Input Layer</p>
+<blockquote>
+<p><strong>Function</strong>: Receives raw data like a image</p>
+<p><strong>Visualization</strong>:Represented as a layer where each neuron corresponds to a pixel value in the image</p>
+<blockquote>
+<p>assume the input is a grayscale image of size 28x28 pixels</p>
+<p>—&gt;</p>
+<p>the input layer would consist of 784 neurons (28 x 28).</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>Hidden Layers</p>
+<blockquote>
+<p><strong>Function</strong>: Extract features from the input.</p>
+<p><strong>Visualization</strong>: Typically drawn as one or more layers between the input and output.</p>
+<p>Each layer contains neurons that connect to the previous layer</p>
+<blockquote>
+<p><strong>First Hidden Layer</strong>: Might learn <em>basic features</em> like edges and simple textures. Visualized as a layer of neurons, each processing different parts of the input based on their weights and biases.</p>
+<p><strong>Second Hidden Layer</strong>: Might learn <em>combinations of features</em> from the first hidden layer, such as corners or parts of objects in the image.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>Output Layer</p>
+<blockquote>
+<p><strong>Function</strong>: Produces the final prediction or classification result.</p>
+<p><strong>Visualization</strong>: The final layer, where each neuron corresponds to a class label in a classification task.</p>
+<blockquote>
+<p>in digit recognition (0-9), this layer would have 10 neurons. Each neuron represents the probability that the input image belongs to one of the digits.</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<p><strong>Specific Architectures Visualization</strong></p>
+<p>Convolutional Layers 卷积层</p>
+<p><a target="_blank" rel="noopener" href="https://poloclub.github.io/cnn-explainer/">https://poloclub.github.io/cnn-explainer/</a></p>
+<p>Recurrent Layers 循环层</p>
+<h2 id="terminology"><a class="markdownIt-Anchor" href="#terminology"></a> Terminology</h2>
+<h3 id="ml-infra"><a class="markdownIt-Anchor" href="#ml-infra"></a> ML infra</h3>
+<p>支持机器学习模型开发、训练、部署和维护的底层技术和工具的集合</p>
+<ol>
+<li>
+<p>数据存储</p>
+<blockquote>
+<p>HDFS、S3、SQL/NoSQL数据库</p>
+</blockquote>
+</li>
+<li>
+<p>计算资源</p>
+<blockquote>
+<p>GPU、TPU、CPU集群</p>
+<p>云平台：AWS、GCP、Azure等</p>
+</blockquote>
+</li>
+<li>
+<p>分布式计算框架</p>
+<blockquote>
+<p>处理计算的框架: TensorFlow、PyTorch、Apache Spark</p>
+</blockquote>
+</li>
+<li>
+<p>模型管理与版本控制</p>
+<blockquote>
+<p>跟踪管理ML tools： MLflow、DVC（Data Version Control）</p>
+</blockquote>
+</li>
+<li>
+<p>持续集成与部署</p>
+<blockquote>
+<p>Jenkins、Kubeflow、Docker</p>
+</blockquote>
+</li>
+<li>
+<p>监控与日志记录</p>
+<p>log 监控 ML model运行情况</p>
+<blockquote>
+<p>Prometheus、Grafana、ELK Stack（Elasticsearch, Logstash, Kibana）</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="preprocessing"><a class="markdownIt-Anchor" href="#preprocessing"></a> Preprocessing</h3>
+<p>对原始数据进行转换和清理，从而让其可以被ML model使用</p>
+<ol>
+<li>
+<p>data clearning</p>
+<p>Handling missing values</p>
+<p>填充缺失数据或删除包含缺失值的记录</p>
+<blockquote>
+<p>平均值填充、中位数填充、前后值填充（前向填充、后向填充）</p>
+</blockquote>
+<p>Processing noise</p>
+<p>识别和删除数据中的异常值或错误值( abnormal value)</p>
+</li>
+<li>
+<p>data formalization</p>
+<p>Normalization/standardization</p>
+<p>将数据缩放到一个特定的范围（如0到1之间）</p>
+<blockquote>
+<p>Min-Max缩放、Z-score标准化</p>
+</blockquote>
+<p>coding category variable</p>
+<p>将类别数据转换为数值形式</p>
+<blockquote>
+<p>One-Hot Encoding</p>
+<p>Label Encoding</p>
+</blockquote>
+</li>
+<li>
+<p>Feature Engineering</p>
+<p>Feature selection: 选择对模型有用的特征，剔除无关或冗余的特征。</p>
+<p>—&gt; 剔除无关或冗余的特征，减少模型的复杂性和过拟合风险</p>
+<p>feature extraction: 通过组合或转换原始特征，生成新的特征以更好地捕捉数据的本质。</p>
+<blockquote>
+<p>时间序列数据中的移动平均、主成分分析（PCA）</p>
+</blockquote>
+</li>
+<li>
+<p>data segmentation</p>
+<p>将数据集划分为Training Set和Test Set</p>
+<p>cross-validation</p>
+</li>
+<li>
+<p>data augmentation</p>
+<p>增加训练样本的多样性</p>
+<blockquote>
+<p>图像翻转、旋转、裁剪 Image flipping, rotating and cropping</p>
+<p>文本的同义词替换 Synonym substitution for text</p>
+</blockquote>
+</li>
+<li>
+<p>Dimensional reduction</p>
+<p>减少特征数量来简化数据</p>
+<blockquote>
+<p>主成分分析（PCA）或线性判别分析（LDA）</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="post-processing"><a class="markdownIt-Anchor" href="#post-processing"></a> Post-processing</h3>
+<p>机器学习模型生成预测结果后对这些结果进行进一步处理的步骤</p>
+<ol>
+<li>
+<p>结果过滤</p>
+<p>去除异常值: 在预测结果中识别并去除明显不合理的值</p>
+<p>规则化处理: 根据业务规则或先验知识，对预测结果进行调整</p>
+<blockquote>
+<p>如果某个模型预测值超出了合理的范围，可以根据业务规则将其截断或调整到一个合理的范围内。</p>
+</blockquote>
+</li>
+<li>
+<p>结果平滑</p>
+<p>平滑时间序列</p>
+<p>对于时间序列预测，通过移动平均或指数平滑等技术减小短期波动</p>
+<p>分类结果平滑</p>
+<p>在图像分类或语音识别等任务中，可能会对模型的预测结果进行平滑处理，以减少误分类现象。</p>
+</li>
+<li>
+<p>结果校准</p>
+<p>概率校准： 对输出的概率进行校准，使得预测概率更加准确</p>
+<blockquote>
+<p>使用Platt校准或Isotonic回归对模型的概率输出进行调整</p>
+</blockquote>
+<p>分段调整: 将预测结果分段处理，比如将回归模型的连续输出分为离散的类别</p>
+</li>
+<li>
+<p>组合与加权</p>
+<p>模型集成: 将多个模型的预测结果进行组合或加权平均 —&gt; 提高最终的预测精度</p>
+<blockquote>
+<p>集成学习方法，如Bagging、Boosting或Stacking</p>
+</blockquote>
+<p>投票机制: 在分类任务中，可以通过多个模型的投票机制来确定最终的分类结果。</p>
+</li>
+<li>
+<p>格式转换</p>
+<p>输出格式转换： 将模型输出转换为所需的格式或结构</p>
+<blockquote>
+<p>将概率分布转换为具体的类别标签</p>
+<p>将预测值映射到实际应用的特定单位（如货币、温度等）</p>
+</blockquote>
+<p>输出解释: 对模型的输出进行解释或可视化，帮助用户理解模型的决策过程</p>
+<blockquote>
+<p>使用SHAP值、LIME等技术对模型预测进行解释</p>
+</blockquote>
+</li>
+<li>
+<p>结果优化</p>
+<p>结果优化： 可以对初始的模型输出进行进一步的优化处理</p>
+<blockquote>
+<p>应用线性规划或其他优化算法，以满足特定的业务目标或约束条件</p>
+</blockquote>
+<p>多目标优化: 在多目标任务中，可能需要对多个预测结果进行协调优化，以找到最优的权衡方案。</p>
+</li>
+<li>
+<p>结果输出与存储</p>
+<p>将最终的预测结果保存到数据库或以指定的格式输出</p>
+<blockquote>
+<p>例如JSON、CSV等</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="ml-model-traininginference"><a class="markdownIt-Anchor" href="#ml-model-traininginference"></a> ML model training/inference</h3>
+<h3 id="model-training-模型训练"><a class="markdownIt-Anchor" href="#model-training-模型训练"></a> Model Training 模型训练</h3>
+<p><strong>调整模型</strong>的参数，以最小化误差并提高模型对未知数据的预测能力</p>
+<ol>
+<li>
+<p>数据准备</p>
+<p>1.1 数据收集</p>
+<p>1.2 数据预处理</p>
+</li>
+<li>
+<p>模型选择</p>
+<p>根据任务的性质（如分类、回归、聚类等）选择适合的机器学习模型( 如线性回归、决策树、支持向量机、神经网络等）</p>
+</li>
+<li>
+<p>损失函数和优化算法</p>
+<p>3.1 损失函数</p>
+<p>loss function: 评估模型预测结果与实际结果之间差异的度量</p>
+<blockquote>
+<p>均方误差（MSE）、交叉熵损失</p>
+</blockquote>
+<p>3.2 选择优化算法</p>
+<p>Optimzer: 用于调整模型参数，以最小化损失函数。</p>
+<blockquote>
+<p>梯度下降（SGD）、Adam</p>
+</blockquote>
+</li>
+<li>
+<p>模型训练</p>
+<p>4.1 training model: 使用训练数据集，通过优化算法迭代地调整模型参数 —&gt; 损失函数逐渐减小，从而提高模型的预测能力。</p>
+<p>4.2 validate model: 使用验证数据集评估模型的性能，调整超参数（如学习率、正则化参数等）以优化模型表现。</p>
+</li>
+<li>
+<p>模型评估</p>
+</li>
+</ol>
+<p>在Test dataset 上评估模型的最终表现</p>
+<blockquote>
+<p>使用性能指标（如准确率、精确率、召回率、F1分数等）来衡量模型的泛化能力。</p>
+</blockquote>
+<h3 id="inference-推理"><a class="markdownIt-Anchor" href="#inference-推理"></a> Inference 推理</h3>
+<p><strong>使用</strong>已经训练好的<strong>模型</strong>对新数据进行预测或分类的过程</p>
+<ol>
+<li>
+<p>数据输入</p>
+<p>接收新的数据输入，该数据通常没有标签，需要模型给出预测结果</p>
+</li>
+<li>
+<p>模型预测</p>
+<p>将新数据输入到已经训练好的模型中，模型根据其内部的参数和结构生成预测结果</p>
+</li>
+<li>
+<p>结果处理</p>
+<p>输出结果: 模型的预测结果输出</p>
+<blockquote>
+<p>这些结果可能是分类标签、回归值、概率分布等</p>
+</blockquote>
+<p>后处理: 根据业务需求，对模型的预测结果进行后处理</p>
+<blockquote>
+<p>例如平滑、校准或转换格式</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="other-company-ml-常见考察形式"><a class="markdownIt-Anchor" href="#other-company-ml-常见考察形式"></a> Other Company ML 常见考察形式</h2>
+<p>亚麻AS： 一轮AS coding三轮ML （breath depth applicatoin）</p>
+<p>Meta： 选system design + ML design    或者两轮ML Design</p>
+<p>Linkedin： 两轮LC + 一轮 ML八股 + 一轮ML Design</p>
+<blockquote>
+<p>一轮data coding 就是Leetcode上比较数学的coding基本都是面经题</p>
+<p>一轮data science （ML八股文和统计基础）</p>
+<p>一轮ML design</p>
+</blockquote>
+<p>Tiktok：每轮都是ML八股 + LC</p>
+<blockquote>
+<p>ML八股： 类似Amazon的breadth + 一部分depth</p>
+</blockquote>
+<p>微软: 一半engineering一半ML</p>
+<blockquote>
+<p>更侧重engineering</p>
+</blockquote>
+<h2 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h2>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-910878-9-1.html">https://www.1point3acres.com/bbs/thread-910878-9-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-788610-1-1.html">https://www.1point3acres.com/bbs/thread-788610-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-585908-1-1.html">https://www.1point3acres.com/bbs/thread-585908-1-1.html</a> (继续)</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-788612-1-1.html%EF%BC%88%E6%80%BB%E7%BB%93%EF%BC%8C%E7%BB%A7%E7%BB%AD%EF%BC%89">https://www.1point3acres.com/bbs/thread-788612-1-1.html（总结，继续）</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Interview/" rel="tag"># Interview</a>
+              <a href="/tags/Resume/" rel="tag"># Resume</a>
+              <a href="/tags/Amazon/" rel="tag"># Amazon</a>
+              <a href="/tags/Meachine-Learning/" rel="tag"># Meachine Learning</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/23/CVStory/" rel="prev" title="CVStory">
+                  <i class="fa fa-angle-left"></i> CVStory
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/08/20/THE-INNER-GAME-OF-TENNIS/" rel="next" title="THE INNER GAME OF TENNIS">
+                  THE INNER GAME OF TENNIS <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Joe</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">271k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">16:25</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>-->
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+  <a href="https://github.com/DonkeyBoy001" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/4.20.0/algoliasearch-lite.umd.js" integrity="sha256-DABVk+hYj0mdUzo+7ViJC6cwLahQIejFvC+my2M/wfM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/4.57.0/instantsearch.production.min.js" integrity="sha256-foJtB+Wd0wvvK+VU3KO0/H6CjwSwJfB1RnWlgx0Ov9U=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"rZsuavEmZYP4PEa5niaZG6rn-MdYXbMMI","app_key":"iv0iSNLUTfYodhD0RwdwW9bn","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script>
+((window.gitter = {}).chat = {}).options = {
+  room: 'your-room-name',
+  activationElement: false
+};
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+</html>

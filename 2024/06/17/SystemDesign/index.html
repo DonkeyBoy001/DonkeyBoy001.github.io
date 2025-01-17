@@ -21,12 +21,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhoujoe.us","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="System Design 大家好，这是我从头系统整理如何学习SD的笔记，这是SD的开头。">
+    <meta name="description" content="System Design 大家好，这是我从头系统整理如何学习SD的笔记，这是SD的开头。 Tips1: sd面试最重要的是和面试官沟通，找到ta想听的答案 Tips2: DDIA + Alex xu  and  mocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SystemDesign">
 <meta property="og:url" content="https://www.zhoujoe.us/2024/06/17/SystemDesign/index.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description" content="System Design 大家好，这是我从头系统整理如何学习SD的笔记，这是SD的开头。">
+<meta property="og:description" content="System Design 大家好，这是我从头系统整理如何学习SD的笔记，这是SD的开头。 Tips1: sd面试最重要的是和面试官沟通，找到ta想听的答案 Tips2: DDIA + Alex xu  and  mocks">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://p.ipic.vip/spp3vl.png">
 <meta property="og:image" content="https://p.ipic.vip/c8vlcm.png">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://p.ipic.vip/7pj54k.png">
 <meta property="og:image" content="https://p.ipic.vip/k7i2et.png">
 <meta property="article:published_time" content="2024-06-17T20:49:10.000Z">
-<meta property="article:modified_time" content="2024-06-23T06:23:14.043Z">
+<meta property="article:modified_time" content="2024-10-28T01:13:29.496Z">
 <meta property="article:author" content="Joe">
 <meta property="article:tag" content="System Design">
 <meta property="article:tag" content="System Design Begain">
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#system-design"><span class="nav-number">1.</span> <span class="nav-text"> System Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87"><span class="nav-number">1.1.</span> <span class="nav-text"> 如何准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#usful-tip"><span class="nav-number">1.2.</span> <span class="nav-text"> Usful Tip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sd-%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text"> SD 面试问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concept"><span class="nav-number">1.4.</span> <span class="nav-text"> Basic Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text"> 延迟和吞吐量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cap"><span class="nav-number">1.4.2.</span> <span class="nav-text"> CAP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#availability-model"><span class="nav-number">1.4.2.0.1.</span> <span class="nav-text"> Availability model</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8C%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%9A%84%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="nav-number">1.4.2.0.2.</span> <span class="nav-text"> 并行和顺序的可用性</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#classic-example"><span class="nav-number">2.</span> <span class="nav-text"> Classic Example</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tiny-url-design-pastebincom-or-bitly"><span class="nav-number">2.1.</span> <span class="nav-text"> Tiny URL —&gt; Design Pastebin.com (or Bit.ly)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-outline-use-cases-and-constraints"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 1. Outline use cases and constraints</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-function"><span class="nav-number">2.1.2.</span> <span class="nav-text"> main function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-create-a-high-level-design"><span class="nav-number">2.1.3.</span> <span class="nav-text"> 2. Create a high level design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-20240618155504491"><span class="nav-number">2.1.4.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-design-core-components"><span class="nav-number">2.1.5.</span> <span class="nav-text"> 3. Design core components</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-scale-the-design"><span class="nav-number">2.1.6.</span> <span class="nav-text"> 4. Scale the Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-additional-talking-points"><span class="nav-number">2.1.7.</span> <span class="nav-text"> 5. Additional talking points</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#design-slack"><span class="nav-number">2.2.</span> <span class="nav-text"> Design Slack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tips"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#script-api-%E5%92%8C-rest-api"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Script API 和 Rest API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-design-a-twitter"><span class="nav-number">2.2.3.</span> <span class="nav-text"> How to design a Twitter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%E8%80%83%E5%AF%9F%E7%82%B9"><span class="nav-number">2.2.4.</span> <span class="nav-text"> 面试官考察点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.2.5.</span> <span class="nav-text"> 系统设计主要步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#step-1-clarify-the-requirements"><span class="nav-number">2.2.5.1.</span> <span class="nav-text"> Step 1: Clarify the requirements</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-2-capacity-estimation"><span class="nav-number">2.2.5.2.</span> <span class="nav-text"> Step 2: Capacity Estimation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-3-system-apis"><span class="nav-number">2.2.5.3.</span> <span class="nav-text"> Step 3: System APIs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-4-high-level-system-design"><span class="nav-number">2.2.5.4.</span> <span class="nav-text"> Step 4: High-level System Design</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-5-data-storage"><span class="nav-number">2.2.5.5.</span> <span class="nav-text"> Step 5: Data Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-6-scalability"><span class="nav-number">2.2.5.6.</span> <span class="nav-text"> Step 6: Scalability</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.3.</span> <span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#system-design"><span class="nav-number">1.</span> <span class="nav-text"> System Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87"><span class="nav-number">1.1.</span> <span class="nav-text"> 如何准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#usful-tip"><span class="nav-number">1.2.</span> <span class="nav-text"> Usful Tip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sd-%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text"> SD 面试问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sd-%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB"><span class="nav-number">1.4.</span> <span class="nav-text"> SD 面试经验分享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concept"><span class="nav-number">1.5.</span> <span class="nav-text"> Basic Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F"><span class="nav-number">1.5.1.</span> <span class="nav-text"> 延迟和吞吐量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cap"><span class="nav-number">1.5.2.</span> <span class="nav-text"> CAP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#availability-model"><span class="nav-number">1.5.2.0.1.</span> <span class="nav-text"> Availability model</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8C%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%9A%84%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="nav-number">1.5.2.0.2.</span> <span class="nav-text"> 并行和顺序的可用性</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#classic-example"><span class="nav-number">2.</span> <span class="nav-text"> Classic Example</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tiny-url-design-pastebincom-or-bitly"><span class="nav-number">2.1.</span> <span class="nav-text"> Tiny URL —&gt; Design Pastebin.com (or Bit.ly)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-outline-use-cases-and-constraints"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 1. Outline use cases and constraints</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-function"><span class="nav-number">2.1.2.</span> <span class="nav-text"> main function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-create-a-high-level-design"><span class="nav-number">2.1.3.</span> <span class="nav-text"> 2. Create a high level design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-20240618155504491"><span class="nav-number">2.1.4.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-design-core-components"><span class="nav-number">2.1.5.</span> <span class="nav-text"> 3. Design core components</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-scale-the-design"><span class="nav-number">2.1.6.</span> <span class="nav-text"> 4. Scale the Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-additional-talking-points"><span class="nav-number">2.1.7.</span> <span class="nav-text"> 5. Additional talking points</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#design-slack"><span class="nav-number">2.2.</span> <span class="nav-text"> Design Slack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tips"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#script-api-%E5%92%8C-rest-api"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Script API 和 Rest API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-design-a-twitter"><span class="nav-number">2.2.3.</span> <span class="nav-text"> How to design a Twitter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%E8%80%83%E5%AF%9F%E7%82%B9"><span class="nav-number">2.2.4.</span> <span class="nav-text"> 面试官考察点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.2.5.</span> <span class="nav-text"> 系统设计主要步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#step-1-clarify-the-requirements"><span class="nav-number">2.2.5.1.</span> <span class="nav-text"> Step 1: Clarify the requirements</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-2-capacity-estimation"><span class="nav-number">2.2.5.2.</span> <span class="nav-text"> Step 2: Capacity Estimation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-3-system-apis"><span class="nav-number">2.2.5.3.</span> <span class="nav-text"> Step 3: System APIs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-4-high-level-system-design"><span class="nav-number">2.2.5.4.</span> <span class="nav-text"> Step 4: High-level System Design</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-5-data-storage"><span class="nav-number">2.2.5.5.</span> <span class="nav-text"> Step 5: Data Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-6-scalability"><span class="nav-number">2.2.5.6.</span> <span class="nav-text"> Step 6: Scalability</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.3.</span> <span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,18 +162,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">76</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -248,7 +248,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-06-22 23:23:14" itemprop="dateModified" datetime="2024-06-22T23:23:14-07:00">2024-06-22</time>
+      <time title="Modified: 2024-10-27 18:13:29" itemprop="dateModified" datetime="2024-10-27T18:13:29-07:00">2024-10-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,14 +281,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>5k</span>
+      <span>5.8k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>18 mins.</span>
+      <span>21 mins.</span>
     </span>
 </div>
 
@@ -300,6 +300,8 @@
     
     <div class="post-body" itemprop="articleBody"><h1 id="system-design"><a class="markdownIt-Anchor" href="#system-design"></a> System Design</h1>
 <p>大家好，这是我从头系统整理如何学习SD的笔记，这是SD的开头。</p>
+<p>Tips1: sd面试最重要的是和面试官沟通，找到ta想听的答案</p>
+<p>Tips2: DDIA + Alex xu  and  mocks</p>
 <span id="more"></span>
 <h2 id="如何准备"><a class="markdownIt-Anchor" href="#如何准备"></a> 如何准备</h2>
 <ol>
@@ -369,6 +371,161 @@
 <p>估算系统的RPS,吞吐量，磁盘空间</p>
 </blockquote>
 </blockquote>
+</li>
+</ol>
+<h2 id="sd-面试经验分享"><a class="markdownIt-Anchor" href="#sd-面试经验分享"></a> SD 面试经验分享</h2>
+<p><strong>我觉得该贴分析更多是侧重API Design方向的面试</strong></p>
+<blockquote>
+<p>偏product的company确实比较侧重于data model和API design，</p>
+<p>但就算这些公司，（取决于面试的level）也会问一些deep dive的问题</p>
+<blockquote>
+<p>比如不同的consistency level的区别，或者各种error case的处理，这些没有点内功是答不好的，做好API design就是个敲门砖，及格分</p>
+</blockquote>
+<blockquote>
+<p>product track偏重模块API数据的设计</p>
+<p>system track就是完全偏重分布式系统设计</p>
+</blockquote>
+</blockquote>
+<p>设计更多关注product本身</p>
+<blockquote>
+<p>而非底层的infra, 因为这些假定 infra team已经提供了。</p>
+<p>有时候nosql还是 relation db都没得选</p>
+</blockquote>
+<ol>
+<li>重点是 data model design 和 API 结构设计</li>
+</ol>
+<p><strong>data model design</strong></p>
+<p>以电商系统为例子解释</p>
+<blockquote>
+<p>E-commerce systems need to process user and order information</p>
+<p>Data Model Design</p>
+<p>User and Order</p>
+<blockquote>
+<p>User</p>
+<p>Attributes:</p>
+<blockquote>
+<p>UserId  (Primary Key)</p>
+<p>UserName</p>
+<p>Email</p>
+<p>Password</p>
+<p>Created At</p>
+</blockquote>
+<p>Relationships</p>
+<blockquote>
+<p>one user === many orders</p>
+</blockquote>
+<p>Order</p>
+<p>Attributes:</p>
+<blockquote>
+<p>OrderID (Primary Key)</p>
+<p>UserID  (Foreign Key from User)</p>
+<p>OrderDate</p>
+<p>ToalAmount</p>
+<p>Status e.g., pending, completed, cancelled)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>API Design</strong></p>
+<blockquote>
+<p>User API</p>
+<p>Post /users  — create new users</p>
+<p>Get /users/{userID}  get user infor</p>
+<p>Put /users/{userID}   update user infor</p>
+<p>Delete /users/{userID} delete user</p>
+<p>Order API</p>
+<p>Post /users/{userID}/orders   create order for specific users</p>
+<p>Get /users/{userID}/orders get the user infor</p>
+<p>Get /orders/{orderID} get the order infor</p>
+<p>Put /orders/{orderID} update order infor</p>
+<p>DELETE /orders/{orderID} delete order</p>
+</blockquote>
+<p><strong>request and response</strong></p>
+<ol>
+<li>
+<p>create new user</p>
+<p><em>POST /users</em></p>
+</li>
+</ol>
+<p>Request</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;username&quot;</span>: <span class="string">&quot;john_doe&quot;</span>,</span><br><span class="line">  <span class="string">&quot;email&quot;</span>: <span class="string">&quot;john@example.com&quot;</span>,</span><br><span class="line">  <span class="string">&quot;password&quot;</span>: <span class="string">&quot;securepassword123&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>response</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;success&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;userID&quot;</span>: <span class="string">&quot;12345&quot;</span>,</span><br><span class="line">  <span class="string">&quot;message&quot;</span>: <span class="string">&quot;User created successfully&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>
+<p>create order for a user</p>
+<p><em>POST /users/{userID}/orders</em></p>
+</li>
+</ol>
+<p>request</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;orderDate&quot;</span>: <span class="string">&quot;2021-09-15&quot;</span>,</span><br><span class="line">  <span class="string">&quot;totalAmount&quot;</span>: 299.99,</span><br><span class="line">  <span class="string">&quot;items&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;itemID&quot;</span>: <span class="string">&quot;998&quot;</span>,</span><br><span class="line">      <span class="string">&quot;quantity&quot;</span>: 2,</span><br><span class="line">      <span class="string">&quot;price&quot;</span>: 149.99</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>response</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;success&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;orderID&quot;</span>: <span class="string">&quot;56789&quot;</span>,</span><br><span class="line">  <span class="string">&quot;message&quot;</span>: <span class="string">&quot;Order created successfully&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>
+<p>get orders of user</p>
+<p>*GET/users/{userID}/orders</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;success&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;orders&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;orderID&quot;</span>: <span class="string">&quot;56789&quot;</span>,</span><br><span class="line">      <span class="string">&quot;orderDate&quot;</span>: <span class="string">&quot;2021-09-15&quot;</span>,</span><br><span class="line">      <span class="string">&quot;totalAmount&quot;</span>: 299.99,</span><br><span class="line">      <span class="string">&quot;status&quot;</span>: <span class="string">&quot;completed&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>offline workflows</strong></p>
+<p>what is offline workflows?</p>
+<p>计算环境中进行的Data handling activity活动，这些活动不依赖Real-time data(real time users interactions)</p>
+<p>handle Batch processing task</p>
+<p>large amount of data / resource-intensive tasks</p>
+<p><strong>batch processing</strong></p>
+<blockquote>
+<p>offline workflows 通常处理累积的数据批量，而不是Instant processing of each data. 这种方式适合于需要处理大量数据的情况，例如log analysis、Data Warehouse Synchronization或Report generation.</p>
+</blockquote>
+<p>举例子解释 —&gt; 设计一个product catalog service(产品目录服务)</p>
+<blockquote>
+<ol>
+<li>这个System有哪些data</li>
+<li>每个object之间是什么关系</li>
+</ol>
+<p>搞清楚 data relation model之后</p>
+<ol start="3">
+<li>
+<p>API design</p>
+<blockquote>
+<p>这些data如何read/write</p>
+<p>每个API的 request/response长什么样子</p>
+</blockquote>
+</li>
+<li>
+<p>data processsing 需不需要 offline workflows</p>
+</li>
+<li>
+<p>为了scaling需不需要拆分service加入message queue</p>
+</li>
+<li>
+<p>如何handle failures</p>
+</li>
+<li>
+<p>数据可以暂时存在server local cache里面吗</p>
+</li>
+<li>
+<p>给client 的response是sync还是async？</p>
+</li>
+<li>
+<p>如何retry</p>
+</li>
+</ol>
+</blockquote>
+<ol start="2">
+<li>暂停 加 交流</li>
+</ol>
+<p>还有一个是交流很重要 —&gt; 需要pause然后问一下feedback，比如 design 是tradeoff decision</p>
+<p>明白面试官打断你的时候对方的concern在哪，自己的设计哪些方面没有考虑？</p>
+<ol start="3">
+<li>
+<p>写 function requirements/non-function requirements</p>
+</li>
+<li>
+<p>画high level design</p>
+</li>
+<li>
+<p>别花太多时间计算traffic，storage size，</p>
+<p>除非面试官明确要求你计算，不然可以直接问peak QPS以及数据多大</p>
 </li>
 </ol>
 <h2 id="basic-concept"><a class="markdownIt-Anchor" href="#basic-concept"></a> Basic Concept</h2>
@@ -1152,6 +1309,9 @@
 <p><a target="_blank" rel="noopener" href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98">https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#如何处理一个系统设计的面试题</a></p>
 <p>Design Twitter</p>
 <p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=wqSnp49gGbg&amp;t=946s">https://www.youtube.com/watch?v=wqSnp49gGbg&amp;t=946s</a></p>
+<p>一亩三分地 面经</p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-1086103-1-1.html">https://www.1point3acres.com/bbs/thread-1086103-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-828490-1-1.html">https://www.1point3acres.com/bbs/thread-828490-1-1.html</a></p>
 
     </div>
 
@@ -1196,7 +1356,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
@@ -1207,13 +1367,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">210k</span>
+    <span title="Word count total">271k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">12:43</span>
+    <span title="Reading time total">16:25</span>
   </span>
 </div>
 <div class="busuanzi-count">
